@@ -1,0 +1,59 @@
+.container {
+  max-width: 800px !important;
+  width: 1170px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+/* WAS title */
+.container .row {
+  margin-top: 80px !important;
+  margin-bottom: 32px !important;
+}
+
+.container .row .image {
+  max-width: 100% !important;
+  height: auto !important;
+  border: 0 !important;
+  padding: 8px !important;
+}
+
+.container .row .title {
+  float: left !important;
+  position: relative !important;
+  min-height: 1px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.container .row .title .logoTxt {
+  font-size: 32px !important;
+  color: #fa6e51 !important;
+  font-weight: 600 !important;
+}
+
+h2 {
+  margin-top: 23px !important;
+  margin-bottom: 11.5px !important;
+}
+/* End of WAS title */
+
+/* Introduction */
+.container .introduction {
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+}
+
+.container .introduction .introduction_grid .text {
+  color: #4b5f6d !important;
+  text-align: justify !important;
+  line-height: 23px !important;
+  white-space: pre-line !important;
+}
+
+.container .formButton {
+  margin-top: 50px !important;
+}
+/* End of Introduction */
