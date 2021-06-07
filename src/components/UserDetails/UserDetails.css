@@ -1,26 +1,22 @@
 /* Content */
 hr {
-  margin-top: 1px !important;
   margin-bottom: 23px !important;
-  padding-bottom: 0 !important;
   border-top: 1px solid #678895 !important;
-  box-sizing: content-box !important;
-  width: 100% !important;
+  width: 100%;
 }
 
 .profileContainer {
-  max-width: 800px !important;
-  margin-right: auto !important;
-  margin-left: auto !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .profileContainer .content1 {
-  font-size: 1rem !important;
-  line-height: 2rem !important;
-  color: #4b5f6d !important;
-  margin: 0 0 1em !important;
+  line-height: 2rem;
+  color: #4b5f6d;
+  margin: 0 0 0.5em;
 }
 
 /* End of content */

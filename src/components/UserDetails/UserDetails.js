@@ -85,7 +85,9 @@ export class UserDetails extends Component {
 
             {/* Country-of-Birth */}
             <Dropdown
-              inputLabel={formData.informationAboutYouPage.birthCountryInstruction}
+              inputLabel={
+                formData.informationAboutYouPage.birthCountryInstruction
+              }
               value={values.countryOfBirth}
               name={"countryOfBirth"}
               onChange={handleCountryOfBirthChange}
@@ -95,7 +97,9 @@ export class UserDetails extends Component {
             {/* Ethnicity (Show ethnicity only if Country-of-Residence is Singapore) */}
             {checkCountryOfBirthSingapore(values) ? (
               <Dropdown
-                inputLabel={formData.informationAboutYouPage.ethnicityInstruction}
+                inputLabel={
+                  formData.informationAboutYouPage.ethnicityInstruction
+                }
                 value={values.ethnicity}
                 name={"ethnicity"}
                 onChange={handleChange}
@@ -105,7 +109,9 @@ export class UserDetails extends Component {
 
             {/* Country-of-Residence */}
             <Dropdown
-              inputLabel={formData.informationAboutYouPage.residenceCountryInstruction}
+              inputLabel={
+                formData.informationAboutYouPage.residenceCountryInstruction
+              }
               value={values.countryOfResidence}
               name={"countryOfResidence"}
               onChange={handleChange}
@@ -114,7 +120,9 @@ export class UserDetails extends Component {
 
             {/* Native Speaker? */}
             <Dropdown
-              inputLabel={formData.informationAboutYouPage.nativeSpeakerInstruction}
+              inputLabel={
+                formData.informationAboutYouPage.nativeSpeakerInstruction
+              }
               value={values.isNative}
               name={"isNative"}
               onChange={handleChange}
@@ -123,7 +131,9 @@ export class UserDetails extends Component {
 
             {/* Languages Spoken */}
             <MultiselectDropdown
-              inputLabel={formData.informationAboutYouPage.otherLanguagesInstruction}
+              inputLabel={
+                formData.informationAboutYouPage.otherLanguagesInstruction
+              }
               value={values.languagesSpoken}
               name={"languagesSpoken"}
               onChange={handleLanguageChange}
@@ -133,7 +143,9 @@ export class UserDetails extends Component {
 
           {/* Continue Button*/}
           <FormButton
-            buttonDescription={formData.informationAboutYouPage.buttonDescription}
+            buttonDescription={
+              formData.informationAboutYouPage.buttonDescription
+            }
             onClick={this.continue}
             disabled={!isEnabled}
           />

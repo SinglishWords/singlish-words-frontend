@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import FormButton from "../FormButton/FormButton";
 import "./Quiz.css";
 import {startTimer, endTimer, currentDateTime} from "../../utils/Logic/time";
+import formData from "../../utils/formData";
 
 export class Quiz extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ export class Quiz extends Component {
             <TextField
               autoFocus
               autoComplete="off"
-              label="Enter a first association"
+              label={formData.quizPage.firstAssociationInstruction}
               name="firstAssociationText"
               onChange={(e) =>
                 handleResponseChange(e, wordIndex, firstAssociationIndex)
@@ -61,14 +62,11 @@ export class Quiz extends Component {
                 }
               }}
             />
-            <br />
-            <br />
-            <br />
 
             {/* Second Association */}
             <TextField
               autoComplete="off"
-              label="Enter a second association"
+              label={formData.quizPage.secondAssociationInstruction}
               name="secondAssociationText"
               onChange={(e) =>
                 handleResponseChange(e, wordIndex, secondAssociationIndex)
@@ -80,14 +78,11 @@ export class Quiz extends Component {
                 }
               }}
             />
-            <br />
-            <br />
-            <br />
 
             {/* Third Association */}
             <TextField
               autoComplete="off"
-              label="Enter a third association"
+              label={formData.quizPage.thirdAssociationInstruction}
               name="thirdAssociationText"
               onChange={(e) =>
                 handleResponseChange(e, wordIndex, thirdAssociationIndex)
@@ -99,15 +94,12 @@ export class Quiz extends Component {
                 }
               }}
             />
-            <br />
-            <br />
-            <br />
           </Grid>
 
           {/* Continue Button */}
           {/* handleTimeOnPage tracks how long the user has been on the page*/}
           <FormButton
-            buttonDescription="continue"
+            buttonDescription={formData.quizPage.buttonDescription}
             onClick={(e) => {
               this.pageEndTime = endTimer();
               handleTimeOnPage(wordIndex, this.pageStartTime, this.pageEndTime);

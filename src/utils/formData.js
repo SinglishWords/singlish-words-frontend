@@ -24,7 +24,7 @@ const formData = {
     buttonDescription: `I want to participate!`,
   },
 
-  /* Information about you Page*/
+  /* Information about you Page */
   informationAboutYouPage: {
     title: `Information about you`,
     instruction1: `Before we get started, please provide the following info.`,
@@ -46,6 +46,40 @@ const formData = {
     yesAndNo: yesNoList,
     languagesSpoken: languagesSpokenList,
   },
+
+  /* Instructions Page */
+  instructionsPage: {
+    title: `Instructions`,
+    firstParagraphHeader: `How it works...`,
+    firstParagraphDescription: {
+      description1: `On the top of the screen a word will appear.`,
+      description2: `Enter the first word that comes to mind`,
+      description3: `when reading this word. If you don't know this word, press`,
+      buttonDescription1: `Unknown word`,
+      description4: `Press`,
+      description5: `Enter`,
+      description6: `to add a second and third word or press`,
+      buttonDescription2: `No more responses`,
+      description7: `if you can't think of any.`,
+    },
+    secondParagraphHeader: `Some hints`,
+    secondParagraphDescription: {
+      description1: `Only give associations to the word on top of the screen (not to your previous responses!) Try to avoid full sentences as responses.`,
+      description2: `Simply type a word and press `,
+      description3: `Enter`,
+      description4: ` to go to the next one.`,
+      buttonDescription: `continue`,
+    }
+  },
+
+  /* Quiz Page */
+  quizPage: {
+    firstAssociationInstruction: `Enter a first association`,
+    secondAssociationInstruction: `Enter a second association`,
+    thirdAssociationInstruction: `Enter a third association`,
+    buttonDescription: `continue`,
+  },
+
 };
 
 export default formData;

@@ -1,5 +1,6 @@
 import { Button, Divider, Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
+import formData from "../../utils/formData";
 import FormButton from "../FormButton/FormButton";
 import Header from "../Header/Header";
 import "./Instruction.css";
@@ -14,7 +15,7 @@ export class Instruction extends Component {
     return (
       <Grid container>
         {/* Header */}
-        <Header title={"Instructions"} />
+        <Header title={formData.instructionsPage.title} />
 
         <Grid container className="instructionContainer" justify="center">
           <Divider />
@@ -22,28 +23,26 @@ export class Instruction extends Component {
             {/* Content How it works...*/}
             <Grid item xs={12}>
               <Typography variant="h4" className="title">
-                How it works...
+                {formData.instructionsPage.firstParagraphHeader}
               </Typography>
             </Grid>
 
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-                On the top of the screen a word will appear.{" "}
-                <b>Enter the first word that comes to mind</b> when reading this
-                word. If you don't know this word, press{"   "}
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="small"
-                  className="button"
-                >
-                  Unknown word
-                </Button>
-                .
-              </Typography>
-              <br />
-              <Typography variant="body1" className="text">
-                Press <em>Enter</em> to add a second and third word or press
+                {
+                  formData.instructionsPage.firstParagraphDescription
+                    .description1
+                }{" "}
+                <b>
+                  {
+                    formData.instructionsPage.firstParagraphDescription
+                      .description2
+                  }
+                </b>{" "}
+                {
+                  formData.instructionsPage.firstParagraphDescription
+                    .description3
+                }
                 {"   "}
                 <Button
                   variant="contained"
@@ -51,9 +50,45 @@ export class Instruction extends Component {
                   size="small"
                   className="button"
                 >
-                  No more responses
+                  {
+                    formData.instructionsPage.firstParagraphDescription
+                      .buttonDescription1
+                  }
+                </Button>
+                {"."}
+              </Typography>
+              <br />
+              <Typography variant="body1" className="text">
+                {
+                  formData.instructionsPage.firstParagraphDescription
+                    .description4
+                }{" "}
+                <em>
+                  {
+                    formData.instructionsPage.firstParagraphDescription
+                      .description5
+                  }
+                </em>{" "}
+                {
+                  formData.instructionsPage.firstParagraphDescription
+                    .description6
+                }
+                {"   "}
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="small"
+                  className="button"
+                >
+                  {
+                    formData.instructionsPage.firstParagraphDescription
+                      .buttonDescription2
+                  }
                 </Button>{" "}
-                if you can't think of any.
+                {
+                  formData.instructionsPage.firstParagraphDescription
+                    .description7
+                }
               </Typography>
             </Grid>
 
@@ -66,23 +101,39 @@ export class Instruction extends Component {
 
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-                Only give associations to the word on top of the screen (not to
-                your previous responses!)
+                {
+                  formData.instructionsPage.secondParagraphDescription
+                    .description1
+                }
               </Typography>
               <br />
               <Typography variant="body1" className="text">
-                Try to avoid full sentences as responses.
-              </Typography>
-              <br />
-              <Typography variant="body1" className="text">
-                Simply type a word and press <em>Enter</em> to go to the next
-                one.
+                {
+                  formData.instructionsPage.secondParagraphDescription
+                    .description2
+                }
+                <em>
+                  {
+                    formData.instructionsPage.secondParagraphDescription
+                      .description3
+                  }
+                </em>{" "}
+                {
+                  formData.instructionsPage.secondParagraphDescription
+                    .description4
+                }
               </Typography>
             </Grid>
           </Grid>
 
           {/* Continue Button*/}
-          <FormButton buttonDescription="continue" onClick={this.continue} />
+          <FormButton
+            buttonDescription={
+              formData.instructionsPage.secondParagraphDescription
+                .buttonDescription
+            }
+            onClick={this.continue}
+          />
         </Grid>
       </Grid>
     );

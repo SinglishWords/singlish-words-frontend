@@ -1,13 +1,13 @@
 .instructionContainer {
-  max-width: 800px !important;
-  margin-right: auto !important;
-  margin-left: auto !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 h4 {
-  color: #4b5f6d !important;
+  color: #4b5f6d;
   font-size: 24px !important;
   margin-top: 11.5px !important;
   margin-bottom: 11.5px !important;
@@ -19,22 +19,18 @@ h4 {
 .instructionContainer .content_grid {
   margin-left: 9%;
   margin-right: 9%;
-  width: 91.66666667%;
-  float: left;
-  position: relative;
-  min-height: 1px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-bottom: 9%
+  margin-bottom: 9%;
 }
 
 .instructionContainer .content_grid .text {
-  color: #4b5f6d !important;
-  white-space: pre-line !important;
-  text-align: justify !important;
-  line-height: 30px !important;
+  color: #4b5f6d;
+  white-space: pre-line;
+  text-align: justify;
+  line-height: 30px;
 }
 
 .instructionContainer .content_grid .text .button {
-  font-size: 0.6rem !important;
+  font-size: 0.6rem;
 }
