@@ -23,13 +23,4 @@ hr {
   margin: 0 0 1em !important;
 }
 
-.profileContainer .dropdown {
-  width: 100% !important;
-  margin-bottom: 20px !important;
-}
-
-.profileContainer .dropdown .MuiSelect-select[multiple] {
-  height: 170px !important;
-}
-
 /* End of content */

@@ -1,16 +1,15 @@
-import {
-  Box,
-  Divider,
-  FormControl,
-  Grid,
-  InputLabel,
-  Select,
-  Typography,
-} from "@material-ui/core";
+import { Box, Divider, Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import formData from "../../utils/formData";
+import {
+  checkCompulsoryFieldsForNonSingaporean,
+  checkCountryOfBirthSingapore,
+  checkEthnicityFieldFilled,
+} from "../../utils/Logic/userInformationLogic";
+import Dropdown from "../Dropdown/Dropdown";
 import FormButton from "../FormButton/FormButton";
 import Header from "../Header/Header";
+import MultiselectDropdown from "../MultiselectDropdown/MultiselectDropdown";
 import "./UserDetails.css";
 
 export class UserDetails extends Component {
@@ -20,27 +19,28 @@ export class UserDetails extends Component {
   };
 
   render() {
-    const { values, handleChange, handleLanguageChange } = this.props;
+    const {
+      values,
+      handleChange,
+      handleAgeChange,
+      handleCountryOfBirthChange,
+      handleLanguageChange,
+    } = this.props;
     /* The below block of code disables/enables the "Continue" button.
     Firstly, check that all compulsory fields (Age, Gender, Education, Birth Country, 
     Residence Country, Native Speaker) are filled.
     Secondly, if participant is a Singaporean, check that Ethnicity Field is filled. */
     const compusloryFieldsFilled =
-      values.age.length > 0 &&
-      values.gender.length > 0 &&
-      values.education.length > 0 &&
-      values.countryOfBirth.length > 0 &&
-      values.countryOfResidence.length > 0 &&
-      values.isNative.length > 0;
-    const isSingaporean = values.countryOfBirth === "Singapore";
+      checkCompulsoryFieldsForNonSingaporean(values);
+    const isSingaporean = checkCountryOfBirthSingapore(values);
     const isEnabled = isSingaporean
-      ? compusloryFieldsFilled && values.ethnicity.length > 0
+      ? compusloryFieldsFilled && checkEthnicityFieldFilled(values)
       : compusloryFieldsFilled;
 
     return (
       <Grid container>
         {/* Header */}
-        <Header title={"Information about you"} />
+        <Header title={formData.informationAboutYouPage.title} />
 
         {/* Content */}
         <Grid container className="profileContainer" justify="center">
@@ -49,171 +49,91 @@ export class UserDetails extends Component {
             {/* User Detail Input Instructions */}
             <Typography variant="body1" className="content1">
               <Box fontWeight="fontWeightRegular">
-                Before we get started, please provide the following info.
+                {formData.informationAboutYouPage.instruction1}
               </Box>
               <Box fontWeight="fontWeightBold">
-                Asterisk (*) indicates a compulsory field.
+                {formData.informationAboutYouPage.instruction2}
               </Box>
             </Typography>
 
             {/* Age */}
-            <FormControl required className="dropdown">
-              <InputLabel>Please select your age</InputLabel>
-              <Select
-                native
-                value={values.age}
-                name="age"
-                defaultValue={values.age}
-                onChange={handleChange}
-              >
-                <option aria-label="None" value="" />
-                {formData.ages.map((age) => (
-                  <option key={age} value={age}>
-                    {age}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
+            <Dropdown
+              inputLabel={formData.informationAboutYouPage.ageInstruction}
+              value={values.age}
+              name={"age"}
+              onChange={handleAgeChange}
+              listData={formData.informationAboutYouPage.ages}
+            />
 
             {/* Gender */}
-            <FormControl required className="dropdown">
-              <InputLabel>Please select your gender</InputLabel>
-              <Select
-                native
-                value={values.gender}
-                name="gender"
-                defaultValue={values.gender}
-                onChange={handleChange}
-              >
-                <option aria-label="None" value="" />
-                {formData.genderTypes.map((gender) => (
-                  <option key={gender} value={gender}>
-                    {gender}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
+            <Dropdown
+              inputLabel={formData.informationAboutYouPage.genderInstruction}
+              value={values.gender}
+              name={"gender"}
+              onChange={handleChange}
+              listData={formData.informationAboutYouPage.genderTypes}
+            />
 
             {/* Education */}
-            <FormControl required className="dropdown">
-              <InputLabel>Please select your level of education</InputLabel>
-              <Select
-                native
-                value={values.education}
-                name="education"
-                defaultValue={values.education}
-                onChange={handleChange}
-              >
-                <option aria-label="None" value="" />
-                {formData.educationLevels.map((education) => (
-                  <option key={education} value={education}>
-                    {education}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
+            <Dropdown
+              inputLabel={formData.informationAboutYouPage.educationInstruction}
+              value={values.education}
+              name={"education"}
+              onChange={handleChange}
+              listData={formData.informationAboutYouPage.educationLevels}
+            />
 
             {/* Country-of-Birth */}
-            <FormControl required className="dropdown">
-              <InputLabel>Please select your country of birth</InputLabel>
-              <Select
-                native
-                value={values.countryOfBirth}
-                name="countryOfBirth"
-                defaultValue={values.countryOfBirth}
-                onChange={handleChange}
-              >
-                <option aria-label="None" value="" />
-                {formData.countries.map((country) => (
-                  <option key={country} value={country}>
-                    {country}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
+            <Dropdown
+              inputLabel={formData.informationAboutYouPage.birthCountryInstruction}
+              value={values.countryOfBirth}
+              name={"countryOfBirth"}
+              onChange={handleCountryOfBirthChange}
+              listData={formData.informationAboutYouPage.countries}
+            />
 
             {/* Ethnicity (Show ethnicity only if Country-of-Residence is Singapore) */}
-            {values.countryOfBirth === "Singapore" ? (
-              <FormControl required className="dropdown">
-                <InputLabel>Please select your ethnic group</InputLabel>
-                <Select
-                  native
-                  value={values.ethnicity}
-                  name="ethnicity"
-                  defaultValue={values.ethnicity}
-                  onChange={handleChange}
-                >
-                  <option aria-label="None" value="" />
-                  {formData.ethnicities.map((ethnicity) => (
-                    <option key={ethnicity} value={ethnicity}>
-                      {ethnicity}
-                    </option>
-                  ))}
-                </Select>
-              </FormControl>
+            {checkCountryOfBirthSingapore(values) ? (
+              <Dropdown
+                inputLabel={formData.informationAboutYouPage.ethnicityInstruction}
+                value={values.ethnicity}
+                name={"ethnicity"}
+                onChange={handleChange}
+                listData={formData.informationAboutYouPage.ethnicities}
+              />
             ) : null}
 
             {/* Country-of-Residence */}
-            <FormControl required className="dropdown">
-              <InputLabel>Please select your country of residence</InputLabel>
-              <Select
-                native
-                value={values.countryOfResidence}
-                name="countryOfResidence"
-                defaultValue={values.countryOfResidence}
-                onChange={handleChange}
-              >
-                <option aria-label="None" value="" />
-                {formData.countries.map((country) => (
-                  <option key={country} value={country}>
-                    {country}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
+            <Dropdown
+              inputLabel={formData.informationAboutYouPage.residenceCountryInstruction}
+              value={values.countryOfResidence}
+              name={"countryOfResidence"}
+              onChange={handleChange}
+              listData={formData.informationAboutYouPage.countries}
+            />
 
             {/* Native Speaker? */}
-            <FormControl required className="dropdown">
-              <InputLabel>Are you a native English speaker?</InputLabel>
-              <Select
-                native
-                value={values.isNative}
-                name="isNative"
-                defaultValue={values.isNative}
-                onChange={handleChange}
-              >
-                <option aria-label="None" value="" />
-                {formData.yesAndNo.map((isNative) => (
-                  <option key={isNative} value={isNative}>
-                    {isNative}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
+            <Dropdown
+              inputLabel={formData.informationAboutYouPage.nativeSpeakerInstruction}
+              value={values.isNative}
+              name={"isNative"}
+              onChange={handleChange}
+              listData={formData.informationAboutYouPage.yesAndNo}
+            />
 
             {/* Languages Spoken */}
-            <FormControl className="dropdown">
-              <InputLabel shrink>What other languages do you speak?</InputLabel>
-              <Select
-                className="languageMultiSelect"
-                native
-                multiple
-                value={values.languagesSpoken}
-                name="languagesSpoken"
-                onChange={handleLanguageChange}
-              >
-                {formData.languagesSpoken.map((language) => (
-                  <option key={language} value={language}>
-                    {language}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
+            <MultiselectDropdown
+              inputLabel={formData.informationAboutYouPage.otherLanguagesInstruction}
+              value={values.languagesSpoken}
+              name={"languagesSpoken"}
+              onChange={handleLanguageChange}
+              listData={formData.informationAboutYouPage.languagesSpoken}
+            />
           </Grid>
 
           {/* Continue Button*/}
           <FormButton
-            buttonDescription="continue"
+            buttonDescription={formData.informationAboutYouPage.buttonDescription}
             onClick={this.continue}
             disabled={!isEnabled}
           />

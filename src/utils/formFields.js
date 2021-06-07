@@ -11,6 +11,8 @@ const formFields = {
   ethnicity: "",
   isNative: "",
   languagesSpoken: [],
+  startTime: "",
+  endTime: "",
   data: [
     {
       question: { id: 1, word: "word1" },

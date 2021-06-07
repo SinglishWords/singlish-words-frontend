@@ -11,14 +11,6 @@ export class Form extends Component {
     this.state = formFields;
   }
 
-  /* Go back to previous step */
-  prevStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step - 1,
-    });
-  };
-
   /* Proceed to next step */
   nextStep = () => {
     const { step } = this.state;
@@ -27,14 +19,30 @@ export class Form extends Component {
     });
   };
 
-  /* Handle primitive field change */
+  /* Handle primitive field change (Default handleChange for most fields) */
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
-  /* Handle array field change (ie Language field)
+  /* Define a handleChange for Age due to string vs number convertibility consideration*/
+  handleAgeChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value !== "" ? +e.target.value : e.target.value,
+    });
+  };
+
+  /* If user changes to another country of birth, 
+  then we should clear the ethnicity field because default is Singapore*/
+  handleCountryOfBirthChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+      ethnicity: "",
+    });
+  };
+
+  /* Handle array field change (ie languagesSpoken field)
   Can be extended to handle general array changes by passing in state field as parameter */
   handleLanguageChange = (e) => {
     let temp = { ...this.state };
@@ -49,7 +57,7 @@ export class Form extends Component {
     this.setState(temp);
   };
 
-  /* Handle nested field change (ie Response field) */
+  /* Handle nested field change (ie response field) */
   handleResponseChange = (e, i, j) => {
     let temp = { ...this.state };
     temp.data[i].response[j] = e.target.value;
@@ -57,12 +65,19 @@ export class Form extends Component {
   };
 
   /* Handle nested field change (ie timeOnPage field) */
-  handleTimeOnPage = (e, i, startTime, endTime) => {
+  handleTimeOnPage = (i, pageStartTime, pageEndTime) => {
     let temp = { ...this.state };
-    const timeDifference = (endTime - startTime) / 1000;
+    const timeDifference = (pageEndTime - pageStartTime) / 1000;
     const timeInSeconds = Math.round(timeDifference);
     temp.data[i].timeOnPage = timeInSeconds;
     this.setState(temp);
+  };
+
+  /* Handle time in which user starts and ends on form (ie startTime and endTime fields)*/
+  handleTimeOnForm = (field, dateTime) => {
+    this.setState({
+      [field]: dateTime,
+    });
   };
 
   render() {
@@ -76,6 +91,8 @@ export class Form extends Component {
       ethnicity,
       isNative,
       languagesSpoken,
+      startTime,
+      endTime,
       data,
     } = this.state;
 
@@ -88,6 +105,8 @@ export class Form extends Component {
       ethnicity,
       isNative,
       languagesSpoken,
+      startTime,
+      endTime,
       data,
     };
 
@@ -97,10 +116,10 @@ export class Form extends Component {
     values.data.forEach((word, wordIndex) => {
       quizList.push(
         <Quiz
-          prevStep={this.prevStep}
           nextStep={this.nextStep}
           handleResponseChange={this.handleResponseChange}
           handleTimeOnPage={this.handleTimeOnPage}
+          handleTimeOnForm={this.handleTimeOnForm}
           values={values}
           wordIndex={wordIndex}
         />
@@ -118,21 +137,26 @@ export class Form extends Component {
       default:
         return <h1>Something went wrong!</h1>;
       case 1:
-        return <Introduction nextStep={this.nextStep} />;
+        return (
+          <Introduction
+            nextStep={this.nextStep}
+            values={values}
+            handleTimeOnForm={this.handleTimeOnForm}
+          />
+        );
       case 2:
         return (
           <UserDetails
-            prevStep={this.prevStep}
             nextStep={this.nextStep}
             handleChange={this.handleChange}
+            handleAgeChange={this.handleAgeChange}
+            handleCountryOfBirthChange={this.handleCountryOfBirthChange}
             handleLanguageChange={this.handleLanguageChange}
             values={values}
           />
         );
       case 3:
-        return (
-          <Instruction prevStep={this.prevStep} nextStep={this.nextStep} />
-        );
+        return <Instruction nextStep={this.nextStep} />;
       case 4:
         wordEntry = 0;
         return quizList[wordEntry];

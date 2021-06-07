@@ -2,6 +2,7 @@ import { Grid, TextField, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import FormButton from "../FormButton/FormButton";
 import "./Quiz.css";
+import {startTimer, endTimer, currentDateTime} from "../../utils/Logic/time";
 
 export class Quiz extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ export class Quiz extends Component {
     this.secondAssociationRef = React.createRef();
     this.thirdAssociationRef = React.createRef();
     this.continueButton = React.createRef();
-    this.startTime = performance.now();
+    this.pageStartTime = startTimer();
+    this.pageEndTime = "";
   }
 
   continue = (e) => {
@@ -21,13 +23,13 @@ export class Quiz extends Component {
     this.secondAssociationRef.current.value = "";
     this.thirdAssociationRef.current.value = "";
     this.firstAssociationRef.current.focus();
-    /* Reset startTime position for every page */
-    this.startTime = performance.now();
+    /* Reset pageStartTime reference position for every page */
+    this.pageStartTime = startTimer();
     this.props.nextStep();
   };
 
   render() {
-    const { values, handleResponseChange, handleTimeOnPage, wordIndex } = this.props;
+    const { values, handleResponseChange, handleTimeOnPage, handleTimeOnForm, wordIndex } = this.props;
     const firstAssociationIndex = 0;
     const secondAssociationIndex = 1;
     const thirdAssociationIndex = 2;
@@ -107,8 +109,9 @@ export class Quiz extends Component {
           <FormButton
             buttonDescription="continue"
             onClick={(e) => {
-              var endTime = performance.now()
-              handleTimeOnPage(e, wordIndex, this.startTime, endTime)
+              this.pageEndTime = endTimer();
+              handleTimeOnPage(wordIndex, this.pageStartTime, this.pageEndTime);
+              handleTimeOnForm("endTime", currentDateTime());
               this.continue(e);
             }}
             buttonRef={this.continueButton}

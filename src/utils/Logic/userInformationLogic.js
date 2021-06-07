@@ -1,20 +1,16 @@
-const userInformationLogic = {
-  checkFieldsForSingaporean:
-    values.age.length > 0 &&
-    values.gender.length > 0 &&
-    values.education.length > 0 &&
-    values.countryOfBirth.length > 0 &&
-    values.ethnicity.length > 0 &&
-    values.countryOfResidence.length > 0 &&
-    values.isNative.length > 0,
+export function checkCompulsoryFieldsForNonSingaporean(values) {
+    return values.age !== "" &&
+    values.gender !== "" &&
+    values.education !== "" &&
+    values.countryOfBirth !== "" &&
+    values.countryOfResidence !== "" &&
+    values.isNative !== "";
+}
 
-  checkFieldsForNonSingaporean:
-    values.age.length > 0 &&
-    values.gender.length > 0 &&
-    values.education.length > 0 &&
-    values.countryOfBirth.length > 0 &&
-    values.countryOfResidence.length > 0 &&
-    values.isNative.length > 0,
-};
+export function checkCountryOfBirthSingapore(values) {
+    return values.countryOfBirth === "Singapore";
+}
 
-export default userInformationLogic;
+export function checkEthnicityFieldFilled(values) {
+    return values.ethnicity !== "";
+}

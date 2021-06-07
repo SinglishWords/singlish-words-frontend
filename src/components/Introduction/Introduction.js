@@ -4,14 +4,22 @@ import image from "../../assets/images/SWOW_Icon.png";
 import formData from "../../utils/formData";
 import FormButton from "../FormButton/FormButton";
 import "./Introduction.css";
+import { currentDateTime } from "../../utils/Logic/time";
 
 export class Introduction extends Component {
+  constructor(props) {
+    super(props);
+    this.currentDateTime = currentDateTime();
+  }
+
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
   };
 
   render() {
+    const { handleTimeOnForm } = this.props;
+
     return (
       <Grid container>
         <Grid className="container" item xs={12}>
@@ -21,7 +29,7 @@ export class Introduction extends Component {
               <img className="image" src={image} alt="" />
             </Grid>
             <Grid item className="title" lg={10} md={10} sm={10} xs={9}>
-              <h2 class="logoTxt">{formData.title}</h2>
+              <h2 className="logoTxt">{formData.introductionPage.title}</h2>
             </Grid>
           </Grid>
 
@@ -29,16 +37,20 @@ export class Introduction extends Component {
           <Grid container className="introduction" justify="center">
             <Grid item xs={12} className="introduction_grid">
               <Typography variant="body2" className="text">
-                {formData.introduction}
+                {formData.introductionPage.introduction}
               </Typography>
             </Grid>
           </Grid>
 
           {/* Button */}
+          {/* Start timer to track user's activity on page*/}
           <Grid className="formButton">
             <FormButton
-              buttonDescription="I want to participate!"
-              onClick={this.continue}
+              buttonDescription={formData.introductionPage.buttonDescription}
+              onClick={(e) => {
+                this.continue(e);
+                handleTimeOnForm("startTime", this.currentDateTime);
+              }}
             />
           </Grid>
         </Grid>
