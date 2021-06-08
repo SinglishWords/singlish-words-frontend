@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Typography } from "@material-ui/core";
+import { Divider, Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import formData from "../../utils/formData";
 import {
@@ -48,12 +48,9 @@ export class UserDetails extends Component {
           <Grid item xs={12}>
             {/* User Detail Input Instructions */}
             <Typography variant="body1" className="content1">
-              <Box fontWeight="fontWeightRegular">
-                {formData.informationAboutYouPage.instruction1}
-              </Box>
-              <Box fontWeight="fontWeightBold">
-                {formData.informationAboutYouPage.instruction2}
-              </Box>
+              {formData.informationAboutYouPage.instruction1}
+              <br />
+              <b>{formData.informationAboutYouPage.instruction2}</b>
             </Typography>
 
             {/* Age */}
@@ -142,13 +139,17 @@ export class UserDetails extends Component {
           </Grid>
 
           {/* Continue Button*/}
-          <FormButton
-            buttonDescription={
-              formData.informationAboutYouPage.buttonDescription
-            }
-            onClick={this.continue}
-            disabled={!isEnabled}
-          />
+          <Grid container>
+            <Grid item xs={12}>
+              <FormButton
+                buttonDescription={
+                  formData.informationAboutYouPage.buttonDescription
+                }
+                onClick={this.continue}
+                disabled={!isEnabled}
+              />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     );

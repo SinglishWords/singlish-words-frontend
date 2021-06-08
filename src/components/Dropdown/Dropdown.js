@@ -11,7 +11,6 @@ export class Dropdown extends Component {
           native
           value={this.props.value}
           name={this.props.name}
-          defaultValue={this.props.value}
           onChange={this.props.onChange}
         >
           <option aria-label="None" value="" />

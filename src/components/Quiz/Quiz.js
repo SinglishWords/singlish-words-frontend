@@ -1,9 +1,10 @@
 import { Grid, TextField, Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import FormButton from "../FormButton/FormButton";
-import "./Quiz.css";
-import {startTimer, endTimer, currentDateTime} from "../../utils/Logic/time";
 import formData from "../../utils/formData";
+import { currentDateTime, endTimer, startTimer } from "../../utils/Logic/time";
+import FormButton from "../FormButton/FormButton";
+import PopoverButton from "../PopoverButton/PopoverButton";
+import "./Quiz.css";
 
 export class Quiz extends Component {
   constructor(props) {
@@ -30,7 +31,13 @@ export class Quiz extends Component {
   };
 
   render() {
-    const { values, handleResponseChange, handleTimeOnPage, handleTimeOnForm, wordIndex } = this.props;
+    const {
+      values,
+      handleResponseChange,
+      handleTimeOnPage,
+      handleTimeOnForm,
+      wordIndex,
+    } = this.props;
     const firstAssociationIndex = 0;
     const secondAssociationIndex = 1;
     const thirdAssociationIndex = 2;
@@ -44,7 +51,6 @@ export class Quiz extends Component {
               {values.data[wordIndex].question.word}
             </Typography>
           </Grid>
-
           {/* First Association */}
           <Grid item xs={12} className="textField">
             <TextField
@@ -61,6 +67,9 @@ export class Quiz extends Component {
                   this.secondAssociationRef.current.focus();
                 }
               }}
+              defaultValue={
+                values.data[wordIndex].response[firstAssociationIndex]
+              }
             />
 
             {/* Second Association */}
@@ -77,6 +86,9 @@ export class Quiz extends Component {
                   this.thirdAssociationRef.current.focus();
                 }
               }}
+              defaultValue={
+                values.data[wordIndex].response[secondAssociationIndex]
+              }
             />
 
             {/* Third Association */}
@@ -93,21 +105,35 @@ export class Quiz extends Component {
                   this.continueButton.current.click();
                 }
               }}
+              defaultValue={
+                values.data[wordIndex].response[thirdAssociationIndex]
+              }
             />
           </Grid>
 
           {/* Continue Button */}
           {/* handleTimeOnPage tracks how long the user has been on the page*/}
-          <FormButton
-            buttonDescription={formData.quizPage.buttonDescription}
-            onClick={(e) => {
-              this.pageEndTime = endTimer();
-              handleTimeOnPage(wordIndex, this.pageStartTime, this.pageEndTime);
-              handleTimeOnForm("endTime", currentDateTime());
-              this.continue(e);
-            }}
-            buttonRef={this.continueButton}
-          />
+          <Grid container>
+            <Grid xs={6}>
+              <PopoverButton />
+            </Grid>
+            <Grid xs={6}>
+              <FormButton
+                buttonDescription={formData.quizPage.buttonDescription}
+                onClick={(e) => {
+                  this.pageEndTime = endTimer();
+                  handleTimeOnPage(
+                    wordIndex,
+                    this.pageStartTime,
+                    this.pageEndTime
+                  );
+                  handleTimeOnForm("endTime", currentDateTime());
+                  this.continue(e);
+                }}
+                buttonRef={this.continueButton}
+              />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     );

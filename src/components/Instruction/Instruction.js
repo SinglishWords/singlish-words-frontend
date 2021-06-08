@@ -127,13 +127,17 @@ export class Instruction extends Component {
           </Grid>
 
           {/* Continue Button*/}
-          <FormButton
-            buttonDescription={
-              formData.instructionsPage.secondParagraphDescription
-                .buttonDescription
-            }
-            onClick={this.continue}
-          />
+          <Grid container>
+            <Grid item xs={12}>
+              <FormButton
+                buttonDescription={
+                  formData.instructionsPage.secondParagraphDescription
+                    .buttonDescription
+                }
+                onClick={this.continue}
+              />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     );

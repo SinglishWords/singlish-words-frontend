@@ -4,7 +4,7 @@ import React, { Component } from "react";
 export class FormButton extends Component {
   render() {
     return (
-      <Grid item xs={12}>
+      <Grid item>
         <Box display="flex" justifyContent="center">
           <Button
             variant="contained"

@@ -44,14 +44,16 @@ export class Introduction extends Component {
 
           {/* Button */}
           {/* Start timer to track user's activity on page*/}
-          <Grid className="formButton">
-            <FormButton
-              buttonDescription={formData.introductionPage.buttonDescription}
-              onClick={(e) => {
-                this.continue(e);
-                handleTimeOnForm("startTime", this.currentDateTime);
-              }}
-            />
+          <Grid container className="formButton">
+            <Grid item xs={12}>
+              <FormButton
+                buttonDescription={formData.introductionPage.buttonDescription}
+                onClick={(e) => {
+                  this.continue(e);
+                  handleTimeOnForm("startTime", this.currentDateTime);
+                }}
+              />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

@@ -8,7 +8,31 @@ import UserDetails from "./UserDetails/UserDetails";
 export class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = formFields;
+    /* If there is a state in the local storage, use it. This handles
+    cases where the user refreshes the page. It ensures that the survey data
+    is not lost */
+    this.state = formFields
+      // JSON.parse(window.localStorage.getItem("formFields")) || formFields;
+  }
+
+  saveStateToLocalStorage() {
+    localStorage.setItem("formFields", JSON.stringify(this.state));
+  }
+
+  componentDidMount() {
+    this.saveStateToLocalStorage();
+    window.addEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+    this.saveStateToLocalStorage();
   }
 
   /* Proceed to next step */
@@ -19,7 +43,9 @@ export class Form extends Component {
     });
   };
 
-  /* Handle primitive field change (Default handleChange for most fields) */
+  /* Handle primitive field change (Default handleChange for most fields) 
+  Special cases like handleAgeChange and handleCountryofBirthChange are handled 
+  separately to preserve code modularity / avoid super functions */
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -73,7 +99,8 @@ export class Form extends Component {
     this.setState(temp);
   };
 
-  /* Handle time in which user starts and ends on form (ie startTime and endTime fields)*/
+  /* Handle time in which user starts and ends on form (ie startTime and endTime fields)
+  Target value for buttons is null. Hence, we can't use e.target.value unlike handleChange*/
   handleTimeOnForm = (field, dateTime) => {
     this.setState({
       [field]: dateTime,
