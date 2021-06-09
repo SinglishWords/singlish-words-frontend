@@ -1,15 +1,15 @@
 import { Divider, Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import formData from "../../utils/formData";
+import formData from "../../../utils/formData";
 import {
   checkCompulsoryFieldsForNonSingaporean,
   checkCountryOfBirthSingapore,
   checkEthnicityFieldFilled,
-} from "../../utils/Logic/userInformationLogic";
-import Dropdown from "../Dropdown/Dropdown";
-import FormButton from "../FormButton/FormButton";
-import Header from "../Header/Header";
-import MultiselectDropdown from "../MultiselectDropdown/MultiselectDropdown";
+} from "../../../utils/Logic/userInformationLogic";
+import Dropdown from "../../Helpers/Dropdown/Dropdown";
+import FormButton from "../../Helpers/FormButton/FormButton";
+import Header from "../../Helpers/Header/Header";
+import MultiselectDropdown from "../../Helpers/MultiselectDropdown/MultiselectDropdown";
 import "./UserDetails.css";
 
 export class UserDetails extends Component {

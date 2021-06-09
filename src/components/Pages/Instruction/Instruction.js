@@ -1,8 +1,8 @@
 import { Button, Divider, Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import formData from "../../utils/formData";
-import FormButton from "../FormButton/FormButton";
-import Header from "../Header/Header";
+import formData from "../../../utils/formData";
+import FormButton from "../../Helpers/FormButton/FormButton";
+import Header from "../../Helpers/Header/Header";
 import "./Instruction.css";
 
 export class Instruction extends Component {

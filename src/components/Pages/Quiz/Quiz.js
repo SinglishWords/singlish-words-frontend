@@ -1,9 +1,9 @@
 import { Grid, TextField, Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import formData from "../../utils/formData";
-import { currentDateTime, endTimer, startTimer } from "../../utils/Logic/time";
-import FormButton from "../FormButton/FormButton";
-import PopoverButton from "../PopoverButton/PopoverButton";
+import formData from "../../../utils/formData";
+import { currentDateTime, endTimer, startTimer } from "../../../utils/Logic/time";
+import FormButton from "../../Helpers/FormButton/FormButton";
+import PopoverButton from "../../Helpers/PopoverButton/PopoverButton";
 import "./Quiz.css";
 
 export class Quiz extends Component {
@@ -114,10 +114,10 @@ export class Quiz extends Component {
           {/* Continue Button */}
           {/* handleTimeOnPage tracks how long the user has been on the page*/}
           <Grid container>
-            <Grid xs={6}>
+            <Grid item xs={6}>
               <PopoverButton />
             </Grid>
-            <Grid xs={6}>
+            <Grid item xs={6}>
               <FormButton
                 buttonDescription={formData.quizPage.buttonDescription}
                 onClick={(e) => {

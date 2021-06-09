@@ -1,0 +1,36 @@
+.emailContainer {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.emailContainer .content_grid {
+  margin-right: 9%;
+  padding-right: 20px;
+  margin-bottom: 9%;
+}
+
+.emailContainer .content_grid .text {
+  color: #4b5f6d;
+  white-space: pre-line;
+  text-align: justify;
+  line-height: 30px;
+}
+
+.emailContainer .content_grid .enter_email {
+  display: block;
+}
+
+.emailContainer .content_grid .text_validator_grid .MuiTextField-root {
+  width: 100%;
+}
+
+.emailContainer .content_grid .submit_button {
+  margin-top: 18px;
+}
+
+.emailContainer .content_grid .MuiBox-root {
+  display: block;
+}

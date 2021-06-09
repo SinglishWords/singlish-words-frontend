@@ -7,10 +7,12 @@ export class FormButton extends Component {
       <Grid item>
         <Box display="flex" justifyContent="center">
           <Button
+            type="submit"
             variant="contained"
             onClick={this.props.onClick}
             disabled={this.props.disabled}
             buttonRef={this.props.buttonRef}
+            size={this.props.size}
           >
             {this.props.buttonDescription}
           </Button>

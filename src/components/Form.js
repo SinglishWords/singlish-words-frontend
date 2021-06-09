@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import formFields from "../utils/formFields";
-import Instruction from "./Instruction/Instruction";
-import Introduction from "./Introduction/Introduction";
-import Quiz from "./Quiz/Quiz";
-import UserDetails from "./UserDetails/UserDetails";
+import Email from "./Pages/Email/Email";
+import Instruction from "./Pages/Instruction/Instruction";
+import Introduction from "./Pages/Introduction/Introduction";
+import Quiz from "./Pages/Quiz/Quiz";
+import UserDetails from "./Pages/UserDetails/UserDetails";
 
 export class Form extends Component {
   constructor(props) {
@@ -11,8 +12,8 @@ export class Form extends Component {
     /* If there is a state in the local storage, use it. This handles
     cases where the user refreshes the page. It ensures that the survey data
     is not lost */
-    this.state = formFields
-      // JSON.parse(window.localStorage.getItem("formFields")) || formFields;
+    this.state =
+      JSON.parse(window.localStorage.getItem("formFields")) || formFields;
   }
 
   saveStateToLocalStorage() {
@@ -245,7 +246,7 @@ export class Form extends Component {
         wordEntry = 19;
         return quizList[wordEntry];
       case 24:
-        return <h1>Feedback</h1>;
+        return <Email />;
     }
   }
 }

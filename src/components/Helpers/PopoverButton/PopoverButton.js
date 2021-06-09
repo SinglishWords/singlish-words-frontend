@@ -2,7 +2,7 @@ import React from "react";
 import {Grid, Typography, Popover} from "@material-ui/core";
 import FormButton from "../FormButton/FormButton";
 import "./PopoverButton.css";
-import formData from "../../utils/formData";
+import formData from "../../../utils/formData";
 
 /* Taken directly from MaterialUI API.
 To look into whether it is possible to change it to a class-based component*/

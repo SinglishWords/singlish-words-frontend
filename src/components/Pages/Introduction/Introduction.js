@@ -1,10 +1,10 @@
 import { Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import image from "../../assets/images/SWOW_Icon.png";
-import formData from "../../utils/formData";
-import FormButton from "../FormButton/FormButton";
+import image from "../../../assets/images/SWOW_Icon.png";
+import formData from "../../../utils/formData";
+import FormButton from "../../Helpers/FormButton/FormButton";
 import "./Introduction.css";
-import { currentDateTime } from "../../utils/Logic/time";
+import { currentDateTime } from "../../../utils/Logic/time";
 
 export class Introduction extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ export class Introduction extends Component {
 
     return (
       <Grid container>
-        <Grid className="container" item xs={12}>
+        <Grid item xs={12} className="container" >
           {/* WAS title*/}
           <Grid container className="row">
             <Grid item lg={2} md={2} sm={2} xs={3}>
