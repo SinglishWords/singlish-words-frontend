@@ -1,9 +1,9 @@
-import { Box, Button, Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import Header from "../../Helpers/Header/Header";
+import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import FormButton from "../../Helpers/FormButton/FormButton";
+import Header from "../../Helpers/Header/Header";
 import "./Email.css";
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
 export class Email extends Component {
   constructor(props) {
@@ -13,6 +13,7 @@ export class Email extends Component {
       email: "",
       submitted: false,
     };
+    this.textRef = React.createRef();
   }
 
   handleChange = (e) => {
@@ -47,35 +48,41 @@ export class Email extends Component {
               Enter your email if you'd like to stay informed about the study
               (remains confidential).
             </Typography>
-            <Grid container className="enter_email">
-              <ValidatorForm ref="form" onSubmit={this.handleSubmit}>
-                <Grid container>
-                  <Grid item xs={6} className="text_validator_grid">
-                    <TextValidator
-                      label="Your email"
-                      onChange={this.handleChange}
-                      name="email"
-                      value={email}
-                      validators={["required", "isEmail"]}
-                      errorMessages={[
-                        "This field is required",
-                        "Email is not valid",
-                      ]}
-                    />
+            {submitted ? (
+              <Typography variant="body1" className="text post_submit">
+                Thank you for your submission!
+              </Typography>
+            ) : (
+              <Grid container className="enter_email">
+                <ValidatorForm onSubmit={this.handleSubmit}>
+                  <Grid container>
+                    <Grid item xs={6} className="text_validator_grid">
+                      <TextValidator
+                        inputRef={this.textRef}
+                        label="Your email"
+                        onChange={this.handleChange}
+                        name="email"
+                        value={email}
+                        validators={["required", "isEmail"]}
+                        errorMessages={[
+                          "This field is required",
+                          "Email is not valid",
+                        ]}
+                      />
+                    </Grid>
+                    <Grid item xs={6} className="submit_button">
+                      <FormButton
+                        disabled={submitted}
+                        buttonDescription={
+                          (submitted && "Submitted") || (!submitted && "Submit")
+                        }
+                        size="small"
+                      />
+                    </Grid>
                   </Grid>
-                  <Grid item xs={6} className="submit_button">
-                    <FormButton
-                      disabled={submitted}
-                      buttonDescription={
-                        (submitted && "Your form is submitted!") ||
-                        (!submitted && "Submit")
-                      }
-                      size="small"
-                    />
-                  </Grid>
-                </Grid>
-              </ValidatorForm>
-            </Grid>
+                </ValidatorForm>
+              </Grid>
+            )}
           </Grid>
 
           {/* Share the study*/}

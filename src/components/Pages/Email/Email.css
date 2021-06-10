@@ -19,6 +19,10 @@
   line-height: 30px;
 }
 
+.emailContainer .content_grid .post_submit {
+  margin-top: 18px;
+}
+
 .emailContainer .content_grid .enter_email {
   display: block;
 }
