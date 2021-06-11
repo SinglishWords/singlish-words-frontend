@@ -1,3 +1,9 @@
-.dropdown .MuiSelect-select[multiple] {
+/* Overwrite select div with a more specific CSS selector */
+#multiple_select_dropdown {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#multiple_select_dropdown > div > select[multiple] {
   height: 170px;
 }

@@ -1,4 +1,6 @@
-.dropdown {
+/* Use a selector id (which is more specific) to override FormControl
+stylings */
+#dropdown {
   width: 100%;
-  margin-bottom: 20px !important;
+  margin-bottom: 20px;
 }

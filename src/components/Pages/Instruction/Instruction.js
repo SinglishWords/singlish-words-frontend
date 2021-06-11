@@ -17,12 +17,12 @@ export class Instruction extends Component {
         {/* Header */}
         <Header title={formData.instructionsPage.title} />
 
-        <Grid container className="instructionContainer" justify="center">
+        <Grid container className="instruction_container" justify="center">
           <Divider />
           <Grid container justify="center">
             {/* Content How it works...*/}
             <Grid item xs={12}>
-              <Typography variant="h4" className="title">
+              <Typography variant="h4" className="title" id="content">
                 {formData.instructionsPage.firstParagraphHeader}
               </Typography>
             </Grid>
@@ -94,7 +94,7 @@ export class Instruction extends Component {
 
             {/* Content Some hints...*/}
             <Grid item xs={12}>
-              <Typography variant="h4" className="title">
+              <Typography variant="h4" className="title" id="content">
                 Some hints
               </Typography>
             </Grid>

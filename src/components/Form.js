@@ -139,7 +139,9 @@ export class Form extends Component {
       data,
     };
 
-    /* Case 4 to 23 will be used for Quiz words. Step 24 will trigger case 24, which is the Email component*/
+    /* Case 4 to 23 will be used for Quiz words. When case is empty, it will share the next closest
+    non-empty code block (ie case 23). 
+    Step 24 will trigger case 24, which is the Email component*/
     switch (step) {
       default:
         return <h1>Something went wrong!</h1>;

@@ -1,7 +1,8 @@
 /* Content */
-hr {
-  margin-bottom: 23px !important;
-  border-top: 1px solid #678895 !important;
+/* Overwrite divider hr with a more specific CSS selector */
+#divider {
+  margin-bottom: 23px;
+  border-top: 1px solid #678895;
   width: 100%;
 }
 
@@ -18,5 +19,4 @@ hr {
   color: #4b5f6d;
   margin: 0 0 0.5em;
 }
-
 /* End of content */

@@ -44,7 +44,7 @@ export class UserDetails extends Component {
 
         {/* Content */}
         <Grid container className="profileContainer" justify="center">
-          <Divider />
+          <Divider id="divider" />
           <Grid item xs={12}>
             {/* User Detail Input Instructions */}
             <Typography variant="body1" className="content1">

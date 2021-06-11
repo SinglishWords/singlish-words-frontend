@@ -5,7 +5,7 @@ import "./MultiselectDropdown.css";
 export class MultiselectDropdown extends Component {
   render() {
     return (
-      <FormControl className="dropdown">
+      <FormControl id="multiple_select_dropdown">
         <InputLabel shrink>{this.props.inputLabel}</InputLabel>
         <Select
           className="languageMultiSelect"

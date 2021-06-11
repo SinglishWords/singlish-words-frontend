@@ -5,7 +5,7 @@ import "./Dropdown.css";
 export class Dropdown extends Component {
   render() {
     return (
-      <FormControl required className="dropdown">
+      <FormControl required id="dropdown">
         <InputLabel>{this.props.inputLabel}</InputLabel>
         <Select
           native

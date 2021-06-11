@@ -31,11 +31,11 @@ const formData = {
     instruction2: `Asterisk (*) indicates a compulsory field.`,
     ageInstruction: `Please select your age`,
     genderInstruction: `Please select your gender`,
-    educationInstruction: `Please select your level of education`,
+    educationInstruction: `Please select your highest attained educational qualification`,
     birthCountryInstruction: `Please select your country of birth`,
     ethnicityInstruction: `Please select your ethnic group`,
-    residenceCountryInstruction: `Please select your country of residence`,
-    nativeSpeakerInstruction: `Are you a native English speaker`,
+    residenceCountryInstruction: `Please select your current country of residence`,
+    nativeSpeakerInstruction: `Are you a native English speaker?`,
     otherLanguagesInstruction: `What other languages do you speak?`,
     buttonDescription: `continue`,
     ages: agesList,
@@ -85,6 +85,18 @@ const formData = {
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+  },
+
+  /* Email Page */
+  emailPage: {
+    title: `Thank You!`,
+    firstParagraphHeader: `Stay informed`,
+    firstParagraphDescription: {
+      description1: `Enter your email if you'd like to stay informed about the study (remains confidential).`,
+      description2: `Thank you for your submission!`,
+    },
+    secondParagraphHeader: `Share the study`,
+    secondParagraphDescription: `To get enough words and make the mental dictionary useful, we need many helping hands (it takes 250,000 persons!). If you want to help, just share the study with family and friends or come back some other time for new words: https://smallworldofwords.org/en`,
   },
 };
 

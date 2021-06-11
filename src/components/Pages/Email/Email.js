@@ -4,6 +4,7 @@ import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
 import "./Email.css";
+import formData from "../../../utils/formData";
 
 export class Email extends Component {
   constructor(props) {
@@ -32,31 +33,29 @@ export class Email extends Component {
     return (
       <Grid container>
         {/* Thank you header*/}
-        <Header title={"Thank you!"} />
+        <Header title={formData.emailPage.title} />
 
-        <Grid container className="emailContainer" justify="center">
+        <Grid container className="email_container" justify="center">
           {/* Content Stay Informed */}
           <Grid item xs={12}>
-            <Typography variant="h4" className="title">
-              Stay informed
+            <Typography variant="h4" id="content">
+              {formData.emailPage.firstParagraphHeader}
             </Typography>
           </Grid>
-
           {/* Email and Submit */}
           <Grid item xs={12} className="content_grid">
             <Typography variant="body1" className="text">
-              Enter your email if you'd like to stay informed about the study
-              (remains confidential).
+            {formData.emailPage.firstParagraphDescription.description1}
             </Typography>
             {submitted ? (
               <Typography variant="body1" className="text post_submit">
-                Thank you for your submission!
+                {formData.emailPage.firstParagraphDescription.description2}
               </Typography>
             ) : (
               <Grid container className="enter_email">
                 <ValidatorForm onSubmit={this.handleSubmit}>
                   <Grid container>
-                    <Grid item xs={6} className="text_validator_grid">
+                    <Grid item xs={5} className="text_validator_grid">
                       <TextValidator
                         inputRef={this.textRef}
                         label="Your email"
@@ -70,7 +69,7 @@ export class Email extends Component {
                         ]}
                       />
                     </Grid>
-                    <Grid item xs={6} className="submit_button">
+                    <Grid item xs={7} className="submit_button">
                       <FormButton
                         disabled={submitted}
                         buttonDescription={
@@ -87,16 +86,12 @@ export class Email extends Component {
 
           {/* Share the study*/}
           <Grid item xs={12}>
-            <Typography variant="h4" className="title">
-              Share the study
+            <Typography variant="h4" id="content">
+            {formData.emailPage.secondParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-                To get enough words and make the mental dictionary useful, we
-                need many helping hands (it takes 250,000 persons!). If you want
-                to help, just share the study with family and friends or come
-                back some other time for new words:
-                https://smallworldofwords.org/en
+              {formData.emailPage.secondParagraphDescription}
               </Typography>
             </Grid>
           </Grid>
