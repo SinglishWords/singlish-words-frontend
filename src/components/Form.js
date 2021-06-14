@@ -12,12 +12,21 @@ export class Form extends Component {
     /* If there is a state in the local storage, use it. This handles
     cases where the user refreshes the page. It ensures that the survey data
     is not lost */
-    this.state = formFields;
-    // JSON.parse(window.localStorage.getItem("formFields")) || formFields;
+    this.stateCopy = JSON.parse(JSON.stringify(formFields));
+    this.state =
+      JSON.parse(window.localStorage.getItem("formFields")) || formFields;
   }
 
   saveStateToLocalStorage() {
-    localStorage.setItem("formFields", JSON.stringify(this.state));
+    window.localStorage.setItem("formFields", JSON.stringify(this.state));
+  }
+
+  removeStateFromLocalStorage() {
+    window.localStorage.removeItem("formFields");
+    window.removeEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
   }
 
   componentDidMount() {
@@ -26,14 +35,6 @@ export class Form extends Component {
       "beforeunload",
       this.saveStateToLocalStorage.bind(this)
     );
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener(
-      "beforeunload",
-      this.saveStateToLocalStorage.bind(this)
-    );
-    this.saveStateToLocalStorage();
   }
 
   /* Proceed to next step */
@@ -199,6 +200,10 @@ export class Form extends Component {
           />
         );
       case 24:
+        /* Send POST here */
+        this.removeStateFromLocalStorage();
+        /* Reset state to route back to Introduction Page */
+        this.state = this.stateCopy;
         return <Email />;
     }
   }
