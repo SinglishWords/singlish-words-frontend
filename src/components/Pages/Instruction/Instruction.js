@@ -6,12 +6,9 @@ import Header from "../../Helpers/Header/Header";
 import "./Instruction.css";
 
 export class Instruction extends Component {
-  continue = (e) => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
-
   render() {
+    const { nextPage } = this.props;
+
     return (
       <Grid container>
         {/* Header */}
@@ -134,7 +131,7 @@ export class Instruction extends Component {
                   formData.instructionsPage.secondParagraphDescription
                     .buttonDescription
                 }
-                onClick={this.continue}
+                onClick={nextPage}
               />
             </Grid>
           </Grid>

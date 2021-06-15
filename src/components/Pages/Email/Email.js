@@ -17,6 +17,10 @@ export class Email extends Component {
     this.textRef = React.createRef();
   }
 
+  componentDidMount() {
+    this.props.removeStateFromLocalStorage();
+  }
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,

@@ -4,7 +4,7 @@ import image from "../../../assets/images/SWOW_Icon.png";
 import formData from "../../../utils/formData";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import "./Introduction.css";
-import { currentDateTime } from "../../../utils/Logic/time";
+import { currentDateTime } from "../../../utils/Logic/timeutil";
 
 export class Introduction extends Component {
   constructor(props) {
@@ -12,13 +12,8 @@ export class Introduction extends Component {
     this.currentDateTime = currentDateTime();
   }
 
-  continue = (e) => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
-
   render() {
-    const { handleTimeOnForm } = this.props;
+    const { handleTimeOnForm, nextPage } = this.props;
 
     return (
       <Grid container>
@@ -49,7 +44,7 @@ export class Introduction extends Component {
               <FormButton
                 buttonDescription={formData.introductionPage.buttonDescription}
                 onClick={(e) => {
-                  this.continue(e);
+                  nextPage(e);
                   handleTimeOnForm("startTime", this.currentDateTime);
                 }}
               />

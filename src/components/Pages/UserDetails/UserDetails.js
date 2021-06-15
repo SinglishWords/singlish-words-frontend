@@ -4,7 +4,7 @@ import formData from "../../../utils/formData";
 import {
   checkCompulsoryFieldsForNonSingaporean,
   checkCountryOfBirthSingapore,
-  checkEthnicityFieldFilled,
+  checkEthnicityFieldFilled
 } from "../../../utils/Logic/userInformationLogic";
 import Dropdown from "../../Helpers/Dropdown/Dropdown";
 import FormButton from "../../Helpers/FormButton/FormButton";
@@ -13,11 +13,6 @@ import MultiselectDropdown from "../../Helpers/MultiselectDropdown/MultiselectDr
 import "./UserDetails.css";
 
 export class UserDetails extends Component {
-  continue = (e) => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
-
   render() {
     const {
       values,
@@ -25,6 +20,7 @@ export class UserDetails extends Component {
       handleAgeChange,
       handleCountryOfBirthChange,
       handleLanguageChange,
+      nextPage,
     } = this.props;
     /* The below block of code disables/enables the "Continue" button.
     Firstly, check that all compulsory fields (Age, Gender, Education, Birth Country, 
@@ -145,7 +141,7 @@ export class UserDetails extends Component {
                 buttonDescription={
                   formData.informationAboutYouPage.buttonDescription
                 }
-                onClick={this.continue}
+                onClick={nextPage}
                 disabled={!isEnabled}
               />
             </Grid>

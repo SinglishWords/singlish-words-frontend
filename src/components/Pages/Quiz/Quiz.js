@@ -1,7 +1,11 @@
 import { Grid, TextField, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import formData from "../../../utils/formData";
-import { currentDateTime, endTimer, startTimer } from "../../../utils/Logic/time";
+import {
+  currentDateTime,
+  endTimer,
+  startTimer,
+} from "../../../utils/Logic/timeutil";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import PopoverButton from "../../Helpers/PopoverButton/PopoverButton";
 import "./Quiz.css";
@@ -15,10 +19,18 @@ export class Quiz extends Component {
     this.continueButton = React.createRef();
     this.pageStartTime = startTimer();
     this.pageEndTime = "";
+    this.resetCursor = false;
   }
 
-  continue = (e) => {
-    e.preventDefault();
+  shouldComponentUpdate() {
+    if (this.resetCursor) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  componentDidUpdate() {
     /* Once user clicks the "Continue" button, reset all test fields and reset
     cursor back to the first association textfield */
     this.firstAssociationRef.current.value = "";
@@ -27,8 +39,8 @@ export class Quiz extends Component {
     this.firstAssociationRef.current.focus();
     /* Reset pageStartTime reference position for every page */
     this.pageStartTime = startTimer();
-    this.props.nextStep();
-  };
+    this.resetCursor = false;
+  }
 
   render() {
     const {
@@ -37,6 +49,7 @@ export class Quiz extends Component {
       handleTimeOnPage,
       handleTimeOnForm,
       wordIndex,
+      nextPage
     } = this.props;
     const firstAssociationIndex = 0;
     const secondAssociationIndex = 1;
@@ -102,6 +115,7 @@ export class Quiz extends Component {
               inputRef={this.thirdAssociationRef}
               onKeyPress={(e) => {
                 if (e.key === "Enter") {
+                  this.resetCursor = true;
                   this.continueButton.current.click();
                 }
               }}
@@ -128,7 +142,7 @@ export class Quiz extends Component {
                     this.pageEndTime
                   );
                   handleTimeOnForm("endTime", currentDateTime());
-                  this.continue(e);
+                  nextPage(e);
                 }}
                 buttonRef={this.continueButton}
               />

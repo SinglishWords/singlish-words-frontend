@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axiosConfig from "../utils/Api/axiosConfig";
 import formFields from "../utils/formFields";
 import Email from "./Pages/Email/Email";
 import Instruction from "./Pages/Instruction/Instruction";
@@ -9,10 +10,13 @@ import UserDetails from "./Pages/UserDetails/UserDetails";
 export class Form extends Component {
   constructor(props) {
     super(props);
+    /* Make a copy of the state so that step number can be reset once
+    we hit the Email page */
+    this.stateCopy = JSON.parse(JSON.stringify(formFields));
+    this.stateReset = false;
     /* If there is a state in the local storage, use it. This handles
     cases where the user refreshes the page. It ensures that the survey data
     is not lost */
-    this.stateCopy = JSON.parse(JSON.stringify(formFields));
     this.state =
       JSON.parse(window.localStorage.getItem("formFields")) || formFields;
   }
@@ -21,13 +25,16 @@ export class Form extends Component {
     window.localStorage.setItem("formFields", JSON.stringify(this.state));
   }
 
-  removeStateFromLocalStorage() {
+  removeStateFromLocalStorage = () => {
     window.localStorage.removeItem("formFields");
     window.removeEventListener(
       "beforeunload",
       this.saveStateToLocalStorage.bind(this)
     );
-  }
+    this.stateReset = true;
+    const cleanState = Object.assign({}, this.stateCopy);
+    this.setState({ ...cleanState });
+  };
 
   componentDidMount() {
     this.saveStateToLocalStorage();
@@ -37,12 +44,27 @@ export class Form extends Component {
     );
   }
 
+  /* Prevent re-rendering after clearing state at Email page
+  (If not we will route back to Introduction immediately) */
+  shouldComponentUpdate() {
+    if (this.stateReset) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   /* Proceed to next step */
   nextStep = () => {
     const { step } = this.state;
     this.setState({
       step: step + 1,
     });
+  };
+
+  nextPage = (e) => {
+    e.preventDefault();
+    this.nextStep();
   };
 
   /* Handle primitive field change (Default handleChange for most fields) 
@@ -147,9 +169,17 @@ export class Form extends Component {
       default:
         return <h1>Something went wrong!</h1>;
       case 1:
+        axiosConfig
+          .get("api/v1/questions")
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         return (
           <Introduction
-            nextStep={this.nextStep}
+            nextPage={this.nextPage}
             values={values}
             handleTimeOnForm={this.handleTimeOnForm}
           />
@@ -157,7 +187,7 @@ export class Form extends Component {
       case 2:
         return (
           <UserDetails
-            nextStep={this.nextStep}
+            nextPage={this.nextPage}
             handleChange={this.handleChange}
             handleAgeChange={this.handleAgeChange}
             handleCountryOfBirthChange={this.handleCountryOfBirthChange}
@@ -166,7 +196,7 @@ export class Form extends Component {
           />
         );
       case 3:
-        return <Instruction nextStep={this.nextStep} />;
+        return <Instruction nextPage={this.nextPage} />;
       case 4:
       case 5:
       case 6:
@@ -191,7 +221,7 @@ export class Form extends Component {
         Hence, all the quiz components will be rendered. At step 24, case 24 (Email component) is executed. */
         return (
           <Quiz
-            nextStep={this.nextStep}
+            nextPage={this.nextPage}
             handleResponseChange={this.handleResponseChange}
             handleTimeOnPage={this.handleTimeOnPage}
             handleTimeOnForm={this.handleTimeOnForm}
@@ -201,10 +231,11 @@ export class Form extends Component {
         );
       case 24:
         /* Send POST here */
-        this.removeStateFromLocalStorage();
-        /* Reset state to route back to Introduction Page */
-        this.state = this.stateCopy;
-        return <Email />;
+        return (
+          <Email
+            removeStateFromLocalStorage={this.removeStateFromLocalStorage}
+          />
+        );
     }
   }
 }
