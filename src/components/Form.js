@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axiosConfig from "../utils/Api/axiosConfig";
 import formFields from "../utils/formFields";
 import Email from "./Pages/Email/Email";
 import Instruction from "./Pages/Instruction/Instruction";
@@ -114,6 +113,15 @@ export class Form extends Component {
     this.setState(temp);
   };
 
+  /* Populate words into form (ie question.word field) */
+  handleWordPopulation = (wordArray) => {
+    let temp = { ...this.state };
+    temp.data.map(
+      (element, index) => (element.question.word = wordArray[index].word)
+    );
+    this.setState(temp);
+  };
+
   /* Handle nested field change (ie timeOnPage field) */
   handleTimeOnPage = (i, pageStartTime, pageEndTime) => {
     let temp = { ...this.state };
@@ -169,18 +177,9 @@ export class Form extends Component {
       default:
         return <h1>Something went wrong!</h1>;
       case 1:
-        axiosConfig
-          .get("api/v1/questions")
-          .then((response) => {
-            console.log(response.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
         return (
           <Introduction
             nextPage={this.nextPage}
-            values={values}
             handleTimeOnForm={this.handleTimeOnForm}
           />
         );
@@ -196,7 +195,12 @@ export class Form extends Component {
           />
         );
       case 3:
-        return <Instruction nextPage={this.nextPage} />;
+        return (
+          <Instruction
+            nextPage={this.nextPage}
+            handleWordPopulation={this.handleWordPopulation}
+          />
+        );
       case 4:
       case 5:
       case 6:
@@ -233,6 +237,7 @@ export class Form extends Component {
         /* Send POST here */
         return (
           <Email
+            formState={this.state}
             removeStateFromLocalStorage={this.removeStateFromLocalStorage}
           />
         );

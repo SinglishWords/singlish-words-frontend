@@ -1,10 +1,11 @@
 import { Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
+import axiosConfig, { answersUrl } from "../../../utils/Api/axiosConfig";
+import formData from "../../../utils/formData";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
 import "./Email.css";
-import formData from "../../../utils/formData";
 
 export class Email extends Component {
   constructor(props) {
@@ -18,6 +19,21 @@ export class Email extends Component {
   }
 
   componentDidMount() {
+    /* Submit quiz answers */
+    let formStateCopy = JSON.parse(JSON.stringify(this.props.formState));
+    delete formStateCopy["step"];
+    let answers = JSON.stringify(formStateCopy);
+    console.log("Initiatiated POST request to server with the following payload:");
+    console.log(answers);
+    axiosConfig
+      .post(answersUrl, answers)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    /* Clear local storage */
     this.props.removeStateFromLocalStorage();
   }
 
@@ -49,7 +65,7 @@ export class Email extends Component {
           {/* Email and Submit */}
           <Grid item xs={12} className="content_grid">
             <Typography variant="body1" className="text">
-            {formData.emailPage.firstParagraphDescription.description1}
+              {formData.emailPage.firstParagraphDescription.description1}
             </Typography>
             {submitted ? (
               <Typography variant="body1" className="text post_submit">
@@ -91,11 +107,11 @@ export class Email extends Component {
           {/* Share the study*/}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
-            {formData.emailPage.secondParagraphHeader}
+              {formData.emailPage.secondParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-              {formData.emailPage.secondParagraphDescription}
+                {formData.emailPage.secondParagraphDescription}
               </Typography>
             </Grid>
           </Grid>

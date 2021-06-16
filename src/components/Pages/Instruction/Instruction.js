@@ -1,11 +1,28 @@
 import { Button, Divider, Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
+import axiosConfig, { questionsUrl } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
 import "./Instruction.css";
 
 export class Instruction extends Component {
+  componentDidMount() {
+    /* Make a GET request to pull questions */
+    axiosConfig
+      .get(questionsUrl)
+      .then((response) => {
+        let question = response.data;
+        console.log("Initiated GET request to server");
+        console.log("Response: ");
+        console.log(question);
+        this.props.handleWordPopulation(question);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     const { nextPage } = this.props;
 
