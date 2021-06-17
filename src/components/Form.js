@@ -16,8 +16,8 @@ export class Form extends Component {
     /* If there is a state in the local storage, use it. This handles
     cases where the user refreshes the page. It ensures that the survey data
     is not lost */
-    this.state = formFields;
-    // JSON.parse(window.localStorage.getItem("formFields")) || formFields;
+    this.state =
+    JSON.parse(window.localStorage.getItem("formFields")) || formFields;
   }
 
   saveStateToLocalStorage() {
