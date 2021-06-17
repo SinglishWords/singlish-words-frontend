@@ -16,8 +16,8 @@ export class Form extends Component {
     /* If there is a state in the local storage, use it. This handles
     cases where the user refreshes the page. It ensures that the survey data
     is not lost */
-    this.state =
-      JSON.parse(window.localStorage.getItem("formFields")) || formFields;
+    this.state = formFields;
+    // JSON.parse(window.localStorage.getItem("formFields")) || formFields;
   }
 
   saveStateToLocalStorage() {
@@ -62,7 +62,7 @@ export class Form extends Component {
   };
 
   nextPage = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     this.nextStep();
   };
 
@@ -94,17 +94,32 @@ export class Form extends Component {
   /* Handle array field change (ie languagesSpoken field)
   Can be extended to handle general array changes by passing in state field as parameter */
   handleLanguageChange = (e) => {
+    this.forceUpdate();
     let temp = { ...this.state };
     const { options } = e.target;
-    const value = temp.languagesSpoken;
+    const languages = temp.languagesSpoken;
     for (let i = 0, l = options.length; i < l; i += 1) {
-      if (options[i].selected) {
-        value.push(options[i].value);
+      /* If option selected, and option not in language array, add language to array*/
+      if (options[i].selected && !languages.includes(options[i].value)) {
+        languages.push(options[i].value);
+      }
+      else if (
+        /* If option selected, and option already in language array, remove language from array */
+        e.target.value === options[i].value &&
+        languages.includes(e.target.value)
+      ) {
+        languages.splice(languages.indexOf(e.target.value), 1);
       }
     }
-    temp.languagesSpoken = value;
+    temp.languagesSpoken = languages;
     this.setState(temp);
   };
+
+  handleLanguageReset = () => {
+    let temp = { ...this.state };
+    temp.languagesSpoken = [];
+    this.setState(temp);
+  }
 
   /* Handle nested field change (ie response field) */
   handleResponseChange = (e, i, j) => {
@@ -191,6 +206,7 @@ export class Form extends Component {
             handleAgeChange={this.handleAgeChange}
             handleCountryOfBirthChange={this.handleCountryOfBirthChange}
             handleLanguageChange={this.handleLanguageChange}
+            handleLanguageReset={this.handleLanguageReset}
             values={values}
           />
         );

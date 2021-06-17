@@ -1,10 +1,17 @@
-import { Divider, Grid, Typography } from "@material-ui/core";
+import {
+  Divider,
+  Grid,
+  Typography,
+  ListItem,
+  ListItemText,
+  List,
+} from "@material-ui/core";
 import React, { Component } from "react";
 import formData from "../../../utils/formData";
 import {
   checkCompulsoryFieldsForNonSingaporean,
   checkCountryOfBirthSingapore,
-  checkEthnicityFieldFilled
+  checkEthnicityFieldFilled,
 } from "../../../utils/Logic/userInformationLogic";
 import Dropdown from "../../Helpers/Dropdown/Dropdown";
 import FormButton from "../../Helpers/FormButton/FormButton";
@@ -13,6 +20,14 @@ import MultiselectDropdown from "../../Helpers/MultiselectDropdown/MultiselectDr
 import "./UserDetails.css";
 
 export class UserDetails extends Component {
+  generate = (element, languages) => {
+    return languages.map((language) =>
+      React.cloneElement(element, {
+        key: language,
+      })
+    );
+  };
+
   render() {
     const {
       values,
@@ -20,6 +35,7 @@ export class UserDetails extends Component {
       handleAgeChange,
       handleCountryOfBirthChange,
       handleLanguageChange,
+      handleLanguageReset,
       nextPage,
     } = this.props;
     /* The below block of code disables/enables the "Continue" button.
@@ -123,15 +139,39 @@ export class UserDetails extends Component {
             />
 
             {/* Languages Spoken */}
-            <MultiselectDropdown
-              inputLabel={
-                formData.informationAboutYouPage.otherLanguagesInstruction
-              }
-              value={values.languagesSpoken}
-              name={"languagesSpoken"}
-              onChange={handleLanguageChange}
-              listData={formData.informationAboutYouPage.languagesSpoken}
-            />
+            <Grid container>
+              <Grid item xs={6}>
+                <MultiselectDropdown
+                  inputLabel={
+                    formData.informationAboutYouPage.otherLanguagesInstruction
+                  }
+                  value={values.languagesSpoken}
+                  name={"languagesSpoken"}
+                  onChange={handleLanguageChange}
+                  listData={formData.informationAboutYouPage.languagesSpoken}
+                />
+                <FormButton
+                  buttonDescription="Reset Chosen Languages"
+                  onClick={handleLanguageReset}
+                ></FormButton>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography className="languagesChosenHeader" variant="button">
+                  Languages Chosen
+                </Typography>
+                <div>
+                  <List dense={true} className="list">
+                    {values.languagesSpoken.map((language) => {
+                      return (
+                        <ListItem className="listItem">
+                          <ListItemText primary={language} />
+                        </ListItem>
+                      );
+                    })}
+                  </List>
+                </div>
+              </Grid>
+            </Grid>
           </Grid>
 
           {/* Continue Button*/}

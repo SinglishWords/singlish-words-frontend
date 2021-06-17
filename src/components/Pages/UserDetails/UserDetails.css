@@ -19,4 +19,21 @@
   color: #4b5f6d;
   margin: 0 0 0.5em;
 }
+
+.profileContainer .languagesChosenHeader {
+  color: #4b5f6d;
+  margin-left: 120px;
+}
+
+.profileContainer .list {
+  padding-left: 144px;
+  padding-bottom: 0px;
+  padding-top: 0px
+}
+
+.profileContainer .list .listItem {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 25px;
+}
 /* End of content */

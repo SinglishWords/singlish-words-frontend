@@ -19,18 +19,16 @@ export class Quiz extends Component {
     this.continueButton = React.createRef();
     this.pageStartTime = startTimer();
     this.pageEndTime = "";
-    this.resetCursor = false;
+    this.resetAssociations = false;
   }
 
+  /* Only reset associations when user clicks continue */
   shouldComponentUpdate() {
-    if (this.resetCursor) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.resetAssociations;
   }
 
   componentDidUpdate() {
+    this.resetAssociations = false;
     /* Once user clicks the "Continue" button, reset all test fields and reset
     cursor back to the first association textfield */
     this.firstAssociationRef.current.value = "";
@@ -39,7 +37,6 @@ export class Quiz extends Component {
     this.firstAssociationRef.current.focus();
     /* Reset pageStartTime reference position for every page */
     this.pageStartTime = startTimer();
-    this.resetCursor = false;
   }
 
   render() {
@@ -49,7 +46,7 @@ export class Quiz extends Component {
       handleTimeOnPage,
       handleTimeOnForm,
       wordIndex,
-      nextPage
+      nextPage,
     } = this.props;
     const firstAssociationIndex = 0;
     const secondAssociationIndex = 1;
@@ -115,7 +112,6 @@ export class Quiz extends Component {
               inputRef={this.thirdAssociationRef}
               onKeyPress={(e) => {
                 if (e.key === "Enter") {
-                  this.resetCursor = true;
                   this.continueButton.current.click();
                 }
               }}
@@ -135,6 +131,7 @@ export class Quiz extends Component {
               <FormButton
                 buttonDescription={formData.quizPage.buttonDescription}
                 onClick={(e) => {
+                  this.resetAssociations = true;
                   this.pageEndTime = endTimer();
                   handleTimeOnPage(
                     wordIndex,

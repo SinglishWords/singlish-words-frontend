@@ -29,6 +29,7 @@ export class Email extends Component {
       .post(answersUrl, answers)
       .then((response) => {
         console.log(response);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
