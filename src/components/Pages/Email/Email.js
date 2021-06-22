@@ -14,8 +14,8 @@ export class Email extends Component {
       uuid: "",
       email: "",
       submitted: false,
-      wantsLuckyDraw: false,
-      wantsUpdates: false,
+      wantLuckyDraw: false,
+      wantUpdate: false,
     };
     this.textRef = React.createRef();
   }
@@ -52,18 +52,18 @@ export class Email extends Component {
 
   /* If checkbox is not tick, tick it. Otherwise untick it */
   handleCheckboxChange = (e) => {
-    e.target.name === "wantsLuckyDraw"
+    e.target.name === "wantLuckyDraw"
       ? this.setState({
-          wantsLuckyDraw: !this.state.wantsLuckyDraw,
+          wantLuckyDraw: !this.state.wantLuckyDraw,
         })
       : this.setState({
-          wantsUpdates: !this.state.wantsUpdates,
+          wantUpdate: !this.state.wantUpdate,
         });
   };
 
   render() {
-    const { email, submitted, wantsLuckyDraw, wantsUpdates } = this.state;
-    const isEnabled = wantsLuckyDraw || wantsUpdates;
+    const { email, submitted, wantLuckyDraw, wantUpdate } = this.state;
+    const isEnabled = wantLuckyDraw || wantUpdate;
     return (
       <Grid container>
         {/* Thank you header*/}
@@ -97,10 +97,10 @@ export class Email extends Component {
             {/* Checkboxes */}
             <Grid item xs={12} className="checkbox_container">
               <Checkbox
-                name="wantsLuckyDraw"
+                name="wantLuckyDraw"
                 color="primary"
                 className="checkbox"
-                checked={wantsLuckyDraw}
+                checked={wantLuckyDraw}
                 onChange={this.handleCheckboxChange}
               />
               <Typography variant="body1" className="text checkbox_text">
@@ -112,10 +112,10 @@ export class Email extends Component {
             </Grid>
             <Grid item xs={12} className="checkbox_container">
               <Checkbox
-                name="wantsUpdates"
+                name="wantUpdate"
                 color="primary"
                 className="checkbox"
-                checked={wantsUpdates}
+                checked={wantUpdate}
                 onChange={this.handleCheckboxChange}
               />
               <Typography variant="body1" className="text checkbox_text">
