@@ -27,3 +27,7 @@
   width: 100%;
   margin-bottom: 50px;
 }
+
+.container .experimentContainer .button_container .MuiButtonBase-root {
+  margin-left: 38px;
+}

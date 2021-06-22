@@ -123,9 +123,12 @@ export class Quiz extends Component {
 
           {/* Continue Button */}
           {/* handleTimeOnPage tracks how long the user has been on the page*/}
-          <Grid container>
+          <Grid container className="button_container">
             <Grid item xs={6}>
-              <PopoverButton />
+              <PopoverButton
+                buttonDescription={formData.quizPage.needHelpButtonDescription}
+                popOverButtonText={formData.quizPage.instructionReminder}
+              />
             </Grid>
             <Grid item xs={6}>
               <FormButton

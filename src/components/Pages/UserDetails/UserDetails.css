@@ -20,15 +20,26 @@
   margin: 0 0 0.5em;
 }
 
+.profileContainer .languagesContainer {
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
 .profileContainer .languagesChosenHeader {
   color: #4b5f6d;
   margin-left: 120px;
 }
 
+.profileContainer .languagesChosenContainer {
+  height: 100%;
+  overflow: auto;
+  max-height: 150px;
+}
+
 .profileContainer .list {
-  padding-left: 144px;
+  padding-left: 105px;
   padding-bottom: 0px;
-  padding-top: 0px
+  padding-top: 0px;
 }
 
 .profileContainer .list .listItem {

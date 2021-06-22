@@ -1,12 +1,10 @@
 import React from "react";
-import {Grid, Typography, Popover} from "@material-ui/core";
-import FormButton from "../FormButton/FormButton";
+import { Button, Grid, Typography, Popover } from "@material-ui/core";
 import "./PopoverButton.css";
-import formData from "../../../utils/formData";
 
 /* Taken directly from MaterialUI API.
 To look into whether it is possible to change it to a class-based component*/
-export default function PopoverButton() {
+export default function PopoverButton({buttonDescription, popOverButtonText}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -21,8 +19,15 @@ export default function PopoverButton() {
   const id = open ? "simple-popover" : undefined;
 
   return (
-    <Grid item>
-      <FormButton aria-describedby={id} onClick={handleClick} buttonDescription="Need help?"/>
+    <Grid item className="container">
+      <Button
+        color="primary"
+        aria-describedby={id}
+        variant="contained"
+        onClick={handleClick}
+      >
+        {buttonDescription}
+      </Button>
       <Popover
         id={id}
         open={open}
@@ -38,7 +43,7 @@ export default function PopoverButton() {
         }}
       >
         <Typography variant="body2" className="popoverbutton_text">
-          {formData.quizPage.instructionReminder}
+          {popOverButtonText}
         </Typography>
       </Popover>
     </Grid>

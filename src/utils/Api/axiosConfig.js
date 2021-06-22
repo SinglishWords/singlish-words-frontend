@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'http://54.196.36.161/'
+    baseURL: 'http://100.25.26.209/'
 });
 
 export const questionsUrl = "api/v1/questions";

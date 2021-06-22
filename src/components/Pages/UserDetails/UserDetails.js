@@ -16,7 +16,6 @@ import {
 import Dropdown from "../../Helpers/Dropdown/Dropdown";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
-import MultiselectDropdown from "../../Helpers/MultiselectDropdown/MultiselectDropdown";
 import "./UserDetails.css";
 
 export class UserDetails extends Component {
@@ -139,9 +138,13 @@ export class UserDetails extends Component {
             />
 
             {/* Languages Spoken */}
-            <Grid container>
+            <Grid container className="languagesContainer">
               <Grid item xs={6}>
-                <MultiselectDropdown
+                {/* If "The `value` prop supplied to <select> must be a scalar value if `multiple` is false."
+                error appears in console, just ignore it. Basically state should not be array if Dropdown
+                component is used. However, Material-UI Multi-Select is buggy. Hence I used a normal
+                Select component in Dropdown instead of Multi-Select */}
+                <Dropdown
                   inputLabel={
                     formData.informationAboutYouPage.otherLanguagesInstruction
                   }
@@ -159,17 +162,17 @@ export class UserDetails extends Component {
                 <Typography className="languagesChosenHeader" variant="button">
                   Languages Chosen
                 </Typography>
-                <div>
+                <Grid item xs={12} className="languagesChosenContainer">
                   <List dense={true} className="list">
                     {values.languagesSpoken.map((language) => {
                       return (
-                        <ListItem className="listItem">
+                        <ListItem key={language} className="listItem">
                           <ListItemText primary={language} />
                         </ListItem>
                       );
                     })}
                   </List>
-                </div>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>

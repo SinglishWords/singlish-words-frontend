@@ -16,8 +16,8 @@ export class Form extends Component {
     /* If there is a state in the local storage, use it. This handles
     cases where the user refreshes the page. It ensures that the survey data
     is not lost */
-    this.state =
-    JSON.parse(window.localStorage.getItem("formFields")) || formFields;
+    this.state = formFields;
+      // JSON.parse(window.localStorage.getItem("formFields")) || formFields;
   }
 
   saveStateToLocalStorage() {
@@ -62,7 +62,7 @@ export class Form extends Component {
   };
 
   nextPage = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     this.nextStep();
   };
 
@@ -94,7 +94,6 @@ export class Form extends Component {
   /* Handle array field change (ie languagesSpoken field)
   Can be extended to handle general array changes by passing in state field as parameter */
   handleLanguageChange = (e) => {
-    this.forceUpdate();
     let temp = { ...this.state };
     const { options } = e.target;
     const languages = temp.languagesSpoken;
@@ -102,14 +101,7 @@ export class Form extends Component {
       /* If option selected, and option not in language array, add language to array*/
       if (options[i].selected && !languages.includes(options[i].value)) {
         languages.push(options[i].value);
-      }
-      else if (
-        /* If option selected, and option already in language array, remove language from array */
-        e.target.value === options[i].value &&
-        languages.includes(e.target.value)
-      ) {
-        languages.splice(languages.indexOf(e.target.value), 1);
-      }
+      } 
     }
     temp.languagesSpoken = languages;
     this.setState(temp);
@@ -119,7 +111,7 @@ export class Form extends Component {
     let temp = { ...this.state };
     temp.languagesSpoken = [];
     this.setState(temp);
-  }
+  };
 
   /* Handle nested field change (ie response field) */
   handleResponseChange = (e, i, j) => {
@@ -250,7 +242,6 @@ export class Form extends Component {
           />
         );
       case 24:
-        /* Send POST here */
         return (
           <Email
             formState={this.state}

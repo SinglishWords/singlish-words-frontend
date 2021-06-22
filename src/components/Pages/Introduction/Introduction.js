@@ -1,10 +1,11 @@
 import { Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import image from "../../../assets/images/SWOW_Icon.png";
+import image from "../../../assets/images/NUS_Logo.png";
 import formData from "../../../utils/formData";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import "./Introduction.css";
 import { currentDateTime } from "../../../utils/Logic/timeutil";
+import PopoverButton from "../../Helpers/PopoverButton/PopoverButton";
 
 export class Introduction extends Component {
   constructor(props) {
@@ -17,32 +18,53 @@ export class Introduction extends Component {
 
     return (
       <Grid container>
-        <Grid item xs={12} className="container" >
+        <Grid item xs={12} className="container">
           {/* WAS title*/}
           <Grid container className="row">
-            <Grid item lg={2} md={2} sm={2} xs={3}>
+            <Grid item xs={4}>
               <img className="image" src={image} alt="" />
             </Grid>
-            <Grid item className="title" lg={10} md={10} sm={10} xs={9}>
-              <h2 className="logoTxt">{formData.introductionPage.title}</h2>
+            <Grid item className="title" xs={8}>
+              <h2 className="logoTxt titleTxt">
+                {formData.introductionPage.title}
+              </h2>
+              <h2 className="logoTxt subTxt">
+                {formData.introductionPage.subtitle}
+              </h2>
             </Grid>
           </Grid>
 
           {/* Introduction */}
           <Grid container className="introduction" justify="center">
             <Grid item xs={12} className="introduction_grid">
-              <Typography variant="body2" className="text">
+              <Typography variant="body2" className="text" component={"div"}>
                 {formData.introductionPage.introduction}
+                <p className="lucky_draw_text">
+                  {formData.introductionPage.introductionLuckyDraw}
+                </p>
+                {formData.introductionPage.introduction2}
               </Typography>
             </Grid>
           </Grid>
 
           {/* Button */}
           {/* Start timer to track user's activity on page*/}
-          <Grid container className="formButton">
-            <Grid item xs={12}>
+          <Grid container className="form_button">
+            <Grid item xs={6} className="lucky_draw_container">
+              <PopoverButton
+                buttonDescription={
+                  formData.introductionPage.luckyDrawButtonDescription
+                }
+                popOverButtonText={
+                  formData.introductionPage.luckyDrawInformation
+                }
+              />
+            </Grid>
+            <Grid item xs={6} className="continue_button_container">
               <FormButton
-                buttonDescription={formData.introductionPage.buttonDescription}
+                buttonDescription={
+                  formData.introductionPage.continueButtonDescription
+                }
                 onClick={(e) => {
                   nextPage(e);
                   handleTimeOnForm("startTime", this.currentDateTime);

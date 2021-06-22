@@ -1,4 +1,4 @@
-import { Button, Divider, Grid, Typography } from "@material-ui/core";
+import { Divider, Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import axiosConfig, { questionsUrl } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
@@ -58,18 +58,6 @@ export class Instruction extends Component {
                     .description3
                 }
                 {"   "}
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="small"
-                  className="button"
-                >
-                  {
-                    formData.instructionsPage.firstParagraphDescription
-                      .buttonDescription1
-                  }
-                </Button>
-                {"."}
               </Typography>
               <br />
               <Typography variant="body1" className="text">
@@ -86,22 +74,6 @@ export class Instruction extends Component {
                 {
                   formData.instructionsPage.firstParagraphDescription
                     .description6
-                }
-                {"   "}
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="small"
-                  className="button"
-                >
-                  {
-                    formData.instructionsPage.firstParagraphDescription
-                      .buttonDescription2
-                  }
-                </Button>{" "}
-                {
-                  formData.instructionsPage.firstParagraphDescription
-                    .description7
                 }
               </Typography>
             </Grid>
@@ -126,15 +98,22 @@ export class Instruction extends Component {
                   formData.instructionsPage.secondParagraphDescription
                     .description2
                 }
+              </Typography>
+              <br />
+              <Typography variant="body1" className="text">
+                {
+                  formData.instructionsPage.secondParagraphDescription
+                    .description3
+                }
                 <em>
                   {
                     formData.instructionsPage.secondParagraphDescription
-                      .description3
+                      .description4
                   }
                 </em>{" "}
                 {
                   formData.instructionsPage.secondParagraphDescription
-                    .description4
+                    .description5
                 }
               </Typography>
             </Grid>
