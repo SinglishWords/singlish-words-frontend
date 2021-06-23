@@ -42,7 +42,7 @@ export default function PopoverButton({buttonDescription, popOverButtonText}) {
           horizontal: "center",
         }}
       >
-        <Typography variant="body2" className="popoverbutton_text">
+        <Typography variant="body2" align="justify" className="popoverbutton_text">
           {popOverButtonText}
         </Typography>
       </Popover>

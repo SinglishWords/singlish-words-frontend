@@ -25,15 +25,19 @@ const formData = {
 
     If you proceed, you consent to your location, demographic, and linguistic data to be collected for research purposes. This data is completely anonymous and is never linked to your personal or contact information.`,
     luckyDrawButtonDescription: `Lucky Draw T&C`,
-    luckyDrawInformation: `The lucky draw will be active from 1st January 2022 to 30th June 2022. In order to participate, please input your email address on the final page of the study. 
-    Your decision to participate is voluntary. The chance that each participant has to win a voucher is proportional to the number of times they had completed the
-    study and entered their email address on the final page. Participants who have been identified as exhibiting bot-like behavior are not permitted to participate
-    in the lucky draw.
+    luckyDrawInformation: `The lucky draw will be active from 1st January 2022 to 30th June 2022. In order to participate,
+    please input your email address on the final page of the study. Your decision to participate is
+    voluntary. The chance that each participant has to win a voucher is proportional to the number
+    of times they had completed the study and entered their email address on the final page. 
+    Participants who have been identified as exhibiting bot-like behavior are not permitted to
+    participate in the lucky draw.
 
-    Winners of the lucky draw will be randomly selected on the final day of the month. All participants will be notified of the outcome regardless of whether they
-    had won or not. 100 $5 Grab Vouchers will be awarded each month.
+    Winners of the lucky draw will be randomly selected on the final day of the month. All
+    participants will be notified of the outcome regardless of whether they had won or not. 
+    100 $5 Grab Vouchers will be awarded each month.
     
-    After winners have been selected, the pool from which the lucky draw winners are selected is reset for the next month.`,
+    After winners have been selected, the pool from which the lucky draw winners are selected
+    is reset for the next month.`,
     continueButtonDescription: `I want to participate!`,
   },
 
