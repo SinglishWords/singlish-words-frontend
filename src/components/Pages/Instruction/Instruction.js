@@ -1,12 +1,19 @@
 import { Divider, Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import axiosConfig, { questionsUrl } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
+import { recaptchaFields } from "../../../utils/formFields";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
 import "./Instruction.css";
 
 export class Instruction extends Component {
+  constructor(props) {
+    super(props);
+    this.state = recaptchaFields;
+  }
+
   componentDidMount() {
     /* Make a GET request to pull questions */
     axiosConfig
@@ -23,8 +30,13 @@ export class Instruction extends Component {
       });
   }
 
+  handleRecaptchaChange = () => {
+    this.setState({ isVerified: true });
+  };
+
   render() {
     const { nextPage } = this.props;
+    const { isVerified } = this.state;
 
     return (
       <Grid container>
@@ -120,7 +132,15 @@ export class Instruction extends Component {
           </Grid>
 
           {/* Continue Button*/}
-          <Grid container>
+          <Grid container className="continue_container">
+            <Grid className="recaptcha" item xs={12}>
+              <ReCAPTCHA
+                /* To change site key once actual site is up.
+                Use smallworldofsinglishwords@gmail.com */
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                onChange={this.handleRecaptchaChange}
+              />
+            </Grid>
             <Grid item xs={12}>
               <FormButton
                 buttonDescription={
@@ -128,6 +148,7 @@ export class Instruction extends Component {
                     .buttonDescription
                 }
                 onClick={nextPage}
+                disabled={!isVerified}
               />
             </Grid>
           </Grid>

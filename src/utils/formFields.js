@@ -117,6 +117,10 @@ const formFields = {
   ],
 };
 
+export const recaptchaFields = {
+  isVerified: false,
+};
+
 export const emailFields = {
   id: "",
   email: "",
