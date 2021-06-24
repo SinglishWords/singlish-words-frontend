@@ -58,7 +58,7 @@ export class Quiz extends Component {
           {/* Word on Page*/}
           <Grid item xs={12}>
             <Typography variant="body2" className="word">
-              {values.data[wordIndex].question.word}
+              {values.data[wordIndex].question.id + ". " + values.data[wordIndex].question.word}
             </Typography>
           </Grid>
           {/* First Association */}
