@@ -19,13 +19,22 @@ import Header from "../../Helpers/Header/Header";
 import "./UserDetails.css";
 
 export class UserDetails extends Component {
-  generate = (element, languages) => {
-    return languages.map((language) =>
-      React.cloneElement(element, {
-        key: language,
-      })
+  componentDidMount() {
+    console.log(
+      `
+      Ignore value prop supplied must be scalar value error message!
+
+      A multiselect dropdown should be used for <What other languages do you speak>.
+
+      However, we are using a normal dropdown because Material-UI multiselect dropdown is buggy.
+
+      For a normal dropdown, React expects a string instead of an array.
+
+      However, the state we are using supplies languagesSpoken field with an array. 
+
+      This error message is harmless.`
     );
-  };
+  }
 
   render() {
     const {

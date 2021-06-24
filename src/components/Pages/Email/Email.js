@@ -1,8 +1,9 @@
-import { Grid, Checkbox, Link, Typography } from "@material-ui/core";
+import { Checkbox, Grid, Link, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import axiosConfig, { answersUrl, patchEmailUrl } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
+import { emailFields } from "../../../utils/formFields";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
 import "./Email.css";
@@ -10,13 +11,7 @@ import "./Email.css";
 export class Email extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      id: "",
-      email: "",
-      submitted: false,
-      wantLuckyDraw: false,
-      wantUpdate: false,
-    };
+    this.state = emailFields;
     this.textRef = React.createRef();
   }
 

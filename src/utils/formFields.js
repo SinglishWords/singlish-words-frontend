@@ -117,4 +117,12 @@ const formFields = {
   ],
 };
 
+export const emailFields = {
+  id: "",
+  email: "",
+  submitted: false,
+  wantLuckyDraw: false,
+  wantUpdate: false,
+};
+
 export default formFields;
