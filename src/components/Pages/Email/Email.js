@@ -1,7 +1,7 @@
 import { Grid, Checkbox, Link, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
-import axiosConfig, { answersUrl } from "../../../utils/Api/axiosConfig";
+import axiosConfig, { answersUrl, patchEmailUrl } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
@@ -11,7 +11,7 @@ export class Email extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      uuid: "",
+      id: "",
       email: "",
       submitted: false,
       wantLuckyDraw: false,
@@ -25,17 +25,24 @@ export class Email extends Component {
     let formStateCopy = JSON.parse(JSON.stringify(this.props.formState));
     delete formStateCopy["step"];
     let answers = JSON.stringify(formStateCopy);
+
     console.log("Initiated POST request to server with the following payload:");
     console.log(answers);
     axiosConfig
       .post(answersUrl, answers)
       .then((response) => {
-        console.log(response);
+        console.log("Server Response Data");
         console.log(response.data);
+        /* Append the form entry id to state in case user wishes to submit email
+        for lucky draw or updates subscription */
+        this.setState({
+          id: response.data.id,
+        });
       })
       .catch((error) => {
         console.log(error);
       });
+
     /* Clear local storage */
     this.props.removeStateFromLocalStorage();
   }
@@ -47,7 +54,28 @@ export class Email extends Component {
   };
 
   handleSubmit = () => {
-    this.setState({ submitted: true });
+    this.setState({
+      submitted: true,
+    });
+    /* Submit email and checkbox options*/
+    let stateCopy = JSON.parse(JSON.stringify(this.state));
+    delete stateCopy["submitted"];
+    /* Convert boolean values to string for database compatibility */
+    stateCopy["wantLuckyDraw"] = stateCopy["wantLuckyDraw"].toString();
+    stateCopy["wantUpdate"] = stateCopy["wantUpdate"].toString();
+    let emailData = JSON.stringify(stateCopy);
+
+    console.log("Initiated POST request to server with the following payload:");
+    console.log(emailData);
+    axiosConfig
+      .patch(patchEmailUrl, emailData)
+      .then((response) => {
+        console.log("Server Response");
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   /* If checkbox is not tick, tick it. Otherwise untick it */
