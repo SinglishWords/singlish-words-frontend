@@ -1,7 +1,10 @@
 import { Checkbox, Grid, Link, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
-import axiosConfig, { answersUrl, patchEmailUrl } from "../../../utils/Api/axiosConfig";
+import axiosConfig, {
+  answersUrl,
+  patchEmailUrl,
+} from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
 import { emailFields } from "../../../utils/formFields";
 import FormButton from "../../Helpers/FormButton/FormButton";
@@ -26,16 +29,26 @@ export class Email extends Component {
     axiosConfig
       .post(answersUrl, answers)
       .then((response) => {
-        console.log("Server Response Data");
-        console.log(response.data);
-        /* Append the form entry id to state in case user wishes to submit email
+        console.log("Server Response");
+        console.log(response);
+        if (response.status === 201) {
+          alert("Responses submitted successfully!");
+          /* Append the form entry id to state in case user wishes to submit email
         for lucky draw or updates subscription */
-        this.setState({
-          id: response.data.id,
-        });
+          this.setState({
+            id: response.data.id,
+          });
+        } else {
+          alert(
+            "Something went wrong in responses submission. Responses were submitted but status code returned is wrong. Please contact Dr Cynthia Siew at cynthia@nus.edu.sg."
+          );
+        }
       })
       .catch((error) => {
         console.log(error);
+        alert(
+          `Error! Responses submission failed. Please contact Dr Cynthia Siew at cynthia@nus.edu.sg.`
+        );
       });
 
     /* Clear local storage */
@@ -67,9 +80,19 @@ export class Email extends Component {
       .then((response) => {
         console.log("Server Response");
         console.log(response);
+        if (response.status === 204) {
+          alert("Email submitted successfully!");
+        } else {
+          alert(
+            "Something went wrong in email submission. Email was submitted but status code returned is wrong. Please contact Dr Cynthia Siew at cynthia@nus.edu.sg."
+          );
+        }
       })
       .catch((error) => {
         console.log(error);
+        alert(
+          `Error! Email submission failed. Please contact Dr Cynthia Siew at cynthia@nus.edu.sg.`
+        );
       });
   };
 
