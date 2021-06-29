@@ -4,7 +4,7 @@ import image from "../../../assets/images/NUS_Logo.png";
 import formData from "../../../utils/formData";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import "./Introduction.css";
-import { currentDateTime } from "../../../utils/Logic/timeutil";
+import { currentDateTime } from "../../../utils/Logic/timeUtil";
 import PopoverButton from "../../Helpers/PopoverButton/PopoverButton";
 
 export class Introduction extends Component {

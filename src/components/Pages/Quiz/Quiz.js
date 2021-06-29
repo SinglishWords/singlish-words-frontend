@@ -5,7 +5,7 @@ import {
   currentDateTime,
   endTimer,
   startTimer,
-} from "../../../utils/Logic/timeutil";
+} from "../../../utils/Logic/timeUtil";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import PopoverButton from "../../Helpers/PopoverButton/PopoverButton";
 import "./Quiz.css";
