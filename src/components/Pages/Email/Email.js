@@ -211,19 +211,31 @@ export class Email extends Component {
             </Typography>
           </Grid>
 
-          {/* Paragraph 3 - Get in touch*/}
+          {/* Paragraph 3 - Lucky Draw T&C*/}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
               {formData.emailPage.thirdParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
+              <Typography variant="body1" className="text">
+                {formData.emailPage.thirdParagraphDescription}
+              </Typography>
+            </Grid>
+          </Grid>
+
+          {/* Paragraph 4 - Get in touch*/}
+          <Grid item xs={12}>
+            <Typography variant="h4" id="content">
+              {formData.emailPage.fourthParagraphHeader}
+            </Typography>
+            <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text" display="inline">
-                {formData.emailPage.thirdParagraphDescription.description1}
+                {formData.emailPage.fourthParagraphDescription.description1}
               </Typography>
               <Typography variant="body1" className="text" display="inline">
                 <Link href="mailto:smallworldofsinglishwords@gmail.com">
                   <b>
-                    <u>{formData.emailPage.thirdParagraphDescription.email}</u>
+                    <u>{formData.emailPage.fourthParagraphDescription.email}</u>
                   </b>
                 </Link>
               </Typography>
@@ -231,27 +243,34 @@ export class Email extends Component {
               <br />
               <Typography variant="body1" className="text" display="inline">
                 <b>
-                  {formData.emailPage.thirdParagraphDescription.description2}
+                  {formData.emailPage.fourthParagraphDescription.description2}
                 </b>
               </Typography>
               <Typography variant="body1" className="text" display="inline">
                 <Link href="mailto:cynthia@nus.edu.sg">
                   <b>
-                    <u>{formData.emailPage.thirdParagraphDescription.email2}</u>
+                    <u>
+                      {formData.emailPage.fourthParagraphDescription.email2}
+                    </u>
                   </b>
                 </Link>
               </Typography>
             </Grid>
           </Grid>
 
-          {/* Paragraph 4 - Share the study*/}
+          {/* Paragraph 5 - Share the study*/}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
-              {formData.emailPage.fourthParagraphHeader}
+              {formData.emailPage.fifthParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
-              <Typography variant="body1" className="text">
-                {formData.emailPage.fourthParagraphDescription}
+              <Typography variant="body1" className="text" display="inline">
+                {formData.emailPage.fifthParagraphDescription}
+                <Link className="site_link" onClick={()=> window.open("/", "_blank")}>
+                  <b>
+                    <u>{window.location.host}</u>
+                  </b>
+                </Link>
               </Typography>
             </Grid>
           </Grid>

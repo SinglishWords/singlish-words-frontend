@@ -43,6 +43,10 @@ export class Introduction extends Component {
                   {formData.introductionPage.introductionLuckyDraw}
                 </p>
                 {formData.introductionPage.introduction2}
+                <i>{formData.introductionPage.introduction3}</i>
+                <br />
+                <br />
+                {formData.introductionPage.introduction4}
               </Typography>
             </Grid>
           </Grid>

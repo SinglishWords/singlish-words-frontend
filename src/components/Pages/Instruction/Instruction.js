@@ -93,7 +93,7 @@ export class Instruction extends Component {
             {/* Content Some hints...*/}
             <Grid item xs={12}>
               <Typography variant="h4" className="title" id="content">
-                Some hints
+                {formData.instructionsPage.secondParagraphHeader}
               </Typography>
             </Grid>
 

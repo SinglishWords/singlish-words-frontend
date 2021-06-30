@@ -65,3 +65,7 @@
   > div:first-child {
   display: block;
 }
+
+.email_container .content_grid .text .site_link {
+  cursor: pointer;
+}
