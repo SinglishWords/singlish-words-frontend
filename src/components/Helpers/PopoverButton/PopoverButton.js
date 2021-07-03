@@ -2,8 +2,7 @@ import React from "react";
 import { Button, Grid, Typography, Popover } from "@material-ui/core";
 import "./PopoverButton.css";
 
-/* Taken directly from MaterialUI API.
-To look into whether it is possible to change it to a class-based component*/
+/* Taken directly from MaterialUI API. */
 export default function PopoverButton({buttonDescription, popOverButtonText}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 

@@ -94,6 +94,7 @@ const formData = {
     firstAssociationInstruction: `Enter a first association`,
     secondAssociationInstruction: `Enter a second association`,
     thirdAssociationInstruction: `Enter a third association`,
+    progress: `Progress`,
     needHelpButtonDescription: `Need Help?`,
     buttonDescription: `continue`,
     instructionReminder: `How it works...

@@ -1,4 +1,4 @@
-import { Grid, TextField, Typography } from "@material-ui/core";
+import { Grid, LinearProgress, TextField, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import formData from "../../../utils/formData";
 import {
@@ -54,11 +54,11 @@ export class Quiz extends Component {
 
     return (
       <Grid container className="container">
-        <Grid container className="experimentContainer">
+        <Grid container className="experiment_container">
           {/* Word on Page*/}
           <Grid item xs={12}>
             <Typography variant="body2" className="word">
-              {values.data[wordIndex].question.id + ". " + values.data[wordIndex].question.word}
+              {values.data[wordIndex].question.word}
             </Typography>
           </Grid>
           {/* First Association */}
@@ -121,6 +121,26 @@ export class Quiz extends Component {
             />
           </Grid>
 
+          <Grid container className="progress_container">
+            <Grid item xs={12}>
+              <Typography
+                className="progress_text"
+                variant="caption"
+                display="block"
+                gutterBottom
+              >
+                {formData.quizPage.progress}
+              </Typography>
+              <LinearProgress
+                className="progress"
+                variant="determinate"
+                value={
+                  (100 / values.data.length) *
+                  values.data[wordIndex].question.id
+                }
+              />
+            </Grid>
+          </Grid>
           {/* Continue Button */}
           {/* handleTimeOnPage tracks how long the user has been on the page*/}
           <Grid container className="button_container">

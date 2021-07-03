@@ -7,7 +7,7 @@
   padding-right: 15px;
 }
 
-.container .experimentContainer {
+.container .experiment_container {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -15,7 +15,7 @@
   padding-right: 15px;
 }
 
-.container .experimentContainer .word {
+.container .experiment_container .word {
   font-size: 3em;
   line-height: 4rem;
   padding-bottom: 3rem;
@@ -28,6 +28,15 @@
   margin-bottom: 50px;
 }
 
-.container .experimentContainer .button_container .MuiButtonBase-root {
+.container .experiment_container .progress_container {
+  margin-bottom: 70px;
+  margin-top: 20px;
+}
+
+.container .experiment_container .progress_container .progress_text {
+  color: #394b58;
+}
+
+.container .experiment_container .button_container .MuiButtonBase-root {
   margin-left: 38px;
 }
