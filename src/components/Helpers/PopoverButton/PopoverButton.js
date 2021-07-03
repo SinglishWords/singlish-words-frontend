@@ -3,7 +3,11 @@ import { Button, Grid, Typography, Popover } from "@material-ui/core";
 import "./PopoverButton.css";
 
 /* Taken directly from MaterialUI API. */
-export default function PopoverButton({buttonDescription, popOverButtonText}) {
+export default function PopoverButton({
+  buttonDescription,
+  popOverButtonText,
+  type,
+}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -29,6 +33,7 @@ export default function PopoverButton({buttonDescription, popOverButtonText}) {
       </Button>
       <Popover
         id={id}
+        className={type}
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
@@ -41,7 +46,11 @@ export default function PopoverButton({buttonDescription, popOverButtonText}) {
           horizontal: "center",
         }}
       >
-        <Typography variant="body2" align="justify" className="popoverbutton_text">
+        <Typography
+          variant="body2"
+          align="justify"
+          className="popoverbutton_text"
+        >
           {popOverButtonText}
         </Typography>
       </Popover>

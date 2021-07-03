@@ -18,7 +18,7 @@
 
 .container .row .title .logoTxt {
   color: #181a86;
-  font-weight: 600 ;
+  font-weight: 600;
 }
 
 .container .row .title .titleTxt {
@@ -66,3 +66,53 @@
   margin-right: 150px;
 }
 /* End of Introduction */
+
+/* Mobile support */
+@media only screen and (max-width: 600px) {
+  .MuiGrid-container .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .container .row {
+    display: contents;
+  }
+
+  .container .row .image_container {
+    height: 130px;
+  }
+
+  .container .row .title .titleTxt {
+    margin-left: 20px;
+    font-size: 22px;
+  }
+
+  .container .row .title .subTxt {
+    margin-left: 20px;
+    font-size: 18px;
+  }
+
+  .container .introduction .introduction_grid .text {
+    margin-left: 36px;
+    margin-right: 450px;
+  }
+
+  .container .form_button {
+    display: block;
+  }
+
+  .container .form_button .lucky_draw_container .MuiButtonBase-root {
+    margin-left: 100px;
+    margin-bottom: 50px;
+  }
+
+  .container .form_button .continue_button_container .MuiButtonBase-root {
+    width: 201px;
+    margin-right: 40px;
+  }
+
+  .lucky_draw .MuiPaper-root {
+    margin-top: 740px;
+  }
+}
+

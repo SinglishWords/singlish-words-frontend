@@ -40,3 +40,10 @@
   margin-left: 240px;
   margin-bottom: 50px;
 }
+
+/* Mobile support */
+@media only screen and (max-width: 600px) {
+  .continue_container .recaptcha {
+    margin-left: 12px;
+  }
+}

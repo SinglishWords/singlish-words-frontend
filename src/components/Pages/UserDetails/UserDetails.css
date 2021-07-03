@@ -48,3 +48,19 @@
   height: 25px;
 }
 /* End of content */
+
+/* Mobile support */
+@media only screen and (max-width: 600px) {
+  .profileContainer .languagesChosenHeader {
+    margin-left: 16px;
+
+  }
+
+  .profileContainer .list {
+    padding-left: 0px;
+  }
+
+  .profileContainer .list .listItem {
+    margin-bottom: 20px;
+  }
+}

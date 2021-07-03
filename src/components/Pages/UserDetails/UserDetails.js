@@ -58,6 +58,7 @@ export class UserDetails extends Component {
 
             {/* Age */}
             <Dropdown
+              className="dropdown"
               inputLabel={formData.informationAboutYouPage.ageInstruction}
               value={values.age}
               name={"age"}
@@ -67,6 +68,7 @@ export class UserDetails extends Component {
 
             {/* Gender */}
             <Dropdown
+              className="dropdown"
               inputLabel={formData.informationAboutYouPage.genderInstruction}
               value={values.gender}
               name={"gender"}
@@ -76,6 +78,7 @@ export class UserDetails extends Component {
 
             {/* Education */}
             <Dropdown
+              className="dropdown"
               inputLabel={formData.informationAboutYouPage.educationInstruction}
               value={values.education}
               name={"education"}
@@ -85,6 +88,7 @@ export class UserDetails extends Component {
 
             {/* Country-of-Birth */}
             <Dropdown
+              className="dropdown"
               inputLabel={
                 formData.informationAboutYouPage.birthCountryInstruction
               }
@@ -97,6 +101,7 @@ export class UserDetails extends Component {
             {/* Ethnicity (Show ethnicity only if Country-of-Residence is Singapore) */}
             {checkCountryOfBirthSingapore(values) ? (
               <Dropdown
+                className="dropdown"
                 inputLabel={
                   formData.informationAboutYouPage.ethnicityInstruction
                 }
@@ -109,6 +114,7 @@ export class UserDetails extends Component {
 
             {/* Country-of-Residence */}
             <Dropdown
+              className="dropdown"
               inputLabel={
                 formData.informationAboutYouPage.residenceCountryInstruction
               }
@@ -120,6 +126,7 @@ export class UserDetails extends Component {
 
             {/* Native Speaker? */}
             <Dropdown
+              className="dropdown"
               inputLabel={
                 formData.informationAboutYouPage.nativeSpeakerInstruction
               }
@@ -137,6 +144,7 @@ export class UserDetails extends Component {
                 component is used. However, Material-UI Multi-Select is buggy. Hence I used a normal
                 Select component in Dropdown instead of Multi-Select */}
                 <Dropdown
+                  className="dropdown"
                   inputLabel={
                     formData.informationAboutYouPage.otherLanguagesInstruction
                   }

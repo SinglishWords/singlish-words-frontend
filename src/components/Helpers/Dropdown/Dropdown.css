@@ -4,3 +4,13 @@ stylings */
   width: 100%;
   margin-bottom: 20px;
 }
+
+/* Mobile support */
+@media only screen and (max-width: 600px) {
+  #dropdown > div {
+    margin-top: 30px;
+  }
+  #dropdown > div > select {
+    height: 50px;
+  }
+}

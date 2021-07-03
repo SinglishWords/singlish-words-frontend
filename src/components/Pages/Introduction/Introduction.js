@@ -18,10 +18,10 @@ export class Introduction extends Component {
 
     return (
       <Grid container>
-        <Grid item xs={12} className="container">
+        <Grid item className="container">
           {/* WAS title*/}
           <Grid container className="row">
-            <Grid item xs={4}>
+            <Grid item xs={4} className="image_container">
               <img className="image" src={image} alt="" />
             </Grid>
             <Grid item className="title" xs={8}>
@@ -36,7 +36,7 @@ export class Introduction extends Component {
 
           {/* Introduction */}
           <Grid container className="introduction" justify="center">
-            <Grid item xs={12} className="introduction_grid">
+            <Grid item className="introduction_grid">
               <Typography variant="body2" className="text" component={"div"}>
                 {formData.introductionPage.introduction}
                 <p className="lucky_draw_text">
@@ -54,17 +54,18 @@ export class Introduction extends Component {
           {/* Button */}
           {/* Start timer to track user's activity on page*/}
           <Grid container className="form_button">
-            <Grid item xs={6} className="lucky_draw_container">
-              <PopoverButton
+            <Grid xs={6} item className="lucky_draw_container">
+              <PopoverButton className="popover_button"
                 buttonDescription={
                   formData.introductionPage.luckyDrawButtonDescription
                 }
                 popOverButtonText={
                   formData.introductionPage.luckyDrawInformation
                 }
+                type={"lucky_draw"}
               />
             </Grid>
-            <Grid item xs={6} className="continue_button_container">
+            <Grid xs={6} item className="continue_button_container">
               <FormButton
                 buttonDescription={
                   formData.introductionPage.continueButtonDescription
