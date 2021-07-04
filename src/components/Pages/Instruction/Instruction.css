@@ -44,6 +44,6 @@
 /* Mobile support */
 @media only screen and (max-width: 600px) {
   .continue_container .recaptcha {
-    margin-left: 12px;
+    margin-left: 35px;
   }
 }

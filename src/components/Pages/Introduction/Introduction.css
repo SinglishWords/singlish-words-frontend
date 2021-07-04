@@ -80,21 +80,22 @@
 
   .container .row .image_container {
     height: 130px;
+    margin-left: 15px;
   }
 
   .container .row .title .titleTxt {
-    margin-left: 20px;
+    margin-left: 35px;
     font-size: 22px;
   }
 
   .container .row .title .subTxt {
-    margin-left: 20px;
+    margin-left: 35px;
     font-size: 18px;
   }
 
   .container .introduction .introduction_grid .text {
-    margin-left: 36px;
-    margin-right: 450px;
+    margin-left: 50px;
+    margin-right: 420px;
   }
 
   .container .form_button {
@@ -102,17 +103,13 @@
   }
 
   .container .form_button .lucky_draw_container .MuiButtonBase-root {
-    margin-left: 100px;
+    margin-left: 125px;
     margin-bottom: 50px;
   }
 
   .container .form_button .continue_button_container .MuiButtonBase-root {
     width: 201px;
-    margin-right: 40px;
-  }
-
-  .lucky_draw .MuiPaper-root {
-    margin-top: 740px;
+    margin-right: 0px;
   }
 }
 

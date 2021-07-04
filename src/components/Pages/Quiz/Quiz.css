@@ -40,3 +40,21 @@
 .container .experiment_container .button_container .MuiButtonBase-root {
   margin-left: 38px;
 }
+
+
+/* Mobile support */
+@media only screen and (max-width: 600px) {
+  .container .experiment_container .word {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .container .textField > div {
+    margin-bottom: 5px;
+  }
+
+  .container .experiment_container .progress_container {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
