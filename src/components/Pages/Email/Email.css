@@ -30,6 +30,10 @@
   line-height: 30px;
 }
 
+.email_container .receive_updates_lucky_draw_header {
+  margin-right: 46px;
+}
+
 .email_container .content_grid .checkbox_container {
   display: inline-flex;
 }
@@ -68,4 +72,12 @@
 
 .email_container .content_grid .text .site_link {
   cursor: pointer;
+}
+
+/* Mobile support */
+@media only screen and (max-width: 600px) {
+  .email_container .content_grid {
+    margin-right: 0%;
+    padding-right: 0px;
+  }
 }

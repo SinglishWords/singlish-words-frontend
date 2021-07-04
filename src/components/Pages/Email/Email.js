@@ -129,7 +129,7 @@ export class Email extends Component {
           </Grid>
 
           {/* Paragraph 2 - If you would like to take part in the lucky draw or receive updates about this research */}
-          <Grid item xs={12}>
+          <Grid item xs={12} className="receive_updates_lucky_draw_header">
             <Typography variant="h4" id="content">
               {formData.emailPage.secondParagraphHeader}
             </Typography>
@@ -229,10 +229,10 @@ export class Email extends Component {
               {formData.emailPage.fourthParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
-              <Typography variant="body1" className="text" display="inline">
+              <Typography variant="body1" className="text">
                 {formData.emailPage.fourthParagraphDescription.description1}
               </Typography>
-              <Typography variant="body1" className="text" display="inline">
+              <Typography variant="body1" className="text">
                 <Link href="mailto:smallworldofsinglishwords@gmail.com">
                   <b>
                     <u>{formData.emailPage.fourthParagraphDescription.email}</u>
@@ -264,7 +264,7 @@ export class Email extends Component {
               {formData.emailPage.fifthParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
-              <Typography variant="body1" className="text" display="inline">
+              <Typography variant="body1" className="text">
                 {formData.emailPage.fifthParagraphDescription}
                 <Link className="site_link" onClick={()=> window.open("/", "_blank")}>
                   <b>

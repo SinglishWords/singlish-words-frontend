@@ -46,4 +46,8 @@
   .continue_container .recaptcha {
     margin-left: 35px;
   }
+  
+  .continue_container .continue_button_container {
+    margin-bottom: 200px;
+  }
 }

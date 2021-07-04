@@ -15,6 +15,7 @@ export class Instruction extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     /* Make a GET request to pull questions */
     axiosConfig
       .get(questionsUrl)
@@ -141,7 +142,7 @@ export class Instruction extends Component {
                 onChange={this.handleRecaptchaChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="continue_button_container">
               <FormButton
                 buttonDescription={
                   formData.instructionsPage.secondParagraphDescription

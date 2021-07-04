@@ -63,4 +63,8 @@
   .profileContainer .list .listItem {
     margin-bottom: 20px;
   }
+
+  .profileContainer .continue_button_container {
+    margin-bottom: 200px;
+  }
 }

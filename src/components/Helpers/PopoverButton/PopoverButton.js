@@ -45,6 +45,7 @@ export default function PopoverButton({
           vertical: "top",
           horizontal: "center",
         }}
+        disableAutoFocus={true}
       >
         <Typography
           variant="body2"

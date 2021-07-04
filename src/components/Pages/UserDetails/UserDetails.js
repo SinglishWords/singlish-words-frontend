@@ -178,7 +178,7 @@ export class UserDetails extends Component {
           </Grid>
 
           {/* Continue Button*/}
-          <Grid container>
+          <Grid container className="continue_button_container">
             <Grid item xs={12}>
               <FormButton
                 buttonDescription={
