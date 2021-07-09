@@ -32,10 +32,15 @@
 
 /* Mobile support */
 @media only screen and (max-width: 600px) {
+  .footer {
+    min-height: 300px;
+  }
+
   .footer .footer_content {
     margin-left: 26px;
     margin-right: 26px;
     margin-bottom: 30px;
+    margin-top: 40px;
   }
 
   .footer .footer_top {
