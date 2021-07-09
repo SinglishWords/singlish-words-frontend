@@ -148,6 +148,7 @@ export class Quiz extends Component {
               <PopoverButton
                 buttonDescription={formData.quizPage.needHelpButtonDescription}
                 popOverButtonText={formData.quizPage.instructionReminder}
+                type="Quiz"
               />
             </Grid>
             <Grid item xs={6}>

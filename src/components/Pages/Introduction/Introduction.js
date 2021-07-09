@@ -2,10 +2,11 @@ import { Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import image from "../../../assets/images/NUS_Logo.png";
 import formData from "../../../utils/formData";
-import FormButton from "../../Helpers/FormButton/FormButton";
-import "./Introduction.css";
 import { currentDateTime } from "../../../utils/Logic/timeUtil";
+import Footer from "../../Helpers/Footer/Footer";
+import FormButton from "../../Helpers/FormButton/FormButton";
 import PopoverButton from "../../Helpers/PopoverButton/PopoverButton";
+import "./Introduction.css";
 
 export class Introduction extends Component {
   constructor(props) {
@@ -55,7 +56,9 @@ export class Introduction extends Component {
           {/* Start timer to track user's activity on page*/}
           <Grid container className="form_button">
             <Grid xs={6} item className="lucky_draw_container">
-              <PopoverButton className="popover_button"
+              <PopoverButton
+                className="popover_button"
+                type="introduction"
                 buttonDescription={
                   formData.introductionPage.luckyDrawButtonDescription
                 }
@@ -78,6 +81,7 @@ export class Introduction extends Component {
             </Grid>
           </Grid>
         </Grid>
+        <Footer/>
       </Grid>
     );
   }

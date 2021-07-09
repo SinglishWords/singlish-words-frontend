@@ -47,6 +47,10 @@
   padding-bottom: 0px;
   height: 25px;
 }
+
+.profileContainer .continue_button_container {
+  margin-bottom: 100px;
+}
 /* End of content */
 
 /* Mobile support */

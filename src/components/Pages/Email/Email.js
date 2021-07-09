@@ -7,6 +7,7 @@ import axiosConfig, {
 } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
 import { emailFields } from "../../../utils/formFields";
+import Footer from "../../Helpers/Footer/Footer";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
 import "./Email.css";
@@ -266,7 +267,10 @@ export class Email extends Component {
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
                 {formData.emailPage.fifthParagraphDescription}
-                <Link className="site_link" onClick={()=> window.open("/", "_blank")}>
+                <Link
+                  className="site_link"
+                  onClick={() => window.open("/", "_blank")}
+                >
                   <b>
                     <u>{window.location.host}</u>
                   </b>
@@ -275,6 +279,7 @@ export class Email extends Component {
             </Grid>
           </Grid>
         </Grid>
+        <Footer />
       </Grid>
     );
   }

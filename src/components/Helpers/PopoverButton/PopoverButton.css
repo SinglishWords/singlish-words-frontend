@@ -2,3 +2,18 @@
   padding: 20px;
   white-space: pre-line;
 }
+
+.popoverbutton_text.MuiTypography-alignJustify {
+  text-align: initial;
+}
+
+/* Mobile support */
+@media only screen and (max-width: 600px) {
+  .introduction_popover {
+    max-width: 350px;
+  }
+
+  .quiz_popover {
+    max-width: 358px;
+  }
+}

@@ -5,7 +5,10 @@ import "./Dropdown.css";
 export class Dropdown extends Component {
   render() {
     return (
-      <FormControl required id="dropdown">
+      <FormControl
+        required={this.props.name === "languagesSpoken" ? false : true}
+        id="dropdown"
+      >
         <InputLabel>{this.props.inputLabel}</InputLabel>
         <Select
           native

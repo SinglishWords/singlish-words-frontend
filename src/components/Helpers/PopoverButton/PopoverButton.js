@@ -50,7 +50,11 @@ export default function PopoverButton({
         <Typography
           variant="body2"
           align="justify"
-          className="popoverbutton_text"
+          className={
+            type === "introduction"
+              ? "popoverbutton_text introduction_popover"
+              : "popoverbutton_text quiz_popover"
+          }
         >
           {popOverButtonText}
         </Typography>

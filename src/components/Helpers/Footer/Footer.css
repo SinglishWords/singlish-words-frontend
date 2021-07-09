@@ -1,0 +1,48 @@
+.footer {
+  margin-top: 100px;
+  background-color: #3f51b5;
+  min-height: 150px;
+}
+
+.footer .footer_content {
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 25px;
+}
+
+.footer .footer_top {
+  text-align: center;
+}
+
+.footer .footer_bottom {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.footer .text {
+  color: white;
+  line-height: 23px;
+  white-space: pre-line;
+}
+
+.site_link {
+  cursor: pointer;
+}
+
+
+/* Mobile support */
+@media only screen and (max-width: 600px) {
+  .footer .footer_content {
+    margin-left: 26px;
+    margin-right: 26px;
+    margin-bottom: 30px;
+  }
+
+  .footer .footer_top {
+    text-align: justify;
+  }
+
+  .footer .footer_bottom {
+    text-align: justify;
+  }
+}

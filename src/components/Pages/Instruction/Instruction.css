@@ -36,6 +36,10 @@
   font-size: 0.6rem;
 }
 
+.continue_container {
+  margin-bottom: 100px;
+}
+
 .continue_container .recaptcha {
   margin-left: 240px;
   margin-bottom: 50px;
