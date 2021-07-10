@@ -1,6 +1,7 @@
+import { Grid, Link, Typography } from "@material-ui/core";
 import React, { Component } from "react";
+import formData from "../../../utils/formData";
 import "./Footer.css";
-import { Link, Grid, Typography } from "@material-ui/core";
 
 export class Footer extends Component {
   render() {
@@ -8,18 +9,16 @@ export class Footer extends Component {
       <Grid container className="footer">
         <Grid item xs={12} className="footer_content">
           <Typography variant="body2" className="text footer_top">
-            This project was inspired by the Small World of Words project. We
-            thank the creators for giving us permission to expand this work into
-            the words that make up the Singaporean lexicon.
+            {formData.footer.top}
           </Typography>
           <Typography variant="body2" className="text footer_bottom">
-            Small World of Words - 
+            {formData.footer.bottom}
             <Link
               className="text site_link"
-              onClick={()=> window.open("https://smallworldofwords.org/", "_blank")}
+              onClick={() => window.open(formData.footer.url, "_blank")}
             >
               <b>
-                <u> https://smallworldofwords.org/</u>
+                <u>{formData.footer.urlstring}</u>
               </b>
             </Link>
           </Typography>

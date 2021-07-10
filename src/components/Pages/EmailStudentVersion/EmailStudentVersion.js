@@ -10,9 +10,9 @@ import { emailFields } from "../../../utils/formFields";
 import Footer from "../../Helpers/Footer/Footer";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
-import "./Email.css";
+import "./EmailStudentVersion.css";
 
-export class Email extends Component {
+export class EmailStudentVersion extends Component {
   constructor(props) {
     super(props);
     this.state = emailFields;
@@ -114,17 +114,17 @@ export class Email extends Component {
     return (
       <Grid container>
         {/* Thank you header*/}
-        <Header title={formData.emailPage.title} />
+        <Header title={formData.emailPageStudent.title} />
 
         <Grid container className="email_container" justify="center">
           {/* Paragraph 1 - What we are trying to do */}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
-              {formData.emailPage.firstParagraphHeader}
+              {formData.emailPageStudent.firstParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-                {formData.emailPage.firstParagraphDescription}
+                {formData.emailPageStudent.firstParagraphDescription}
               </Typography>
             </Grid>
           </Grid>
@@ -132,14 +132,24 @@ export class Email extends Component {
           {/* Paragraph 2 - If you would like to take part in the lucky draw or receive updates about this research */}
           <Grid item xs={12} className="receive_updates_lucky_draw_header">
             <Typography variant="h4" id="content">
-              {formData.emailPage.secondParagraphHeader}
+              {formData.emailPageStudent.secondParagraphHeader}
             </Typography>
           </Grid>
 
           {/* Email and Submit */}
           <Grid item xs={12} className="content_grid">
             <Typography variant="body1" className="text">
-              {formData.emailPage.secondParagraphDescription.description1}
+              {
+                formData.emailPageStudent.secondParagraphDescription
+                  .description1
+              }
+              <b>
+                {formData.emailPageStudent.secondParagraphDescription.email}
+              </b>
+              {
+                formData.emailPageStudent.secondParagraphDescription
+                  .description2
+              }
             </Typography>
             {/* Checkboxes */}
             <Grid container>
@@ -153,7 +163,7 @@ export class Email extends Component {
                 />
                 <Typography variant="body1" className="text checkbox_text">
                   {
-                    formData.emailPage.secondParagraphDescription
+                    formData.emailPageStudent.secondParagraphDescription
                       .luckyDrawCheckboxDescription
                   }
                 </Typography>
@@ -168,7 +178,7 @@ export class Email extends Component {
                 />
                 <Typography variant="body1" className="text checkbox_text">
                   {
-                    formData.emailPage.secondParagraphDescription
+                    formData.emailPageStudent.secondParagraphDescription
                       .updatesCheckboxDescription
                   }
                 </Typography>
@@ -178,7 +188,10 @@ export class Email extends Component {
             {/* Email Input field and Submit button*/}
             {submitted ? (
               <Typography variant="body1" className="text post_submit">
-                {formData.emailPage.secondParagraphDescription.description2}
+                {
+                  formData.emailPageStudent.secondParagraphDescription
+                    .description3
+                }
               </Typography>
             ) : (
               <Grid container className="enter_email">
@@ -210,35 +223,34 @@ export class Email extends Component {
               </Grid>
             )}
             <Typography variant="body1" className="text">
-              {formData.emailPage.secondParagraphDescription.description3}
+              {
+                formData.emailPageStudent.secondParagraphDescription
+                  .description4
+              }
             </Typography>
-          </Grid>
-
-          {/* Paragraph 3 - Lucky Draw T&C*/}
-          <Grid item xs={12}>
-            <Typography variant="h4" id="content">
-              {formData.emailPage.thirdParagraphHeader}
-            </Typography>
-            <Grid item xs={12} className="content_grid">
-              <Typography variant="body1" className="text">
-                {formData.emailPage.thirdParagraphDescription}
-              </Typography>
-            </Grid>
           </Grid>
 
           {/* Paragraph 4 - Get in touch*/}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
-              {formData.emailPage.fourthParagraphHeader}
+              {formData.emailPageStudent.thirdParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-                {formData.emailPage.fourthParagraphDescription.description1}
+                {
+                  formData.emailPageStudent.thirdParagraphDescription
+                    .description1
+                }
               </Typography>
               <Typography variant="body1" className="text">
                 <Link href="mailto:smallworldofsinglishwords@gmail.com">
                   <b>
-                    <u>{formData.emailPage.fourthParagraphDescription.email}</u>
+                    <u>
+                      {
+                        formData.emailPageStudent.thirdParagraphDescription
+                          .email
+                      }
+                    </u>
                   </b>
                 </Link>
               </Typography>
@@ -246,14 +258,20 @@ export class Email extends Component {
               <br />
               <Typography variant="body1" className="text" display="inline">
                 <b>
-                  {formData.emailPage.fourthParagraphDescription.description2}
+                  {
+                    formData.emailPageStudent.thirdParagraphDescription
+                      .description2
+                  }
                 </b>
               </Typography>
               <Typography variant="body1" className="text" display="inline">
                 <Link href="mailto:cynthia@nus.edu.sg">
                   <b>
                     <u>
-                      {formData.emailPage.fourthParagraphDescription.email2}
+                      {
+                        formData.emailPageStudent.thirdParagraphDescription
+                          .email2
+                      }
                     </u>
                   </b>
                 </Link>
@@ -264,11 +282,11 @@ export class Email extends Component {
           {/* Paragraph 5 - Share the study*/}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
-              {formData.emailPage.fifthParagraphHeader}
+              {formData.emailPageStudent.fourthParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-                {formData.emailPage.fifthParagraphDescription}
+                {formData.emailPageStudent.fourthParagraphDescription}
                 <Link
                   className="site_link"
                   onClick={() => window.open("/", "_blank")}
@@ -287,4 +305,4 @@ export class Email extends Component {
   }
 }
 
-export default Email;
+export default EmailStudentVersion;

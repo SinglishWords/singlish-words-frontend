@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import formFields from "../utils/formFields";
-import Email from "./Pages/Email/Email";
+// import Email from "./Pages/Email/Email";
+import EmailStudentVersion from "./Pages/EmailStudentVersion/EmailStudentVersion";
 import Instruction from "./Pages/Instruction/Instruction";
-import Introduction from "./Pages/Introduction/Introduction";
+// import Introduction from "./Pages/Introduction/Introduction";
+import IntroductionStudentVersion from "./Pages/IntroductionStudentVersion/IntroductionStudentVersion";
 import Quiz from "./Pages/Quiz/Quiz";
 import UserDetails from "./Pages/UserDetails/UserDetails";
 
@@ -101,7 +103,7 @@ export class Form extends Component {
       /* If option selected, and option not in language array, add language to array*/
       if (options[i].selected && !languages.includes(options[i].value)) {
         languages.push(options[i].value);
-      } 
+      }
     }
     temp.languagesSpoken = languages;
     this.setState(temp);
@@ -185,7 +187,11 @@ export class Form extends Component {
         return <h1>Something went wrong!</h1>;
       case 1:
         return (
-          <Introduction
+          // <Introduction
+          //   nextPage={this.nextPage}
+          //   handleTimeOnForm={this.handleTimeOnForm}
+          // />
+          <IntroductionStudentVersion
             nextPage={this.nextPage}
             handleTimeOnForm={this.handleTimeOnForm}
           />
@@ -243,7 +249,11 @@ export class Form extends Component {
         );
       case 24:
         return (
-          <Email
+          // <Email
+          //   formState={this.state}
+          //   removeStateFromLocalStorage={this.removeStateFromLocalStorage}
+          // />
+          <EmailStudentVersion
             formState={this.state}
             removeStateFromLocalStorage={this.removeStateFromLocalStorage}
           />
