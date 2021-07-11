@@ -74,8 +74,18 @@
 
 /* Mobile support */
 @media only screen and (max-width: 600px) {
-  .email_container .content_grid {
-    margin-right: 0%;
-    padding-right: 0px;
+  .email_container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .email_container .receive_updates_lucky_draw_header {
+    margin-right: 0px;
+    text-align: justify;
+  }
+
+  .email_container .content_grid .checkbox_container .checkbox_text {
+    line-height: 20px;
+    margin-top: 10px;
   }
 }

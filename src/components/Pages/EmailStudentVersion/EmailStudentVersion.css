@@ -86,5 +86,6 @@
 
   .email_container .content_grid .checkbox_container .checkbox_text {
     line-height: 20px;
+    margin-top: 10px;
   }
 }

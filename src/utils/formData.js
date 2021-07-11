@@ -156,7 +156,7 @@ const formData = {
     fourthParagraphDescription: `To get enough words and make the mental dictionary useful, we need many helping hands. If you want to help, just share the study with family and friends or come back some other time for new words! - `,
   },
 
-  /* Introduction Page (Student) */
+  /* Email Page (Student) */
   emailPage: {
     title: `Thank You!`,
     firstParagraphHeader: `What are we trying to do`,
@@ -166,7 +166,7 @@ const formData = {
     secondParagraphHeader: `If you would like to take part in the lucky draw or receive updates about this research`,
     secondParagraphDescription: {
       description1: `Enter your email below.`,
-      luckyDrawCheckboxDescription: `I would like to take part in the lucky draw!`,
+      luckyDrawCheckboxDescription: `I would like to be reimbursed!`,
       updatesCheckboxDescription: `I would like to receive updates about this research!`,
       description2: `Thank you for your submission!`,
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
