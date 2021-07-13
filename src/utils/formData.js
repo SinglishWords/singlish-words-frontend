@@ -126,37 +126,6 @@ const formData = {
   },
 
   /* Email Page */
-  emailPageStudent: {
-    title: `Thank You!`,
-    firstParagraphHeader: `What are we trying to do`,
-    firstParagraphDescription: `The mental lexicon is the part of long-term memory where all of the words that you know and their meanings are stored. The connections between these words and concepts can be represented as a language network (akin to a “social network” of words) to model the large-scale structure of the mental lexicon.
-
-    In this study, you were asked to respond with words that came to your mind upon the presentation of Singapore English words. These responses are called free associations, and we and other language researchers plan to use these free associations across thousands of words in Singapore English to study the structure of the Singaporean mental lexicon. Thank you for your help with this research!`,
-    secondParagraphHeader: `If you would like to be reimbursed or receive updates about this research`,
-    secondParagraphDescription: {
-      description1: `Enter your `,
-      email: `NUS Student email `,
-      description2: `below.`,
-      luckyDrawCheckboxDescription: `I would like to take part in the lucky draw!`,
-      updatesCheckboxDescription: `I would like to receive updates about this research!`,
-      description3: `Thank you for your submission!`,
-      description4: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
-    },
-    thirdParagraphHeader: `Get in touch`,
-    thirdParagraphDescription: {
-      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
-      email: `smallworldofsinglishwords@gmail.com`,
-      description2: `Principal Investigator: Dr. Cynthia Siew
-      Department of Psychology, National University of Singapore.
-      Email: `,
-      email2: `cynthia@nus.edu.sg`,
-    },
-
-    fourthParagraphHeader: `Share the study`,
-    fourthParagraphDescription: `To get enough words and make the mental dictionary useful, we need many helping hands. If you want to help, just share the study with family and friends or come back some other time for new words! - `,
-  },
-
-  /* Email Page (Student) */
   emailPage: {
     title: `Thank You!`,
     firstParagraphHeader: `What are we trying to do`,
@@ -166,7 +135,7 @@ const formData = {
     secondParagraphHeader: `If you would like to take part in the lucky draw or receive updates about this research`,
     secondParagraphDescription: {
       description1: `Enter your email below.`,
-      luckyDrawCheckboxDescription: `I would like to be reimbursed!`,
+      luckyDrawCheckboxDescription: `I would like to take part in the lucky draw!`,
       updatesCheckboxDescription: `I would like to receive updates about this research!`,
       description2: `Thank you for your submission!`,
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
@@ -189,6 +158,37 @@ const formData = {
 
     fifthParagraphHeader: `Share the study`,
     fifthParagraphDescription: `To get enough words and make the mental dictionary useful, we need many helping hands. If you want to help, just share the study with family and friends or come back some other time for new words! - `,
+  },
+
+  /* Email Page (Student) */
+  emailPageStudent: {
+    title: `Thank You!`,
+    firstParagraphHeader: `What are we trying to do`,
+    firstParagraphDescription: `The mental lexicon is the part of long-term memory where all of the words that you know and their meanings are stored. The connections between these words and concepts can be represented as a language network (akin to a “social network” of words) to model the large-scale structure of the mental lexicon.
+
+    In this study, you were asked to respond with words that came to your mind upon the presentation of Singapore English words. These responses are called free associations, and we and other language researchers plan to use these free associations across thousands of words in Singapore English to study the structure of the Singaporean mental lexicon. Thank you for your help with this research!`,
+    secondParagraphHeader: `If you would like to be reimbursed or receive updates about this research`,
+    secondParagraphDescription: {
+      description1: `Enter your `,
+      email: `NUS Student email `,
+      description2: `below.`,
+      luckyDrawCheckboxDescription: `I would like to be reimbursed!`,
+      updatesCheckboxDescription: `I would like to receive updates about this research!`,
+      description3: `Thank you for your submission!`,
+      description4: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
+    },
+    thirdParagraphHeader: `Get in touch`,
+    thirdParagraphDescription: {
+      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
+      email: `smallworldofsinglishwords@gmail.com`,
+      description2: `Principal Investigator: Dr. Cynthia Siew
+      Department of Psychology, National University of Singapore.
+      Email: `,
+      email2: `cynthia@nus.edu.sg`,
+    },
+
+    fourthParagraphHeader: `Share the study`,
+    fourthParagraphDescription: `To get enough words and make the mental dictionary useful, we need many helping hands. If you want to help, just share the study with family and friends or come back some other time for new words! - `,
   },
 
   /* Footer */
