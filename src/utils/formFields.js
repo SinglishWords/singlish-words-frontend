@@ -122,11 +122,11 @@ export const recaptchaFields = {
 };
 
 export const emailFields = {
-  id: "",
   email: "",
   submitted: false,
   wantLuckyDraw: false,
   wantUpdate: false,
+  timesOnPages: [],
 };
 
 export default formFields;

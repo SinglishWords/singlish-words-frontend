@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import axiosConfig, {
   answersUrl,
-  patchEmailUrl,
+  emailUrl,
 } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
 import { emailFields } from "../../../utils/formFields";
@@ -19,8 +19,8 @@ export class EmailStudentVersion extends Component {
     this.textRef = React.createRef();
   }
 
+  /* Submit quiz answers */
   componentDidMount() {
-    /* Submit quiz answers */
     let formStateCopy = JSON.parse(JSON.stringify(this.props.formState));
     delete formStateCopy["step"];
     let answers = JSON.stringify(formStateCopy);
@@ -34,11 +34,6 @@ export class EmailStudentVersion extends Component {
         console.log(response);
         if (response.status === 201) {
           alert("Responses submitted successfully!");
-          /* Append the form entry id to state in case user wishes to submit email
-        for lucky draw or updates subscription */
-          this.setState({
-            id: response.data.id,
-          });
         } else {
           alert(
             "Something went wrong in responses submission. Responses were submitted but status code returned is wrong. Please contact Dr Cynthia Siew at cynthia@nus.edu.sg."
@@ -52,6 +47,15 @@ export class EmailStudentVersion extends Component {
         );
       });
 
+    /* Append timesOnPages to email*/
+    let timesOnPages = [];
+    formStateCopy.data.forEach((element) => {
+      timesOnPages.push(element.timeOnPage);
+    });
+    this.setState({
+      timesOnPages: timesOnPages,
+    });
+
     /* Clear local storage */
     this.props.removeStateFromLocalStorage();
   }
@@ -62,11 +66,11 @@ export class EmailStudentVersion extends Component {
     });
   };
 
+  /* Submit email and checkbox options*/
   handleSubmit = () => {
     this.setState({
       submitted: true,
     });
-    /* Submit email and checkbox options*/
     let stateCopy = JSON.parse(JSON.stringify(this.state));
     delete stateCopy["submitted"];
     /* Convert boolean values to string for database compatibility */
@@ -77,11 +81,11 @@ export class EmailStudentVersion extends Component {
     console.log("Initiated POST request to server with the following payload:");
     console.log(emailData);
     axiosConfig
-      .patch(patchEmailUrl, emailData)
+      .post(emailUrl, emailData)
       .then((response) => {
         console.log("Server Response");
         console.log(response);
-        if (response.status === 204) {
+        if (response.status === 201) {
           alert("Email submitted successfully!");
         } else {
           alert(

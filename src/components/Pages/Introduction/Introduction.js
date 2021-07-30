@@ -65,7 +65,6 @@ export class Introduction extends Component {
                 popOverButtonText={
                   formData.introductionPage.luckyDrawInformation
                 }
-                type={"lucky_draw"}
               />
             </Grid>
             <Grid xs={6} item className="continue_button_container">
