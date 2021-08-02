@@ -188,7 +188,7 @@ export class Email extends Component {
               <Grid container className="enter_email">
                 <ValidatorForm onSubmit={this.handleSubmit}>
                   <Grid container>
-                    <Grid item xs={5} className="text_validator_grid">
+                    <Grid item xs={7} className="text_validator_grid">
                       <TextValidator
                         inputRef={this.textRef}
                         label="Your email"
@@ -202,7 +202,7 @@ export class Email extends Component {
                         ]}
                       />
                     </Grid>
-                    <Grid item xs={7} className="submit_button">
+                    <Grid item xs={5} className="submit_button">
                       <FormButton
                         disabled={!isEnabled}
                         buttonDescription={"Submit"}

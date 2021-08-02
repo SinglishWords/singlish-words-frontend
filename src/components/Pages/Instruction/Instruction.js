@@ -138,7 +138,7 @@ export class Instruction extends Component {
               <ReCAPTCHA
                 /* To change site key once actual site is up.
                 Use smallworldofsinglishwords@gmail.com */
-                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                sitekey="6Ldy0tQbAAAAANL-FvKgyzKBeWcGSaER4cd9jta0"
                 onChange={this.handleRecaptchaChange}
               />
             </Grid>
