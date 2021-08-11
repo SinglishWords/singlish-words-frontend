@@ -18,7 +18,7 @@
 .container .experiment_container .word {
   font-size: 3em;
   line-height: 4rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   padding-top: 2rem;
   text-align: center;
 }
@@ -48,6 +48,7 @@
   .container .experiment_container .word {
     padding-top: 5px;
     padding-bottom: 5px;
+    font-size: 33px;
   }
 
   .container .textField > div {
