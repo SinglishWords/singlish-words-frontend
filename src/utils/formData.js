@@ -107,9 +107,9 @@ const formData = {
 
   /* Quiz Page */
   quizPage: {
-    firstAssociationInstruction: `Enter a word that comes to mind`,
-    secondAssociationInstruction: `Enter a word that comes to mind`,
-    thirdAssociationInstruction: `Enter a word that comes to mind`,
+    firstAssociationInstruction: `Enter a word that comes to your mind`,
+    secondAssociationInstruction: `Enter a word that comes to your mind`,
+    thirdAssociationInstruction: `Enter a word that comes to your mind`,
     progress: `Progress`,
     needHelpButtonDescription: `Need Help?`,
     buttonDescription: `continue`,
