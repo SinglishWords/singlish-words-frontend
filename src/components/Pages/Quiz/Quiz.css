@@ -42,6 +42,10 @@
   margin-bottom: 100px;
 }
 
+.container .experiment_container .recaptcha {
+  text-align: -webkit-center;
+  margin-bottom: 52px;
+}
 
 /* Mobile support */
 @media only screen and (max-width: 600px) {
@@ -58,5 +62,13 @@
   .container .experiment_container .progress_container {
     margin-bottom: 20px;
     margin-top: 10px;
+  }
+
+  .container .experiment_container .recaptcha {
+    margin-bottom: 17px;
+  }
+
+  .container .experiment_container .button_container .MuiButtonBase-root {
+    margin-left: 25px;
   }
 }

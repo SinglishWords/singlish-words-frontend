@@ -119,6 +119,10 @@ const formFields = {
 
 export const recaptchaFields = {
   isVerified: false,
+  // 10% chance of recaptcha rendering to catch bots
+  showRecaptcha: Math.random() < 0.1,
+  // Render recaptcha once on Quiz page, at random depending on showRecaptcha boolean
+  recaptchaAlreadyShown: false,
 };
 
 export const emailFields = {

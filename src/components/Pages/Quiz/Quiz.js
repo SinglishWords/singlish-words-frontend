@@ -1,6 +1,8 @@
 import { Grid, LinearProgress, TextField, Typography } from "@material-ui/core";
 import React, { Component } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import formData from "../../../utils/formData";
+import { recaptchaFields } from "../../../utils/formFields";
 import {
   currentDateTime,
   endTimer,
@@ -20,24 +22,28 @@ export class Quiz extends Component {
     this.pageStartTime = startTimer();
     this.pageEndTime = "";
     this.resetAssociations = false;
-  }
-
-  /* Only reset associations when user clicks continue */
-  shouldComponentUpdate() {
-    return this.resetAssociations;
+    this.state = recaptchaFields;
   }
 
   componentDidUpdate() {
-    this.resetAssociations = false;
-    /* Once user clicks the "Continue" button, reset all test fields and reset
+    if (this.resetAssociations) {
+      this.resetAssociations = false;
+      /* Once user clicks the "Continue" button, reset all test fields and reset
     cursor back to the first association textfield */
-    this.firstAssociationRef.current.value = "";
-    this.secondAssociationRef.current.value = "";
-    this.thirdAssociationRef.current.value = "";
-    this.firstAssociationRef.current.focus();
-    /* Reset pageStartTime reference position for every page */
-    this.pageStartTime = startTimer();
+      this.firstAssociationRef.current.value = "";
+      this.secondAssociationRef.current.value = "";
+      this.thirdAssociationRef.current.value = "";
+      this.firstAssociationRef.current.focus();
+      /* Reset pageStartTime reference position for every page */
+      this.pageStartTime = startTimer();
+      this.setState({ showRecaptcha: Math.random() < 0.1 });
+    }
   }
+
+  handleRecaptchaChange = () => {
+    this.setState({ recaptchaAlreadyShown: true });
+    this.setState({ isVerified: true });
+  };
 
   render() {
     const {
@@ -51,6 +57,7 @@ export class Quiz extends Component {
     const firstAssociationIndex = 0;
     const secondAssociationIndex = 1;
     const thirdAssociationIndex = 2;
+    const { isVerified } = this.state;
 
     return (
       <Grid container className="container">
@@ -141,6 +148,20 @@ export class Quiz extends Component {
               />
             </Grid>
           </Grid>
+
+          {/* Recaptcha that randomly appears one time in quiz page .
+          Show Recaptcha once at random if it has not been shown. */}
+          {this.state.showRecaptcha && !this.state.recaptchaAlreadyShown ? (
+            <Grid className="recaptcha" item xs={12}>
+              <ReCAPTCHA
+                /* To change site key once actual site is up.
+                Use smallworldofsinglishwords@gmail.com */
+                sitekey="6Ldy0tQbAAAAANL-FvKgyzKBeWcGSaER4cd9jta0"
+                onChange={this.handleRecaptchaChange}
+              />
+            </Grid>
+          ) : null}
+
           {/* Continue Button */}
           {/* handleTimeOnPage tracks how long the user has been on the page*/}
           <Grid container className="button_container">
@@ -166,6 +187,11 @@ export class Quiz extends Component {
                   nextPage(e);
                 }}
                 buttonRef={this.continueButton}
+                disabled={
+                  this.state.showRecaptcha && !this.state.recaptchaAlreadyShown
+                    ? !isVerified
+                    : false
+                }
               />
             </Grid>
           </Grid>
