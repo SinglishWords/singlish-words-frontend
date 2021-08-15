@@ -57,7 +57,7 @@ export class Quiz extends Component {
     const firstAssociationIndex = 0;
     const secondAssociationIndex = 1;
     const thirdAssociationIndex = 2;
-    const { isVerified } = this.state;
+    const { isVerified, showRecaptcha, recaptchaAlreadyShown } = this.state;
 
     return (
       <Grid container className="container">
@@ -151,7 +151,7 @@ export class Quiz extends Component {
 
           {/* Recaptcha that randomly appears one time in quiz page .
           Show Recaptcha once at random if it has not been shown. */}
-          {this.state.showRecaptcha && !this.state.recaptchaAlreadyShown ? (
+          {showRecaptcha && !recaptchaAlreadyShown ? (
             <Grid className="recaptcha" item xs={12}>
               <ReCAPTCHA
                 /* To change site key once actual site is up.
@@ -188,7 +188,7 @@ export class Quiz extends Component {
                 }}
                 buttonRef={this.continueButton}
                 disabled={
-                  this.state.showRecaptcha && !this.state.recaptchaAlreadyShown
+                  showRecaptcha && !recaptchaAlreadyShown
                     ? !isVerified
                     : false
                 }

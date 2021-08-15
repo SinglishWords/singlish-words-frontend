@@ -44,6 +44,7 @@
 
 .container .experiment_container .recaptcha {
   text-align: -webkit-center;
+  text-align: -moz-center;
   margin-bottom: 52px;
 }
 
