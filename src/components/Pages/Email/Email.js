@@ -2,6 +2,7 @@ import { Grid, Link, Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import axiosConfig, { answersUrl } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
+import { copyToClipboard } from "../../../utils/Logic/copyUtil";
 import Footer from "../../Helpers/Footer/Footer";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
@@ -98,7 +99,7 @@ export class Email extends Component {
                   <FormButton
                     buttonDescription={"Copied"}
                     onClick={() => {
-                      navigator.clipboard.writeText(uuid);
+                      copyToClipboard(uuid);
                     }}
                   />
                 </Grid>
@@ -107,7 +108,7 @@ export class Email extends Component {
                   <FormButton
                     buttonDescription={"Copy"}
                     onClick={() => {
-                      navigator.clipboard.writeText(uuid);
+                      copyToClipboard(uuid);
                       this.setState({ isCopied: true });
                     }}
                   />
