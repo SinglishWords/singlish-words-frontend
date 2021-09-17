@@ -32,23 +32,6 @@
   margin-right: 46px;
 }
 
-.email_container .content_grid .checkbox_container {
-  display: inline-flex;
-}
-
-.email_container .content_grid .checkbox_container .checkbox {
-  padding-left: 0px;
-}
-
-.email_container .content_grid .checkbox_container .checkbox_text {
-  margin-top: 6px;
-}
-
-.email_container .content_grid .enter_email {
-  display: block;
-  margin-bottom: 20px
-}
-
 .email_container .content_grid .text_validator_grid div:first-child {
   width: 100%;
 }
@@ -72,6 +55,33 @@
   cursor: pointer;
 }
 
+.email_container .content_grid .uuid_container {
+  text-align-last: center;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  border: 2px solid black;
+  display: flex;
+}
+
+.email_container .content_grid .code_text {
+  margin-top: 35px;
+}
+
+.email_container .content_grid .uuid_container .text {
+  font-size: 25px;
+  padding: 18px;
+  padding-left: 30px;
+  text-align-last: left;
+}
+
+.email_container .content_grid .uuid_container .copy_button {
+  align-self: center;
+}
+
+.email_container .content_grid .uuid_container .copied {
+  width: 75px;
+}
+
 /* Mobile support */
 @media only screen and (max-width: 600px) {
   .email_container {
@@ -84,8 +94,11 @@
     text-align: justify;
   }
 
-  .email_container .content_grid .checkbox_container .checkbox_text {
-    line-height: 20px;
-    margin-top: 10px;
+  .email_container .content_grid .uuid_container .copy_button {
+    margin-right: 13px
+  }
+
+  .email_container .content_grid .uuid_container .text {
+    padding-left: 16px;
   }
 }

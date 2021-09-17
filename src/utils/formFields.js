@@ -13,6 +13,7 @@ const formFields = {
   languagesSpoken: [],
   startTime: "",
   endTime: "",
+  uuid: "",
   data: [
     {
       question: { id: 1, word: "word1" },
@@ -123,14 +124,6 @@ export const recaptchaFields = {
   showRecaptcha: Math.random() < 0.1,
   // Render recaptcha once on Quiz page, at random depending on showRecaptcha boolean
   recaptchaAlreadyShown: false,
-};
-
-export const emailFields = {
-  email: "",
-  submitted: false,
-  wantLuckyDraw: false,
-  wantUpdate: false,
-  timesOnPages: [],
 };
 
 export default formFields;

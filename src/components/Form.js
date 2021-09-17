@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import formFields from "../utils/formFields";
 import Email from "./Pages/Email/Email";
-// import EmailStudentVersion from "./Pages/EmailStudentVersion/EmailStudentVersion";
+//import EmailStudentVersion from "./Pages/EmailStudentVersion/EmailStudentVersion";
 import Instruction from "./Pages/Instruction/Instruction";
 import Introduction from "./Pages/Introduction/Introduction";
-// import IntroductionStudentVersion from "./Pages/IntroductionStudentVersion/IntroductionStudentVersion";
+//import IntroductionStudentVersion from "./Pages/IntroductionStudentVersion/IntroductionStudentVersion";
 import Quiz from "./Pages/Quiz/Quiz";
 import UserDetails from "./Pages/UserDetails/UserDetails";
 
@@ -142,9 +142,9 @@ export class Form extends Component {
 
   /* Handle time in which user starts and ends on form (ie startTime and endTime fields)
   Target value for buttons is null. Hence, we can't use e.target.value unlike handleChange*/
-  handleTimeOnForm = (field, dateTime) => {
+  handleFieldChange = (field, value) => {
     this.setState({
-      [field]: dateTime,
+      [field]: value,
     });
   };
 
@@ -162,6 +162,7 @@ export class Form extends Component {
       startTime,
       endTime,
       data,
+      uuid,
     } = this.state;
 
     const values = {
@@ -177,6 +178,7 @@ export class Form extends Component {
       startTime,
       endTime,
       data,
+      uuid,
     };
 
     /* Case 4 to 23 will be used for Quiz words. When case is empty, it will share the next closest
@@ -189,11 +191,13 @@ export class Form extends Component {
         return (
           <Introduction
             nextPage={this.nextPage}
-            handleTimeOnForm={this.handleTimeOnForm}
+            handleChange={this.handleChange}
+            handleFieldChange={this.handleFieldChange}
+            values={values}
           />
           // <IntroductionStudentVersion
           //   nextPage={this.nextPage}
-          //   handleTimeOnForm={this.handleTimeOnForm}
+          //   handleFieldChange={this.handleFieldChange}
           // />
         );
       case 2:
@@ -242,7 +246,7 @@ export class Form extends Component {
             nextPage={this.nextPage}
             handleResponseChange={this.handleResponseChange}
             handleTimeOnPage={this.handleTimeOnPage}
-            handleTimeOnForm={this.handleTimeOnForm}
+            handleFieldChange={this.handleFieldChange}
             values={values}
             wordIndex={step - 4}
           />

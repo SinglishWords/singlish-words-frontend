@@ -1,5 +1,6 @@
 import { Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import image from "../../../assets/images/NUS_Logo.png";
 import formData from "../../../utils/formData";
 import { currentDateTime } from "../../../utils/Logic/timeUtil";
@@ -14,7 +15,7 @@ export class IntroductionStudentVersion extends Component {
   }
 
   render() {
-    const { handleTimeOnForm, nextPage } = this.props;
+    const { handleFieldChange, nextPage } = this.props;
 
     return (
       <Grid container>
@@ -60,8 +61,10 @@ export class IntroductionStudentVersion extends Component {
                   formData.introductionPageStudent.continueButtonDescription
                 }
                 onClick={(e) => {
+                  handleFieldChange("startTime", currentDateTime());
+                  handleFieldChange("uuid", "swow-" + uuidv4());
                   nextPage(e);
-                  handleTimeOnForm("startTime", this.currentDateTime);
+                  
                 }}
               />
             </Grid>

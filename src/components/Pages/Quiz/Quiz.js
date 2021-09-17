@@ -50,7 +50,7 @@ export class Quiz extends Component {
       values,
       handleResponseChange,
       handleTimeOnPage,
-      handleTimeOnForm,
+      handleFieldChange,
       wordIndex,
       nextPage,
     } = this.props;
@@ -183,7 +183,7 @@ export class Quiz extends Component {
                     this.pageStartTime,
                     this.pageEndTime
                   );
-                  handleTimeOnForm("endTime", currentDateTime());
+                  handleFieldChange("endTime", currentDateTime());
                   nextPage(e);
                 }}
                 buttonRef={this.continueButton}
