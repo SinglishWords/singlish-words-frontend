@@ -68,6 +68,14 @@ export class Form extends Component {
     this.nextStep();
   };
 
+  /* Moves user to previous step (For error handling purposes) */
+  previousStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step - 1,
+    });
+  };
+
   /* Handle primitive field change (Default handleChange for most fields) 
   Special cases like handleAgeChange and handleCountryofBirthChange are handled 
   separately to preserve code modularity / avoid super functions */
@@ -193,7 +201,6 @@ export class Form extends Component {
             nextPage={this.nextPage}
             handleChange={this.handleChange}
             handleFieldChange={this.handleFieldChange}
-            values={values}
           />
           // <IntroductionStudentVersion
           //   nextPage={this.nextPage}
@@ -215,8 +222,10 @@ export class Form extends Component {
       case 3:
         return (
           <Instruction
+            previousStep={this.previousStep}
             nextPage={this.nextPage}
             handleWordPopulation={this.handleWordPopulation}
+            values={values}
           />
         );
       case 4:

@@ -30,14 +30,14 @@ export class Email extends Component {
           alert("Responses submitted successfully!");
         } else {
           alert(
-            "Something went wrong in responses submission. Responses were submitted but status code returned is wrong. Please contact Dr Cynthia Siew at cynthia@nus.edu.sg."
+            "Something went wrong in responses submission. Responses were submitted but status code returned is wrong. Please contact the project team at smallworldofsinglishwords@gmail.com."
           );
         }
       })
       .catch((error) => {
         console.log(error);
         alert(
-          `Error! Responses submission failed. Please contact Dr Cynthia Siew at cynthia@nus.edu.sg.`
+          `Error! Responses submission failed. Please contact the project team at smallworldofsinglishwords@gmail.com.`
         );
       });
 

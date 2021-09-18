@@ -16,18 +16,35 @@ export class Instruction extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    const numberOfWordsToGet = this.props.values.data.length;
+    const { previousStep } = this.props;
     /* Make a GET request to pull questions */
     axiosConfig
-      .get(questionsUrl)
+      .get(questionsUrl + "?limit=" + numberOfWordsToGet)
       .then((response) => {
         let question = response.data;
         console.log("Initiated GET request to server");
         console.log("Response: ");
         console.log(question);
-        this.props.handleWordPopulation(question);
+
+        /* Something is wrong if the number of words we requested from DB does not
+        match the number of words we get, or if DB returns null. => Redirect user to 
+        Introduction Page. */
+        if (question.length !== numberOfWordsToGet || question === null) {
+          previousStep();
+          alert(
+            `Database is down for maintenance. Please try again later. Alternatively, please contact the project team at smallworldofsinglishwords@gmail.com`
+          );
+        } else {
+          this.props.handleWordPopulation(question);
+        }
       })
       .catch((error) => {
         console.log(error);
+        previousStep();
+        alert(
+          `Database is down for maintenance. Please try again later. Alternatively, please contact the project team at smallworldofsinglishwords@gmail.com`
+        );
       });
   }
 
