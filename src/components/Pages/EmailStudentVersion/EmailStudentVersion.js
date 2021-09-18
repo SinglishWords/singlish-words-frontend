@@ -76,7 +76,12 @@ export class Email extends Component {
           <Grid item xs={12} className="content_grid">
             <Typography variant="body1" className="text">
               {formData.emailPage.secondParagraphDescription.description1}
-              <Link href="mailto:cynthia@nus.edu.sg">
+              <Link
+                className="site_link"
+                onClick={() =>
+                  window.open("mailto:singlishwords@nus.edu.sg", "_blank")
+                }
+              >
                 <b>
                   <u>{formData.emailPage.secondParagraphDescription.email}</u>
                 </b>
@@ -143,7 +148,15 @@ export class Email extends Component {
                 {formData.emailPage.fourthParagraphDescription.description1}
               </Typography>
               <Typography variant="body1" className="text">
-                <Link href="mailto:smallworldofsinglishwords@gmail.com">
+                <Link
+                  className="site_link"
+                  onClick={() =>
+                    window.open(
+                      "mailto:smallworldofsinglishwords@gmail.com",
+                      "_blank"
+                    )
+                  }
+                >
                   <b>
                     <u>{formData.emailPage.fourthParagraphDescription.email}</u>
                   </b>
@@ -157,7 +170,12 @@ export class Email extends Component {
                 </b>
               </Typography>
               <Typography variant="body1" className="text" display="inline">
-                <Link href="mailto:cynthia@nus.edu.sg">
+                <Link
+                  className="site_link"
+                  onClick={() =>
+                    window.open("mailto:cynthia@nus.edu.sg", "_blank")
+                  }
+                >
                   <b>
                     <u>
                       {formData.emailPage.fourthParagraphDescription.email2}
