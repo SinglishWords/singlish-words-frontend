@@ -24,11 +24,11 @@ const formData = {
     introduction4: `If you proceed, you consent to your demographic and linguistic data to be collected for research purposes. This data is completely anonymous, and never linked to your personal or contact information. Your anonymized data could be shared with other researchers for the purpose of scientific exploration.`,
     luckyDrawButtonDescription: `Lucky Draw T&C`,
     luckyDrawInformation: `The lucky draw will be active from 1st January 2022 to 30th June 2022. In order to participate,
-    please input your email address on the final page of the study. Your decision to participate is
-    voluntary. The chance that each participant has to win a voucher is proportional to the number
-    of times they had completed the study and entered their email address on the final page. 
-    Participants who have been identified as exhibiting bot-like behavior are not permitted to
-    participate in the lucky draw.
+    please email the unique code shown at the end of the survey to singlishwords@nus.edu.sg. 
+    Your decision to participate is voluntary. The chance that each participant has to win a 
+    voucher is proportional to the number of times they had completed the study and entered 
+    their email address on the final page. Participants who have been identified as 
+    exhibiting bot-like behavior are not permitted to participate in the lucky draw.
 
     Winners of the lucky draw will be randomly selected on the final day of the month. All
     participants will be notified of the outcome regardless of whether they had won or not. 
@@ -141,7 +141,7 @@ const formData = {
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
     },
     thirdParagraphHeader: `Lucky Draw Terms & Conditions`,
-    thirdParagraphDescription: `The lucky draw will be active from 1st January 2022 to 30th June 2022. In order to participate, please input your email address on the final page of the study. Your decision to participate is voluntary. The chance that each participant has to win a voucher is proportional to the number of times they had completed the study and entered their email address on the final page. Participants who have been identified as exhibiting bot-like behavior are not permitted to participate in the lucky draw.
+    thirdParagraphDescription: `The lucky draw will be active from 1st January 2022 to 30th June 2022. Your decision to participate is voluntary. The chance that each participant has to win a voucher is proportional to the number of times they had completed the study and entered their email address on the final page. Participants who have been identified as exhibiting bot-like behavior are not permitted to participate in the lucky draw.
 
     Winners of the lucky draw will be randomly selected on the final day of the month. All participants will be notified of the outcome regardless of whether they had won or not. 100 $5 Grab Vouchers will be awarded each month.
     
