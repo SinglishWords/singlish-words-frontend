@@ -33,7 +33,7 @@ export class Instruction extends Component {
         if (question.length !== numberOfWordsToGet || question === null) {
           previousStep();
           alert(
-            `Database is down for maintenance. Please try again later. Alternatively, please contact the project team at smallworldofsinglishwords@gmail.com`
+            `Database is down for maintenance. Please try again later. Alternatively, you can contact the project team at singlishwords@nus.edu.sg.`
           );
         } else {
           this.props.handleWordPopulation(question);
@@ -43,7 +43,7 @@ export class Instruction extends Component {
         console.log(error);
         previousStep();
         alert(
-          `Database is down for maintenance. Please try again later. Alternatively, please contact the project team at smallworldofsinglishwords@gmail.com`
+          `Database is down for maintenance. Please try again later. Alternatively, you can contact the project team at singlishwords@nus.edu.sg.`
         );
       });
   }
