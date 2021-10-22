@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'http://139.162.4.127/'
+    baseURL: 'https://singlishwords.nus.edu.sg/'
 });
 
 export const questionsUrl = "api/v1/questions";
