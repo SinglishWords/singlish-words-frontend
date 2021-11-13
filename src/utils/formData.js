@@ -153,15 +153,6 @@ const formData = {
     fourthParagraphDescription: `To get enough words and make the mental dictionary useful, we need many helping hands. If you want to help, just share the study with family and friends or come back some other time for new words! - `,
   },
 
-  /* Footer */
-  footer: {
-    top: `This project was inspired by the Small World of Words project. We thank the creators for giving us permission to expand this work into the words that make up the Singaporean lexicon.`,
-    bottom: `Small World of Words - `,
-    urlstring: ` https://smallworldofwords.org/`,
-    url: `https://smallworldofwords.org/`,
-  }
-};
-
 //  emailPage: {
 //    title: `Thank You!`,
 //    firstParagraphHeader: `What are we trying to do`,
@@ -207,6 +198,7 @@ const formData = {
     secondParagraphDescription: {
       description1: `Please email the following code to `,
       email: `singlishwords@nus.edu.sg`,
+      description2: ` to take part in the lucky draw.`,
       enterCode: `Your code is:`,
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
     },
