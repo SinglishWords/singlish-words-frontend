@@ -166,22 +166,19 @@ const formData = {
     secondParagraphDescription: {
       description1: `Please email the following code to `,
       email: `singlishwords@nus.edu.sg`,
-      description2: ` to take part in the lucky draw.`,
+//      description2: ` to take part in the lucky draw.`,
       enterCode: `Your code is:`,
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
     },
-    thirdParagraphHeader: `Get in touch`,
-    thirdParagraphDescription: {
-      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
-      email: `smallworldofsinglishwords@gmail.com`,
-      description2: `Principal Investigator: Dr. Cynthia Siew
-      Department of Psychology, National University of Singapore.
-      Email: `,
-      email2: `cynthia@nus.edu.sg`,
-    },
-
-    fourthParagraphHeader: `Share the study`,
-    fourthParagraphDescription: `To get enough words and make the mental dictionary useful, we need many helping hands. If you want to help, just share the study with family and friends or come back some other time for new words! - `,
+//    thirdParagraphHeader: `Get in touch`,
+//    thirdParagraphDescription: {
+//      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
+//      email: `smallworldofsinglishwords@gmail.com`,
+//      description2: `Principal Investigator: Dr. Cynthia Siew
+//      Department of Psychology, National University of Singapore.
+//      Email: `,
+//      email2: `cynthia@nus.edu.sg`,
+//    },
   },
 
   /* Footer */

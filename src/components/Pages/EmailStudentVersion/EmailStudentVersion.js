@@ -126,18 +126,6 @@ export class Email extends Component {
             </Typography>
           </Grid>
 
-          {/* Paragraph 3 - Lucky Draw T&C*/}
-          <Grid item xs={12}>
-            <Typography variant="h4" id="content">
-              {formData.emailPage.thirdParagraphHeader}
-            </Typography>
-            <Grid item xs={12} className="content_grid">
-              <Typography variant="body1" className="text">
-                {formData.emailPage.thirdParagraphDescription}
-              </Typography>
-            </Grid>
-          </Grid>
-
           {/* Paragraph 4 - Get in touch*/}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
