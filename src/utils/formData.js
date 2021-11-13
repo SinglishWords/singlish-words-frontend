@@ -145,7 +145,7 @@ const formData = {
     fourthParagraphHeader: `Get in touch`,
     fourthParagraphDescription: {
       description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
-      email: `smallworldofsinglishwords@gmail.com`,
+      email: `singlishwords@nus.edu.sg`,
       description2: `Principal Investigator: Dr. Cynthia Siew
       Department of Psychology, National University of Singapore.
       Email: `,
@@ -166,7 +166,7 @@ const formData = {
     secondParagraphDescription: {
       description1: `Please email the following code to `,
       email: `singlishwords@nus.edu.sg`,
-//      description2: ` to take part in the lucky draw.`,
+      description2: ` to be reimbursed.`,
       enterCode: `Your code is:`,
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
     },

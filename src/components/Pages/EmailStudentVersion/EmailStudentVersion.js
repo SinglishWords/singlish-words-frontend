@@ -75,7 +75,7 @@ export class Email extends Component {
 
           <Grid item xs={12} className="content_grid">
             <Typography variant="body1" className="text">
-              {formData.emailPage.secondParagraphDescription.description1}
+              {formData.emailPageStudent.secondParagraphDescription.description1}
               <Link
                 className="site_link"
                 onClick={() =>
@@ -83,14 +83,14 @@ export class Email extends Component {
                 }
               >
                 <b>
-                  <u>{formData.emailPage.secondParagraphDescription.email}</u>
+                  <u>{formData.emailPageStudent.secondParagraphDescription.email}</u>
                 </b>
               </Link>
-              {formData.emailPage.secondParagraphDescription.description2}
+              {formData.emailPageStudent.secondParagraphDescription.description2}
             </Typography>
 
             <Typography variant="body1" className="text code_text">
-              <b>{formData.emailPage.secondParagraphDescription.enterCode}</b>
+              <b>{formData.emailPageStudent.secondParagraphDescription.enterCode}</b>
             </Typography>
 
             <Grid item xs={12} className="uuid_container">
@@ -122,7 +122,7 @@ export class Email extends Component {
             </Grid>
 
             <Typography variant="body1" className="text">
-              {formData.emailPage.secondParagraphDescription.description3}
+              {formData.emailPageStudent.secondParagraphDescription.description3}
             </Typography>
           </Grid>
 
