@@ -207,7 +207,6 @@ const formData = {
     secondParagraphDescription: {
       description1: `Please email the following code to `,
       email: `singlishwords@nus.edu.sg`,
-      description2: ` to take part in the lucky draw.`,
       enterCode: `Your code is:`,
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
     },
