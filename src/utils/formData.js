@@ -132,22 +132,15 @@ const formData = {
     firstParagraphDescription: `The mental lexicon is the part of long-term memory where all of the words that you know and their meanings are stored. The connections between these words and concepts can be represented as a language network (akin to a “social network” of words) to model the large-scale structure of the mental lexicon.
 
     In this study, you were asked to respond with words that came to your mind upon the presentation of Singapore English words. These responses are called free associations, and we and other language researchers plan to use these free associations across thousands of words in Singapore English to study the structure of the Singaporean mental lexicon. Thank you for your help with this research!`,
-    secondParagraphHeader: `If you would like to take part in the lucky draw or receive updates about this research`,
+    secondParagraphHeader: `If you would like to be reimbursed or receive updates about this research`,
     secondParagraphDescription: {
       description1: `Please email the following code to `,
       email: `singlishwords@nus.edu.sg`,
-      description2: ` to take part in the lucky draw.`,
       enterCode: `Your code is:`,
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
     },
-    thirdParagraphHeader: `Lucky Draw Terms & Conditions`,
-    thirdParagraphDescription: `The lucky draw will be active from 1st January 2022 to 30th June 2022. Your decision to participate is voluntary. The chance that each participant has to win a voucher is proportional to the number of times they had completed the study and entered their email address on the final page. Participants who have been identified as exhibiting bot-like behavior are not permitted to participate in the lucky draw.
-
-    Winners of the lucky draw will be randomly selected on the final day of the month. All participants will be notified of the outcome regardless of whether they had won or not. 100 $5 Grab Vouchers will be awarded each month.
-    
-    After winners have been selected, the pool from which the lucky draw winners are selected is reset for the next month.`,
-    fourthParagraphHeader: `Get in touch`,
-    fourthParagraphDescription: {
+    thirdParagraphHeader: `Get in touch`,
+    thirdParagraphDescription: {
       description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
       email: `smallworldofsinglishwords@gmail.com`,
       description2: `Principal Investigator: Dr. Cynthia Siew
@@ -156,8 +149,8 @@ const formData = {
       email2: `cynthia@nus.edu.sg`,
     },
 
-    fifthParagraphHeader: `Share the study`,
-    fifthParagraphDescription: `To get enough words and make the mental dictionary useful, we need many helping hands. If you want to help, just share the study with family and friends or come back some other time for new words! - `,
+    fourthParagraphHeader: `Share the study`,
+    fourthParagraphDescription: `To get enough words and make the mental dictionary useful, we need many helping hands. If you want to help, just share the study with family and friends or come back some other time for new words! - `,
   },
 
   /* Email Page (Student) */
@@ -171,7 +164,6 @@ const formData = {
     secondParagraphDescription: {
       description1: `Please email the following code to `,
       email: `singlishwords@nus.edu.sg`,
-      description2: ` to take part in the lucky draw.`,
       enterCode: `Your code is:`,
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
     },
