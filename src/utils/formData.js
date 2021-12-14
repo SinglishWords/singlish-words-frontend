@@ -47,9 +47,9 @@ const formData = {
     
     If you are between 18 to 25 years old, and consider yourself to be a native speaker of Singapore English, you are eligible to take part in our study.
     
-    Upon completion of the study, if you are a current NUS student, you are eligible to be reimbursed $5 for your time by entering your `,
+    Upon completion of the study, if you are a current NUS student, you are eligible to be reimbursed $5 for your time by emailing us, with your `,
     introductionEmail: `NUS student email address`,
-    introduction2: ` in the last page. `,
+    introduction2: `, your participation code presented to you only upon completion of this study. `,
     introduction3: `Don’t say bojio!`,
     introduction4: `If you proceed, you consent to your demographic and linguistic data to be collected for research purposes. This data is completely anonymous, and never linked to your personal or contact information. Your anonymized data could be shared with other researchers for the purpose of scientific exploration.`,
     continueButtonDescription: `I want to participate!`,
