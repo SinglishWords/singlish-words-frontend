@@ -136,6 +136,9 @@ export class Form extends Component {
     temp.data.map(
       (element, index) => (element.question.word = wordArray[index].word)
     );
+    temp.data.map(
+      (element, index) => (element.question.id = wordArray[index].id)
+    );
     this.setState(temp);
   };
 
