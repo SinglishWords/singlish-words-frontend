@@ -143,7 +143,7 @@ export class Quiz extends Component {
                 variant="determinate"
                 value={
                   (100 / values.data.length) *
-                  values.data[wordIndex].question.id
+                  values.data[wordIndex].question.progress
                 }
               />
             </Grid>
