@@ -49,12 +49,12 @@ This project’s frontend consists of the following components in this hierarchy
 
 ```
 App
-	|_ Form
-			|_ Introduction
-			|_ UserDetails
-			|_ Instruction
-			|_ Quiz
-			|_ Email
+  |_Form
+      |_Introduction
+      |_UserDetails
+      |_Instruction
+      |_Quiz
+      |_Email
 ```
 
 ## Editing structure and layout
@@ -72,16 +72,16 @@ export class Introduction extends Component {
   render() {
     const { handleFieldChange, nextPage } = this.props;
     return (
-			...
-	    <h2 className="logoTxt titleTxt">
-				{formData.introductionPage.title}
+      ...
+      <h2 className="logoTxt titleTxt">
+        {formData.introductionPage.title}
       </h2>
       <h2 className="logoTxt subTxt">
-				{formData.introductionPage.subtitle}
-			</h2>
-			...
-		);
-	}
+        {formData.introductionPage.subtitle}
+      </h2>
+      ...
+    );
+  }
 }
 ```
 
@@ -99,8 +99,8 @@ const formData = {
     subtitle: `A Word Association Study`,
     introduction: `Welcome to this study on word associations ...`
     ...
-	},
-	/* All other pages */
+  },
+  /* All other pages */
 }
 ```
 
