@@ -43,6 +43,7 @@ const formData = {
     title: `A Small World of Singlish Words:`,
     subtitle: `A Word Association Study`,
     introduction: `Welcome to this study on word associations in Singapore English. Singaporeans have a unique vocabulary, consisting of Singlish words and phrases that originate from various local languages, on top of the Standard English vocabulary. As researchers studying language and memory we are interested in the nature and organization of this unique mental dictionary of Singapore English.
+    
     You can help us capture this knowledge by playing a simple game of word associations. This game takes no more than 30 minutes of your time. All you have to do is to respond with the first three words that come to your mind for a list of Singapore English words.
     
     If you are between 18 to 25 years old, and consider yourself to be a native speaker of Singapore English, you are eligible to take part in our study.
@@ -170,15 +171,15 @@ const formData = {
       enterCode: `Your code is:`,
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
     },
-//    thirdParagraphHeader: `Get in touch`,
-//    thirdParagraphDescription: {
-//      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
-//      email: `smallworldofsinglishwords@gmail.com`,
-//      description2: `Principal Investigator: Dr. Cynthia Siew
-//      Department of Psychology, National University of Singapore.
-//      Email: `,
-//      email2: `cynthia@nus.edu.sg`,
-//    },
+    //    thirdParagraphHeader: `Get in touch`,
+    //    thirdParagraphDescription: {
+    //      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
+    //      email: `smallworldofsinglishwords@gmail.com`,
+    //      description2: `Principal Investigator: Dr. Cynthia Siew
+    //      Department of Psychology, National University of Singapore.
+    //      Email: `,
+    //      email2: `cynthia@nus.edu.sg`,
+    //    },
   },
 
   /* Footer */
@@ -187,7 +188,7 @@ const formData = {
     bottom: `Small World of Words - `,
     urlstring: ` https://smallworldofwords.org/`,
     url: `https://smallworldofwords.org/`,
-  }
+  },
 };
 
 export default formData;

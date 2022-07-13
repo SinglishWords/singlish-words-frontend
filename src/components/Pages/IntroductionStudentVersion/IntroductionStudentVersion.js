@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import image from "../../../assets/images/NUS_Logo.png";
 import formData from "../../../utils/formData";
 import { currentDateTime } from "../../../utils/Logic/timeUtil";
@@ -64,13 +64,12 @@ export class IntroductionStudentVersion extends Component {
                   handleFieldChange("startTime", currentDateTime());
                   handleFieldChange("uuid", "swow-" + uuidv4());
                   nextPage(e);
-                  
                 }}
               />
             </Grid>
           </Grid>
         </Grid>
-        <Footer/>
+        <Footer />
       </Grid>
     );
   }

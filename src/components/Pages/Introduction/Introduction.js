@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import image from "../../../assets/images/NUS_Logo.png";
 import formData from "../../../utils/formData";
 import { currentDateTime } from "../../../utils/Logic/timeUtil";
@@ -10,7 +10,6 @@ import PopoverButton from "../../Helpers/PopoverButton/PopoverButton";
 import "./Introduction.css";
 
 export class Introduction extends Component {
-
   render() {
     const { handleFieldChange, nextPage } = this.props;
 
@@ -78,7 +77,7 @@ export class Introduction extends Component {
             </Grid>
           </Grid>
         </Grid>
-        <Footer/>
+        <Footer />
       </Grid>
     );
   }
