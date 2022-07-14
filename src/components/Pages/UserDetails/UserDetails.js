@@ -5,7 +5,7 @@ import {
   ListItem,
   ListItemText,
   List,
-} from "@material-ui/core";
+} from "@mui/material";
 import React, { Component } from "react";
 import formData from "../../../utils/formData";
 import {
@@ -59,7 +59,11 @@ export class UserDetails extends Component {
             {/* Age */}
             <Dropdown
               className="dropdown"
-              inputLabel={formData.informationAboutYouPage.ageInstruction}
+              inputLabel={
+                values.age === ""
+                  ? formData.informationAboutYouPage.ageInstruction
+                  : ""
+              }
               value={values.age}
               name={"age"}
               onChange={handleAgeChange}
@@ -69,7 +73,11 @@ export class UserDetails extends Component {
             {/* Gender */}
             <Dropdown
               className="dropdown"
-              inputLabel={formData.informationAboutYouPage.genderInstruction}
+              inputLabel={
+                values.gender === ""
+                  ? formData.informationAboutYouPage.genderInstruction
+                  : ""
+              }
               value={values.gender}
               name={"gender"}
               onChange={handleChange}
@@ -79,7 +87,11 @@ export class UserDetails extends Component {
             {/* Education */}
             <Dropdown
               className="dropdown"
-              inputLabel={formData.informationAboutYouPage.educationInstruction}
+              inputLabel={
+                values.education === ""
+                  ? formData.informationAboutYouPage.educationInstruction
+                  : ""
+              }
               value={values.education}
               name={"education"}
               onChange={handleChange}
@@ -90,7 +102,9 @@ export class UserDetails extends Component {
             <Dropdown
               className="dropdown"
               inputLabel={
-                formData.informationAboutYouPage.birthCountryInstruction
+                values.countryOfBirth === ""
+                  ? formData.informationAboutYouPage.birthCountryInstruction
+                  : ""
               }
               value={values.countryOfBirth}
               name={"countryOfBirth"}
@@ -103,7 +117,9 @@ export class UserDetails extends Component {
               <Dropdown
                 className="dropdown"
                 inputLabel={
-                  formData.informationAboutYouPage.ethnicityInstruction
+                  values.ethnicity === ""
+                    ? formData.informationAboutYouPage.ethnicityInstruction
+                    : ""
                 }
                 value={values.ethnicity}
                 name={"ethnicity"}
@@ -116,7 +132,9 @@ export class UserDetails extends Component {
             <Dropdown
               className="dropdown"
               inputLabel={
-                formData.informationAboutYouPage.residenceCountryInstruction
+                values.countryOfResidence === ""
+                  ? formData.informationAboutYouPage.residenceCountryInstruction
+                  : ""
               }
               value={values.countryOfResidence}
               name={"countryOfResidence"}
@@ -128,7 +146,9 @@ export class UserDetails extends Component {
             <Dropdown
               className="dropdown"
               inputLabel={
-                formData.informationAboutYouPage.nativeSpeakerInstruction
+                values.isNative === ""
+                  ? formData.informationAboutYouPage.nativeSpeakerInstruction
+                  : ""
               }
               value={values.isNative}
               name={"isNative"}
@@ -146,7 +166,10 @@ export class UserDetails extends Component {
                 <Dropdown
                   className="dropdown"
                   inputLabel={
-                    formData.informationAboutYouPage.otherLanguagesInstruction
+                    values.languagesSpoken.length === 0
+                      ? formData.informationAboutYouPage
+                          .otherLanguagesInstruction
+                      : ""
                   }
                   value={values.languagesSpoken}
                   name={"languagesSpoken"}

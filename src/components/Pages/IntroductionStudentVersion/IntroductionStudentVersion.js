@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@mui/material";
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 import image from "../../../assets/images/NUS_Logo.png";

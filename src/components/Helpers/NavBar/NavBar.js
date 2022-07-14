@@ -1,5 +1,5 @@
 import React from "react";
-import MenuIcon from "@material-ui/icons/Menu";
+import MenuIcon from '@mui/icons-material/Menu';
 import "./NavBar.css";
 
 import {
@@ -12,7 +12,7 @@ import {
   Menu,
   Container,
   MenuItem,
-} from "@material-ui/core";
+} from "@mui/material";
 
 const pages = ["Home", "Explore", "Visualise"];
 

@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, Select } from "@material-ui/core";
+import { FormControl, InputLabel, Select } from "@mui/material";
 import React, { Component } from "react";
 import "./Dropdown.css";
 
@@ -6,7 +6,16 @@ export class Dropdown extends Component {
   render() {
     return (
       <FormControl
-        required={this.props.name === "languagesSpoken" ? false : true}
+        /* The 'required' props decides whether an asterisk (*) will appear in the inputLabel.
+        If the field is languagesSpoken, then it is not compulsory. Hence no asterisk required in inputLabel.
+        The input label and the associated asterisk should both disappear once a value is input into the field
+        If the inputLabel is blank, then it suggests that there is already a value input into the field.
+        Hence, we check for this.props.inputLabel === "" and remove the asterisk if its true */
+        required={
+          this.props.name === "languagesSpoken" || this.props.inputLabel === ""
+            ? false
+            : true
+        }
         id="dropdown"
       >
         <InputLabel>{this.props.inputLabel}</InputLabel>

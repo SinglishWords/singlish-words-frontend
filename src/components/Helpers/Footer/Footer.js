@@ -1,4 +1,4 @@
-import { Grid, Link, Typography } from "@material-ui/core";
+import { Grid, Link, Typography } from "@mui/material";
 import React, { Component } from "react";
 import formData from "../../../utils/formData";
 import "./Footer.css";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Grid, Typography, Popover } from "@material-ui/core";
+import { Button, Grid, Typography, Popover } from "@mui/material";
 import "./PopoverButton.css";
 
 /* Taken directly from MaterialUI API. */
@@ -24,7 +24,7 @@ export default function PopoverButton({
   return (
     <Grid item className="container">
       <Button
-        color="primary"
+        className="popoverbutton"
         aria-describedby={id}
         variant="contained"
         onClick={handleClick}

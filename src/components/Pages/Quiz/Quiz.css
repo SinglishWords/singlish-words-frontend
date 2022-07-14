@@ -23,9 +23,13 @@
   text-align: center;
 }
 
-.container .textField > div {
+.container .textField .MuiTextField-root {
   width: 100%;
   margin-bottom: 50px;
+}
+
+.container .textField .MuiTextField-root .MuiInputLabel-a_Mui-focused {
+  color: #181a86
 }
 
 .container .experiment_container .progress_container {
@@ -35,6 +39,10 @@
 
 .container .experiment_container .progress_container .progress_text {
   color: #394b58;
+}
+
+.container .experiment_container .progress_container .progress .MuiLinearProgress-bar {
+  background-color: #181a86
 }
 
 .container .experiment_container .button_container .MuiButtonBase-root {

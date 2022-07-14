@@ -1,4 +1,4 @@
-import { Grid, LinearProgress, TextField, Typography } from "@material-ui/core";
+import { Grid, LinearProgress, TextField, Typography } from "@mui/material";
 import React, { Component } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import formData from "../../../utils/formData";
@@ -141,25 +141,25 @@ export class Quiz extends Component {
               <LinearProgress
                 className="progress"
                 variant="determinate"
-                value={
-                  (100 / values.data.length) * wordIndex
-                }
+                value={(100 / values.data.length) * wordIndex}
               />
             </Grid>
           </Grid>
 
           {/* Recaptcha that randomly appears one time in quiz page .
           Show Recaptcha once at random if it has not been shown. */}
-          {showRecaptcha && !recaptchaAlreadyShown ? (
+          {/* To change site key once actual site is up.
+                Use smallworldofsinglishwords@gmail.com */}
+          {/* To uncomment */}
+          {/* {showRecaptcha && !recaptchaAlreadyShown ? (
             <Grid className="recaptcha" item xs={12}>
               <ReCAPTCHA
-                /* To change site key once actual site is up.
-                Use smallworldofsinglishwords@gmail.com */
+                
                 sitekey="6Ldy0tQbAAAAANL-FvKgyzKBeWcGSaER4cd9jta0"
                 onChange={this.handleRecaptchaChange}
               />
             </Grid>
-          ) : null}
+          ) : null} */}
 
           {/* Continue Button */}
           {/* handleTimeOnPage tracks how long the user has been on the page*/}
@@ -186,11 +186,9 @@ export class Quiz extends Component {
                   nextPage(e);
                 }}
                 buttonRef={this.continueButton}
-                disabled={
-                  showRecaptcha && !recaptchaAlreadyShown
-                    ? !isVerified
-                    : false
-                }
+                // disabled={
+                //   showRecaptcha && !recaptchaAlreadyShown ? !isVerified : false
+                // } {/* To uncomment */}
               />
             </Grid>
           </Grid>

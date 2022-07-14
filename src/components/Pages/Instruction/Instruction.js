@@ -1,4 +1,4 @@
-import { Divider, Grid, Typography } from "@material-ui/core";
+import { Divider, Grid, Typography } from "@mui/material";
 import React, { Component } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import axiosConfig, { questionsUrl } from "../../../utils/Api/axiosConfig";
@@ -31,7 +31,8 @@ export class Instruction extends Component {
         match the number of words we get, or if DB returns null. => Redirect user to 
         Introduction Page. */
         if (question.length !== numberOfWordsToGet || question === null) {
-          previousStep();
+          // To uncomment
+          // previousStep();
           alert(
             `Database is down for maintenance. Please try again later. Alternatively, you can contact the project team at singlishwords@nus.edu.sg.`
           );
@@ -41,7 +42,8 @@ export class Instruction extends Component {
       })
       .catch((error) => {
         console.log(error);
-        previousStep();
+        // To uncomment
+        // previousStep();
         alert(
           `Database is down for maintenance. Please try again later. Alternatively, you can contact the project team at singlishwords@nus.edu.sg.`
         );
@@ -152,12 +154,13 @@ export class Instruction extends Component {
           {/* Continue Button*/}
           <Grid container className="continue_container">
             <Grid className="recaptcha" item xs={12}>
-              <ReCAPTCHA
-                /* To change site key once actual site is up.
-                Use smallworldofsinglishwords@gmail.com */
+              {/* To uncomment */}
+              {/* To change site key once actual site is up.
+                Use smallworldofsinglishwords@gmail.com */}
+              {/* <ReCAPTCHA
                 sitekey="6Ldy0tQbAAAAANL-FvKgyzKBeWcGSaER4cd9jta0"
                 onChange={this.handleRecaptchaChange}
-              />
+              /> */}
             </Grid>
             <Grid item xs={12} className="continue_button_container">
               <FormButton
@@ -166,7 +169,7 @@ export class Instruction extends Component {
                     .buttonDescription
                 }
                 onClick={nextPage}
-                disabled={!isVerified}
+                // disabled={!isVerified} {/* To uncomment */}
               />
             </Grid>
           </Grid>

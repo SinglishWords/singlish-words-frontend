@@ -1,4 +1,4 @@
-import { Grid, Link, Typography } from "@material-ui/core";
+import { Grid, Link, Typography } from "@mui/material";
 import React, { Component } from "react";
 import axiosConfig, { answersUrl } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
