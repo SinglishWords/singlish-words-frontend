@@ -1,5 +1,5 @@
 /* Backend to exclude survey participant from lucky draw if timeOnPage is very short
-formFields is used on Form.js so as to set a state for the Form to collect data */
+formFields is used on Form.js to set a state for Form to collect data */
 
 const formFields = {
   step: 1,

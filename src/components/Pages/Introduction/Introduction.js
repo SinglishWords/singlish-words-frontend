@@ -8,6 +8,7 @@ import Footer from "../../Helpers/Footer/Footer";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import PopoverButton from "../../Helpers/PopoverButton/PopoverButton";
 import "./Introduction.css";
+import NavBar from "../../Helpers/NavBar/NavBar";
 
 export class Introduction extends Component {
   render() {
@@ -15,6 +16,7 @@ export class Introduction extends Component {
 
     return (
       <Grid container>
+        <NavBar />
         <Grid item className="container">
           {/* WAS title*/}
           <Grid container className="row">

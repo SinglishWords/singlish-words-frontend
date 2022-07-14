@@ -15,7 +15,7 @@ import {
   MenuItem,
 } from "@mui/material";
 
-const pages = ["Home", "Explore", "Visualise"];
+const pages = ["Participate", "Explore", "Visualise"];
 
 /* Taken directly from MaterialUI API. */
 export default function NavBar() {

@@ -7,6 +7,7 @@ import { currentDateTime } from "../../../utils/Logic/timeUtil";
 import Footer from "../../Helpers/Footer/Footer";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import "./IntroductionStudentVersion.css";
+import NavBar from "../../Helpers/NavBar/NavBar";
 
 export class IntroductionStudentVersion extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export class IntroductionStudentVersion extends Component {
 
     return (
       <Grid container>
+        <NavBar />
         <Grid item className="container">
           {/* WAS title*/}
           <Grid container className="row">

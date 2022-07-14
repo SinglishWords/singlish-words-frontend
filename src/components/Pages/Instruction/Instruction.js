@@ -1,9 +1,9 @@
 import { Divider, Grid, Typography } from "@mui/material";
 import React, { Component } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 import axiosConfig, { questionsUrl } from "../../../utils/Api/axiosConfig";
 import formData from "../../../utils/formData";
-import { recaptchaFields } from "../../../utils/formFields";
+// import { recaptchaFields } from "../../../utils/formFields";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
 import "./Instruction.css";
@@ -11,7 +11,7 @@ import "./Instruction.css";
 export class Instruction extends Component {
   constructor(props) {
     super(props);
-    this.state = recaptchaFields;
+    // this.state = recaptchaFields;
   }
 
   componentDidMount() {
@@ -56,7 +56,7 @@ export class Instruction extends Component {
 
   render() {
     const { nextPage } = this.props;
-    const { isVerified } = this.state;
+    // const { isVerified } = this.state;
 
     return (
       <Grid container>
@@ -153,15 +153,14 @@ export class Instruction extends Component {
 
           {/* Continue Button*/}
           <Grid container className="continue_container">
-            <Grid className="recaptcha" item xs={12}>
-              {/* To uncomment */}
+            {/* <Grid className="recaptcha" item xs={12}> */}
               {/* To change site key once actual site is up.
                 Use smallworldofsinglishwords@gmail.com */}
               {/* <ReCAPTCHA
                 sitekey="6Ldy0tQbAAAAANL-FvKgyzKBeWcGSaER4cd9jta0"
                 onChange={this.handleRecaptchaChange}
               /> */}
-            </Grid>
+            {/* </Grid> */}
             <Grid item xs={12} className="continue_button_container">
               <FormButton
                 buttonDescription={
@@ -169,7 +168,7 @@ export class Instruction extends Component {
                     .buttonDescription
                 }
                 onClick={nextPage}
-                // disabled={!isVerified} {/* To uncomment */}
+                // disabled={!isVerified}
               />
             </Grid>
           </Grid>
