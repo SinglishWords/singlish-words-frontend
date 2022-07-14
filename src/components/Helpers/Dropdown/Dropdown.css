@@ -2,15 +2,23 @@
 stylings */
 #dropdown {
   width: 100%;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#dropdown > label {
+  transform: none;
+  margin-top: 16px;
+  margin-left: 14px;
 }
 
 /* Mobile support */
 @media only screen and (max-width: 600px) {
-  #dropdown > div {
-    margin-top: 30px;
-  }
-  #dropdown > div > select {
-    height: 50px;
+
+  #dropdown > label {
+    transform: none;
+    white-space: break-spaces;
+    margin-left: 15px;
+    font-size: 15px;
   }
 }

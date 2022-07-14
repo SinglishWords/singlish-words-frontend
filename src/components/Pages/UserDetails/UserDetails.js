@@ -158,7 +158,7 @@ export class UserDetails extends Component {
 
             {/* Languages Spoken */}
             <Grid container className="languagesContainer">
-              <Grid item xs={6}>
+              <Grid item xs={8}>
                 {/* If "The `value` prop supplied to <select> must be a scalar value if `multiple` is false."
                 error appears in console, just ignore it. Basically state should not be array if Dropdown
                 component is used. However, Material-UI Multi-Select is buggy. Hence I used a normal
@@ -181,7 +181,7 @@ export class UserDetails extends Component {
                   onClick={handleLanguageReset}
                 ></FormButton>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <Typography className="languagesChosenHeader" variant="button">
                   Languages Chosen
                 </Typography>

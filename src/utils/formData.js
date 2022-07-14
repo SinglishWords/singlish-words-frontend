@@ -129,6 +129,7 @@ const formData = {
     title: `Thank You!`,
     firstParagraphHeader: `What are we trying to do`,
     firstParagraphDescription: `The mental lexicon is the part of long-term memory where all of the words that you know and their meanings are stored. The connections between these words and concepts can be represented as a language network (akin to a “social network” of words) to model the large-scale structure of the mental lexicon.
+    
     In this study, you were asked to respond with words that came to your mind upon the presentation of Singapore English words. These responses are called free associations, and we and other language researchers plan to use these free associations across thousands of words in Singapore English to study the structure of the Singaporean mental lexicon. Thank you for your help with this research!`,
     secondParagraphHeader: `If you would like to take part in the lucky draw or receive updates about this research`,
     secondParagraphDescription: {
@@ -162,6 +163,7 @@ const formData = {
     title: `Thank You!`,
     firstParagraphHeader: `What are we trying to do`,
     firstParagraphDescription: `The mental lexicon is the part of long-term memory where all of the words that you know and their meanings are stored. The connections between these words and concepts can be represented as a language network (akin to a “social network” of words) to model the large-scale structure of the mental lexicon.
+    
     In this study, you were asked to respond with words that came to your mind upon the presentation of Singapore English words. These responses are called free associations, and we and other language researchers plan to use these free associations across thousands of words in Singapore English to study the structure of the Singaporean mental lexicon. Thank you for your help with this research!`,
     secondParagraphHeader: `If you would like to be reimbursed or receive updates about this research`,
     secondParagraphDescription: {

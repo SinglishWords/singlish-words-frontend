@@ -27,7 +27,7 @@
 
 .profileContainer .languagesChosenHeader {
   color: #4b5f6d;
-  margin-left: 120px;
+  margin-left: 70px;
 }
 
 .profileContainer .languagesChosenContainer {
@@ -57,6 +57,7 @@
 @media only screen and (max-width: 600px) {
   .profileContainer .languagesChosenHeader {
     margin-left: 16px;
+    font-size: 11px;
 
   }
 

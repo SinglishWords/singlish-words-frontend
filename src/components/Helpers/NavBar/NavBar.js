@@ -1,6 +1,7 @@
 import React from "react";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 import {
   AppBar,
@@ -10,7 +11,7 @@ import {
   IconButton,
   Typography,
   Menu,
-  Container,
+  Grid,
   MenuItem,
 } from "@mui/material";
 
@@ -29,11 +30,11 @@ export default function NavBar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <AppBar position="static" className="appbar">
+      <Grid container className="container">
+        <Toolbar variant="dense" className="toolbar">
           {/* Side Navigation Panel */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box className="side_nav_panel">
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -58,32 +59,31 @@ export default function NavBar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page} onClick={handleCloseNavMenu} className="menu_item">
+                  <Typography textAlign="center">
+                    <Link to={page === "Home" ? "/" : `/${page}`}>{page}</Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
           {/* App Navigation Bar */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box className="default_header">
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                className="MuiButton-root"
+                className="button"
               >
-                {page}
+                <Link to={page === "Home" ? "/" : `/${page}`}>{page}</Link>
               </Button>
             ))}
           </Box>
         </Toolbar>
-      </Container>
+      </Grid>
     </AppBar>
   );
 }

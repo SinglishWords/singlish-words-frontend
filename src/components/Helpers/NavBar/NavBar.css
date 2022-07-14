@@ -1,3 +1,42 @@
-.MuiButton-root {
-    color: white;
+.App .appbar {
+    background-color: #181a86
+}
+
+.appbar .button > a {
+    color:white;
+    font-weight: bold;
+    margin-right: 5px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+#menu-appbar .MuiPaper-root > ul > li > p > a{
+    text-decoration: none;
+    color: black;
+}
+
+.appbar .default_header {
+    display: flex;
+}
+
+.appbar .side_nav_panel {
+    display: none;
+}
+
+.appbar #menu-appbar .side_nav_panel .menu_item {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .appbar .default_header {
+        display: none;
+    }
+    .appbar .side_nav_panel {
+        display: block;
+    }
+
+    .appbar .toolbar {
+        margin-left: auto;
+        margin-right: 0;
+    }
 }
