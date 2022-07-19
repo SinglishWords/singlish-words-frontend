@@ -1,5 +1,5 @@
 .App .appbar {
-    background-color: #003062
+    background-color: var(--blue)
 }
 
 .appbar .button > a {
@@ -9,6 +9,10 @@
     margin-right: 5px;
     font-size: 14px;
     text-decoration: none;
+}
+
+.appbar .button > a:hover {
+    color: var(--orange);
 }
 
 #menu-appbar .MuiPaper-root > ul > li > p > a{
@@ -39,5 +43,9 @@
     .appbar .toolbar {
         margin-left: auto;
         margin-right: 0;
+    }
+
+    .appbar .side_nav_panel .icon_button:hover {
+        color: var(--orange);
     }
 }

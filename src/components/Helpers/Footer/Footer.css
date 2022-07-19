@@ -1,6 +1,6 @@
 .footer {
   margin-top: 100px;
-  background-color: #003062;
+  background-color: var(--blue);
   min-height: 150px;
 }
 
@@ -29,6 +29,9 @@
   cursor: pointer;
 }
 
+.site_link:hover {
+  color: var(--orange);
+}
 
 /* Mobile support */
 @media only screen and (max-width: 600px) {

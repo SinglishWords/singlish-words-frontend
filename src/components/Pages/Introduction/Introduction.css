@@ -17,7 +17,7 @@
 }
 
 .container .row .title .logoTxt {
-  color: #003062;
+  color: var(--blue);
   font-weight: 600;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .container .introduction .introduction_grid .lucky_draw_text {
-  color: #003062;
+  color: var(--blue);
   display: inline;
 }
 

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Card, CardContent, Grid, TextField, IconButton } from "@mui/material";
-import ShuffleIcon from "@mui/icons-material/Shuffle";
-import DownloadIcon from "@mui/icons-material/Download";
+import { Card, CardContent, Grid } from "@mui/material";
 import NavBar from "../../Helpers/NavBar/NavBar";
+import ExpansionPanel from "../../Helpers/ExpansionPanel/ExpansionPanel";
+import SearchBar from "../../Helpers/SearchBar/SearchBar";
 import "./Explore.css";
 
 export class Explore extends Component {
@@ -15,18 +15,12 @@ export class Explore extends Component {
         <Grid item xs={12} className="card_container">
           <Card elevation={3} className="card">
             <CardContent>
-              <Grid item xs={12} className="inputs_container">
-                <Grid item xs={6}>
-                  <TextField label="Search" variant="outlined" />
-                </Grid>
-                <Grid item xs={6} className="btn_container">
-                  <IconButton className="download_btn">
-                    <DownloadIcon />
-                  </IconButton>
-                  <IconButton className="shuffle_btn">
-                    <ShuffleIcon />
-                  </IconButton>
-                </Grid>
+              <SearchBar />
+              <Grid item xs={12} className="expansion_panel_container">
+                <ExpansionPanel title="Forward Associations" />
+              </Grid>
+              <Grid item xs={12} className="expansion_panel_container">
+                <ExpansionPanel title="Backward Associations" />
               </Grid>
             </CardContent>
           </Card>

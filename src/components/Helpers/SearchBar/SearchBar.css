@@ -1,0 +1,35 @@
+.search_bar {
+    display: flex;
+}
+
+.search_bar .btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.search_bar .download_btn {
+    border-radius: 0px;
+    width: 60px;
+}
+
+.search_bar .download_btn > svg {
+    color: var(--blue);
+}
+
+.search_bar .download_btn > svg:hover {
+    color: var(--orange);
+}
+
+.search_bar .shuffle_btn {
+    border-radius: 0px;
+    width: 60px;
+}
+
+.search_bar .shuffle_btn > svg {
+    color: var(--blue);
+}
+
+.search_bar .shuffle_btn > svg:hover {
+    color: var(--orange);
+}

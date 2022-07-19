@@ -1,5 +1,5 @@
 .container .popoverbutton {
-  background-color: #003062;
+  background-color: var(--blue);
   font-weight: bold;
 }
 

@@ -42,6 +42,7 @@ export default function NavBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              className="icon_button"
             >
               <MenuIcon />
             </IconButton>
@@ -61,7 +62,11 @@ export default function NavBar() {
               onClose={handleCloseNavMenu}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} className="menu_item">
+                <MenuItem
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  className="menu_item"
+                >
                   <Typography textAlign="center">
                     <Link to={page === "Home" ? "/" : `/${page}`}>{page}</Link>
                   </Typography>

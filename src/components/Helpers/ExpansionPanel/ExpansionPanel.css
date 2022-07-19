@@ -1,0 +1,14 @@
+.panel_container {
+    border: 1px solid rgba(0, 0, 0, 0.23);
+}
+
+.panel_container > div > div:first-of-type {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.23);
+    color: white;
+    background-color: var(--blue);
+}
+
+.panel_container > div > div:first-of-type:hover {
+    color: white;
+    background-color: var(--orange);
+}

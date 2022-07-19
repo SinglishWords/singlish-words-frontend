@@ -29,7 +29,7 @@
 }
 
 .container .textField .MuiTextField-root .MuiInputLabel-a_Mui-focused {
-  color: #003062
+  color: var(--blue);
 }
 
 .container .experiment_container .progress_container {
@@ -42,7 +42,7 @@
 }
 
 .container .experiment_container .progress_container .progress .MuiLinearProgress-bar {
-  background-color: #003062
+  background-color: var(--blue)
 }
 
 .container .experiment_container .button_container .MuiButtonBase-root {
