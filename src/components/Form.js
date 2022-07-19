@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import formFields from "../utils/formFields";
-// import Email from "./Pages/Email/Email";
-import EmailStudentVersion from "./Pages/EmailStudentVersion/EmailStudentVersion";
+import Email from "./Pages/Email/Email";
+// import EmailStudentVersion from "./Pages/EmailStudentVersion/EmailStudentVersion";
 import Instruction from "./Pages/Instruction/Instruction";
-// import Introduction from "./Pages/Introduction/Introduction";
-import IntroductionStudentVersion from "./Pages/IntroductionStudentVersion/IntroductionStudentVersion";
+import Introduction from "./Pages/Introduction/Introduction";
+// import IntroductionStudentVersion from "./Pages/IntroductionStudentVersion/IntroductionStudentVersion";
 import Quiz from "./Pages/Quiz/Quiz";
 import UserDetails from "./Pages/UserDetails/UserDetails";
 
@@ -200,15 +200,15 @@ export class Form extends Component {
         return <h1>Something went wrong!</h1>;
       case 1:
         return (
-          // <Introduction
-          //   nextPage={this.nextPage}
-          //   handleChange={this.handleChange}
-          //   handleFieldChange={this.handleFieldChange}
+           <Introduction
+             nextPage={this.nextPage}
+             handleChange={this.handleChange}
+             handleFieldChange={this.handleFieldChange}
+           />
+          // <IntroductionStudentVersion
+          //  nextPage={this.nextPage}
+          //  handleFieldChange={this.handleFieldChange}
           // />
-          <IntroductionStudentVersion
-            nextPage={this.nextPage}
-            handleFieldChange={this.handleFieldChange}
-          />
         );
       case 2:
         return (
@@ -265,14 +265,14 @@ export class Form extends Component {
         );
       case 24:
         return (
-          // <Email
-          //   formState={this.state}
-          //   removeStateFromLocalStorage={this.removeStateFromLocalStorage}
+           <Email
+             formState={this.state}
+             removeStateFromLocalStorage={this.removeStateFromLocalStorage}
+           />
+          // <EmailStudentVersion
+          //  formState={this.state}
+          //  removeStateFromLocalStorage={this.removeStateFromLocalStorage}
           // />
-          <EmailStudentVersion
-            formState={this.state}
-            removeStateFromLocalStorage={this.removeStateFromLocalStorage}
-          />
         );
     }
   }
