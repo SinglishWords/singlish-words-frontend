@@ -1,0 +1,21 @@
+.explore_page_container .card_container {
+    margin-top: 50px;
+}
+
+.explore_page_container .card_container .card {
+    border-radius: 7px;
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.explore_page_container .card_container .inputs_container {
+    display: flex;
+}
+
+.explore_page_container .card_container .inputs_container .btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
