@@ -4,7 +4,6 @@ import {
   AccordionDetails,
   Typography,
   Grid,
-  Box,
 } from "@mui/material";
 import React, { Component } from "react";
 import "./ExpansionPanel.css";

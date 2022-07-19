@@ -13,7 +13,7 @@ export class Explore extends Component {
           <NavBar />
         </Grid>
         <Grid item xs={12} className="card_container">
-          <Card elevation={3} className="card">
+          <Card elevation={2} className="card">
             <CardContent>
               <SearchBar />
               <Grid item xs={12} className="expansion_panel_container">
