@@ -2,7 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 import image from "../../../assets/images/NUS_Logo.png";
-import formData from "../../../utils/formData";
+import appData from "../../../utils/appData";
 import { currentDateTime } from "../../../utils/Logic/timeUtil";
 import Footer from "../../Helpers/Footer/Footer";
 import FormButton from "../../Helpers/FormButton/FormButton";
@@ -29,10 +29,10 @@ export class IntroductionStudentVersion extends Component {
             </Grid>
             <Grid item className="title" xs={8}>
               <h2 className="logoTxt titleTxt">
-                {formData.introductionPageStudent.title}
+                {appData.introductionPageStudent.title}
               </h2>
               <h2 className="logoTxt subTxt">
-                {formData.introductionPageStudent.subtitle}
+                {appData.introductionPageStudent.subtitle}
               </h2>
             </Grid>
           </Grid>
@@ -41,15 +41,15 @@ export class IntroductionStudentVersion extends Component {
           <Grid container className="introduction" justify="center">
             <Grid item className="introduction_grid">
               <Typography variant="body2" className="text" component={"div"}>
-                {formData.introductionPageStudent.introduction}
+                {appData.introductionPageStudent.introduction}
                 <p className="email_text">
-                  <b>{formData.introductionPageStudent.introductionEmail}</b>
+                  <b>{appData.introductionPageStudent.introductionEmail}</b>
                 </p>
-                {formData.introductionPageStudent.introduction2}
-                <i>{formData.introductionPageStudent.introduction3}</i>
+                {appData.introductionPageStudent.introduction2}
+                <i>{appData.introductionPageStudent.introduction3}</i>
                 <br />
                 <br />
-                {formData.introductionPageStudent.introduction4}
+                {appData.introductionPageStudent.introduction4}
               </Typography>
             </Grid>
           </Grid>
@@ -60,7 +60,7 @@ export class IntroductionStudentVersion extends Component {
             <Grid xs={6} item className="continue_button_container">
               <FormButton
                 buttonDescription={
-                  formData.introductionPageStudent.continueButtonDescription
+                  appData.introductionPageStudent.continueButtonDescription
                 }
                 onClick={(e) => {
                   handleFieldChange("startTime", currentDateTime());

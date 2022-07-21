@@ -6,7 +6,7 @@ import genderList from "./Data/genderList";
 import languagesSpokenList from "./Data/languagesSpokenList";
 import yesNoList from "./Data/yesNoList";
 
-const formData = {
+const appData = {
   /* Introduction Page */
   introductionPage: {
     title: `A Small World of Singlish Words:`,
@@ -193,4 +193,4 @@ const formData = {
   },
 };
 
-export default formData;
+export default appData;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import formFields from "../utils/formFields";
+import formState from "../utils/state";
 import Email from "./Pages/Email/Email";
 // import EmailStudentVersion from "./Pages/EmailStudentVersion/EmailStudentVersion";
 import Instruction from "./Pages/Instruction/Instruction";
@@ -13,21 +13,21 @@ export class Form extends Component {
     super(props);
     /* Make a copy of the state so that step number can be reset once
     we hit the Email page */
-    this.stateCopy = JSON.parse(JSON.stringify(formFields));
+    this.stateCopy = JSON.parse(JSON.stringify(formState));
     this.stateReset = false;
     /* If there is a state in the local storage, use it. This handles
     cases where the user refreshes the page. It ensures that the survey data
     is not lost */
     this.state =
-      JSON.parse(window.localStorage.getItem("formFields")) || formFields;
+      JSON.parse(window.localStorage.getItem("formState")) || formState;
   }
 
   saveStateToLocalStorage() {
-    window.localStorage.setItem("formFields", JSON.stringify(this.state));
+    window.localStorage.setItem("formState", JSON.stringify(this.state));
   }
 
   removeStateFromLocalStorage = () => {
-    window.localStorage.removeItem("formFields");
+    window.localStorage.removeItem("formState");
     window.removeEventListener(
       "beforeunload",
       this.saveStateToLocalStorage.bind(this)
@@ -200,11 +200,11 @@ export class Form extends Component {
         return <h1>Something went wrong!</h1>;
       case 1:
         return (
-           <Introduction
-             nextPage={this.nextPage}
-             handleChange={this.handleChange}
-             handleFieldChange={this.handleFieldChange}
-           />
+          <Introduction
+            nextPage={this.nextPage}
+            handleChange={this.handleChange}
+            handleFieldChange={this.handleFieldChange}
+          />
           // <IntroductionStudentVersion
           //  nextPage={this.nextPage}
           //  handleFieldChange={this.handleFieldChange}
@@ -265,10 +265,10 @@ export class Form extends Component {
         );
       case 24:
         return (
-           <Email
-             formState={this.state}
-             removeStateFromLocalStorage={this.removeStateFromLocalStorage}
-           />
+          <Email
+            formState={this.state}
+            removeStateFromLocalStorage={this.removeStateFromLocalStorage}
+          />
           // <EmailStudentVersion
           //  formState={this.state}
           //  removeStateFromLocalStorage={this.removeStateFromLocalStorage}

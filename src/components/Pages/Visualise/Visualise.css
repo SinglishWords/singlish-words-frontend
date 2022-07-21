@@ -9,15 +9,18 @@
     padding: 20px;
 }
 
-.visualise_page_container .card_container .card > div {
+.visualise_page_container .card_container .card .MuiCardContent-root {
     padding-left: 5%;
     padding-right: 5%;
 }
 
 
-
 .visualise_page_container .card_container .expansion_panel_container {
     margin-top: 30px;
+}
+
+.visualise_page_container .visualisation_container {
+    margin-top: 40px;
 }
 
 @media only screen and (max-width: 900px) {

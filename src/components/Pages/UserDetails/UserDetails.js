@@ -7,7 +7,7 @@ import {
   List,
 } from "@mui/material";
 import React, { Component } from "react";
-import formData from "../../../utils/formData";
+import appData from "../../../utils/appData";
 import {
   checkCompulsoryFieldsForNonSingaporean,
   checkCountryOfBirthSingapore,
@@ -43,7 +43,7 @@ export class UserDetails extends Component {
     return (
       <Grid container>
         {/* Header */}
-        <Header title={formData.informationAboutYouPage.title} />
+        <Header title={appData.informationAboutYouPage.title} />
 
         {/* Content */}
         <Grid container className="profileContainer" justify="center">
@@ -51,9 +51,9 @@ export class UserDetails extends Component {
           <Grid item xs={12}>
             {/* User Detail Input Instructions */}
             <Typography variant="body1" className="content1">
-              {formData.informationAboutYouPage.instruction1}
+              {appData.informationAboutYouPage.instruction1}
               <br />
-              <b>{formData.informationAboutYouPage.instruction2}</b>
+              <b>{appData.informationAboutYouPage.instruction2}</b>
             </Typography>
 
             {/* Age */}
@@ -61,13 +61,13 @@ export class UserDetails extends Component {
               className="dropdown"
               inputLabel={
                 values.age === ""
-                  ? formData.informationAboutYouPage.ageInstruction
+                  ? appData.informationAboutYouPage.ageInstruction
                   : ""
               }
               value={values.age}
               name={"age"}
               onChange={handleAgeChange}
-              listData={formData.informationAboutYouPage.ages}
+              listData={appData.informationAboutYouPage.ages}
             />
 
             {/* Gender */}
@@ -75,13 +75,13 @@ export class UserDetails extends Component {
               className="dropdown"
               inputLabel={
                 values.gender === ""
-                  ? formData.informationAboutYouPage.genderInstruction
+                  ? appData.informationAboutYouPage.genderInstruction
                   : ""
               }
               value={values.gender}
               name={"gender"}
               onChange={handleChange}
-              listData={formData.informationAboutYouPage.genderTypes}
+              listData={appData.informationAboutYouPage.genderTypes}
             />
 
             {/* Education */}
@@ -89,13 +89,13 @@ export class UserDetails extends Component {
               className="dropdown"
               inputLabel={
                 values.education === ""
-                  ? formData.informationAboutYouPage.educationInstruction
+                  ? appData.informationAboutYouPage.educationInstruction
                   : ""
               }
               value={values.education}
               name={"education"}
               onChange={handleChange}
-              listData={formData.informationAboutYouPage.educationLevels}
+              listData={appData.informationAboutYouPage.educationLevels}
             />
 
             {/* Country-of-Birth */}
@@ -103,13 +103,13 @@ export class UserDetails extends Component {
               className="dropdown"
               inputLabel={
                 values.countryOfBirth === ""
-                  ? formData.informationAboutYouPage.birthCountryInstruction
+                  ? appData.informationAboutYouPage.birthCountryInstruction
                   : ""
               }
               value={values.countryOfBirth}
               name={"countryOfBirth"}
               onChange={handleCountryOfBirthChange}
-              listData={formData.informationAboutYouPage.countries}
+              listData={appData.informationAboutYouPage.countries}
             />
 
             {/* Ethnicity (Show ethnicity only if Country-of-Residence is Singapore) */}
@@ -118,13 +118,13 @@ export class UserDetails extends Component {
                 className="dropdown"
                 inputLabel={
                   values.ethnicity === ""
-                    ? formData.informationAboutYouPage.ethnicityInstruction
+                    ? appData.informationAboutYouPage.ethnicityInstruction
                     : ""
                 }
                 value={values.ethnicity}
                 name={"ethnicity"}
                 onChange={handleChange}
-                listData={formData.informationAboutYouPage.ethnicities}
+                listData={appData.informationAboutYouPage.ethnicities}
               />
             ) : null}
 
@@ -133,13 +133,13 @@ export class UserDetails extends Component {
               className="dropdown"
               inputLabel={
                 values.countryOfResidence === ""
-                  ? formData.informationAboutYouPage.residenceCountryInstruction
+                  ? appData.informationAboutYouPage.residenceCountryInstruction
                   : ""
               }
               value={values.countryOfResidence}
               name={"countryOfResidence"}
               onChange={handleChange}
-              listData={formData.informationAboutYouPage.countries}
+              listData={appData.informationAboutYouPage.countries}
             />
 
             {/* Native Speaker? */}
@@ -147,13 +147,13 @@ export class UserDetails extends Component {
               className="dropdown"
               inputLabel={
                 values.isNative === ""
-                  ? formData.informationAboutYouPage.nativeSpeakerInstruction
+                  ? appData.informationAboutYouPage.nativeSpeakerInstruction
                   : ""
               }
               value={values.isNative}
               name={"isNative"}
               onChange={handleChange}
-              listData={formData.informationAboutYouPage.yesAndNo}
+              listData={appData.informationAboutYouPage.yesAndNo}
             />
 
             {/* Languages Spoken */}
@@ -167,14 +167,14 @@ export class UserDetails extends Component {
                   className="dropdown"
                   inputLabel={
                     values.languagesSpoken.length === 0
-                      ? formData.informationAboutYouPage
+                      ? appData.informationAboutYouPage
                           .otherLanguagesInstruction
                       : ""
                   }
                   value={values.languagesSpoken}
                   name={"languagesSpoken"}
                   onChange={handleLanguageChange}
-                  listData={formData.informationAboutYouPage.languagesSpoken}
+                  listData={appData.informationAboutYouPage.languagesSpoken}
                 />
                 <FormButton
                   buttonDescription="Reset Chosen Languages"
@@ -205,7 +205,7 @@ export class UserDetails extends Component {
             <Grid item xs={12}>
               <FormButton
                 buttonDescription={
-                  formData.informationAboutYouPage.buttonDescription
+                  appData.informationAboutYouPage.buttonDescription
                 }
                 onClick={nextPage}
                 disabled={!isEnabled}

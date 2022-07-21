@@ -24,9 +24,15 @@ export class ExpansionPanel extends Component {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              consequat a lacus euismod vulputate. Quisque ut blandit lacus.
+              Donec posuere odio ut consequat vestibulum. Nullam ligula diam,
+              porttitor porta iaculis non, gravida sed leo. Suspendisse at nulla
+              ultricies, viverra est posuere, finibus mauris. Integer tincidunt
+              arcu eu mi malesuada condimentum. Donec eget venenatis nulla.
+              Integer bibendum dictum lectus, a ultrices lorem ullamcorper non.
+              Quisque vitae leo sit amet enim tristique mattis sed luctus est.
+              Aliquam eget feugiat nisl, eu porta magna.
             </Typography>
           </AccordionDetails>
         </Accordion>

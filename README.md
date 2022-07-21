@@ -29,7 +29,7 @@ This will deploy the frontend of the application to `https://localhost:3000`. En
 
 ## Setting up CORS Everywhere
 
-For the purpose of frontend testing on `[localhost](http://localhost)`, it is recommended to install the CORS Everywhere browser extension on [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/) or [Google Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en). This will allow `localhost` to retrieve cues from the backend on [singlishwords.nus.edu.sg](http://singlishwords.nus.edu.sg). 
+For the purpose of frontend testing on `[localhost](http://localhost)`, it is recommended to install the CORS Everywhere browser extension on [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/) or [Google Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en). This will allow `localhost` to retrieve cues from the backend on [singlishwords.nus.edu.sg](http://singlishwords.nus.edu.sg).
 
 Follow the steps on the pages linked above to install and enable the browser extension
 
@@ -74,10 +74,10 @@ export class Introduction extends Component {
     return (
       ...
       <h2 className="logoTxt titleTxt">
-        {formData.introductionPage.title}
+        {appData.introductionPage.title}
       </h2>
       <h2 className="logoTxt subTxt">
-        {formData.introductionPage.subtitle}
+        {appData.introductionPage.subtitle}
       </h2>
       ...
     );
@@ -89,10 +89,10 @@ Above, the `<h2>` tags can be changed to `<h1>`. Saving the file with these chan
 
 ## Editing content and wordings
 
-The content and wordings on every page in the frontend are served as `props` to the components. These properties can be found in `./src/utils/formData.js`. Here is a brief look at what the file contains:
+The content and wordings on every page in the frontend are served as `props` to the components. These properties can be found in `./src/utils/appData.js`. Here is a brief look at what the file contains:
 
 ```tsx
-const formData = {
+const appData = {
   /* Introduction Page, as an example */
   introductionPage: {
     title: `A Small World of Singlish Words:`,
@@ -104,9 +104,9 @@ const formData = {
 }
 ```
 
-The contents from this data is imported in every component file. When a component is loaded, for example `<Instruction>`, the code snippet in the previous section shows the content is being retrieved by using `{formData.introductionPage.title}`.
+The contents from this data is imported in every component file. When a component is loaded, for example `<Instruction>`, the code snippet in the previous section shows the content is being retrieved by using `{appData.introductionPage.title}`.
 
-Hence, making changes to the wordings on any page or component involves changing the string values in `formData.js`. 
+Hence, making changes to the wordings on any page or component involves changing the string values in `appData.js`.
 
 Once changes are saved, the React application running in the browser will automaticaly update these changes.
 
@@ -144,7 +144,6 @@ $ npm run build
 This will create a `build` folder containing all the assets in the root directory `./`
 
 > This is an important step, since we push these files to GitHub as well, and our deployment script will later use the contents of `build` folder when we create a Docker container
-> 
 
 # Next steps
 

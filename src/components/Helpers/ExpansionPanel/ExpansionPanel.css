@@ -2,13 +2,17 @@
     border: 1px solid rgba(0, 0, 0, 0.23);
 }
 
-.panel_container > div > div:first-of-type {
+.panel_container .MuiPaper-root .MuiButtonBase-root {
     border-bottom: 1px solid rgba(0, 0, 0, 0.23);
     color: white;
     background-color: var(--blue);
 }
 
-.panel_container > div > div:first-of-type:hover {
+.panel_container .MuiPaper-root .MuiButtonBase-root:hover {
     color: white;
     background-color: var(--orange);
+}
+
+.panel_container .MuiPaper-root .MuiButtonBase-root .MuiAccordionSummary-expandIconWrapper  {
+    color: white;
 }

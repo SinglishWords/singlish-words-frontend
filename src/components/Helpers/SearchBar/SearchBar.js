@@ -1,8 +1,7 @@
-import { Grid, TextField, IconButton, Tooltip } from "@mui/material";
-import ShuffleIcon from "@mui/icons-material/Shuffle";
-import DownloadIcon from "@mui/icons-material/Download";
+import { Grid, TextField } from "@mui/material";
 import React, { Component } from "react";
 import "./SearchBar.css";
+import UtilityButton from "../UtilityButton/UtilityButton";
 
 export class SearchBar extends Component {
   render() {
@@ -16,16 +15,11 @@ export class SearchBar extends Component {
           />
         </Grid>
         <Grid item xs={6} className="btn_container">
-          <Tooltip title="Download">
-            <IconButton className="download_btn">
-              <DownloadIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Shuffle">
-            <IconButton className="shuffle_btn">
-              <ShuffleIcon />
-            </IconButton>
-          </Tooltip>
+          <UtilityButton title="Download" />
+          <UtilityButton title="Random" />
+          {this.props.page === "Visualise" ? (
+            <UtilityButton title="Options" />
+          ) : null}
         </Grid>
       </Grid>
     );

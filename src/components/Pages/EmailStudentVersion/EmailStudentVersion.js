@@ -1,7 +1,7 @@
 import { Grid, Link, Typography } from "@mui/material";
 import React, { Component } from "react";
 import axiosConfig, { answersUrl } from "../../../utils/Api/axiosConfig";
-import formData from "../../../utils/formData";
+import appData from "../../../utils/appData";
 import { copyToClipboard } from "../../../utils/Logic/copyUtil";
 import Footer from "../../Helpers/Footer/Footer";
 import FormButton from "../../Helpers/FormButton/FormButton";
@@ -51,17 +51,17 @@ export class Email extends Component {
     return (
       <Grid container>
         {/* Thank you header*/}
-        <Header title={formData.emailPageStudent.title} />
+        <Header title={appData.emailPageStudent.title} />
 
         <Grid container className="email_container" justify="center">
           {/* Paragraph 1 - What we are trying to do */}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
-              {formData.emailPageStudent.firstParagraphHeader}
+              {appData.emailPageStudent.firstParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-                {formData.emailPageStudent.firstParagraphDescription}
+                {appData.emailPageStudent.firstParagraphDescription}
               </Typography>
             </Grid>
           </Grid>
@@ -69,16 +69,13 @@ export class Email extends Component {
           {/* Paragraph 2 - If you would like to take part in the lucky draw or receive updates about this research */}
           <Grid item xs={12} className="receive_updates_lucky_draw_header">
             <Typography variant="h4" id="content">
-              {formData.emailPageStudent.secondParagraphHeader}
+              {appData.emailPageStudent.secondParagraphHeader}
             </Typography>
           </Grid>
 
           <Grid item xs={12} className="content_grid">
             <Typography variant="body1" className="text">
-              {
-                formData.emailPageStudent.secondParagraphDescription
-                  .description1
-              }
+              {appData.emailPageStudent.secondParagraphDescription.description1}
               <Link
                 className="site_link"
                 onClick={() =>
@@ -87,19 +84,16 @@ export class Email extends Component {
               >
                 <b>
                   <u>
-                    {formData.emailPageStudent.secondParagraphDescription.email}
+                    {appData.emailPageStudent.secondParagraphDescription.email}
                   </u>
                 </b>
               </Link>
-              {
-                formData.emailPageStudent.secondParagraphDescription
-                  .description2
-              }
+              {appData.emailPageStudent.secondParagraphDescription.description2}
             </Typography>
 
             <Typography variant="body1" className="text code_text">
               <b>
-                {formData.emailPageStudent.secondParagraphDescription.enterCode}
+                {appData.emailPageStudent.secondParagraphDescription.enterCode}
               </b>
             </Typography>
 
@@ -132,21 +126,18 @@ export class Email extends Component {
             </Grid>
 
             <Typography variant="body1" className="text">
-              {
-                formData.emailPageStudent.secondParagraphDescription
-                  .description3
-              }
+              {appData.emailPageStudent.secondParagraphDescription.description3}
             </Typography>
           </Grid>
 
           {/* Paragraph 4 - Get in touch*/}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
-              {formData.emailPage.fourthParagraphHeader}
+              {appData.emailPage.fourthParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-                {formData.emailPage.fourthParagraphDescription.description1}
+                {appData.emailPage.fourthParagraphDescription.description1}
               </Typography>
               <Typography variant="body1" className="text">
                 <Link
@@ -159,7 +150,7 @@ export class Email extends Component {
                   }
                 >
                   <b>
-                    <u>{formData.emailPage.fourthParagraphDescription.email}</u>
+                    <u>{appData.emailPage.fourthParagraphDescription.email}</u>
                   </b>
                 </Link>
               </Typography>
@@ -167,7 +158,7 @@ export class Email extends Component {
               <br />
               <Typography variant="body1" className="text" display="inline">
                 <b>
-                  {formData.emailPage.fourthParagraphDescription.description2}
+                  {appData.emailPage.fourthParagraphDescription.description2}
                 </b>
               </Typography>
               <Typography variant="body1" className="text" display="inline">
@@ -178,9 +169,7 @@ export class Email extends Component {
                   }
                 >
                   <b>
-                    <u>
-                      {formData.emailPage.fourthParagraphDescription.email2}
-                    </u>
+                    <u>{appData.emailPage.fourthParagraphDescription.email2}</u>
                   </b>
                 </Link>
               </Typography>
@@ -190,11 +179,11 @@ export class Email extends Component {
           {/* Paragraph 5 - Share the study*/}
           <Grid item xs={12}>
             <Typography variant="h4" id="content">
-              {formData.emailPage.fifthParagraphHeader}
+              {appData.emailPage.fifthParagraphHeader}
             </Typography>
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
-                {formData.emailPage.fifthParagraphDescription}
+                {appData.emailPage.fifthParagraphDescription}
                 <Link
                   className="site_link"
                   onClick={() => window.open("/", "_blank")}

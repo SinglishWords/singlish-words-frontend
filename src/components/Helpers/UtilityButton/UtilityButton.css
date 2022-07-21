@@ -1,0 +1,12 @@
+.util_btn_container .icon_btn {
+    border-radius: 0px;
+    width: 60px;
+}
+
+.util_btn_container .icon_btn > svg {
+    color: var(--blue);
+}
+
+.util_btn_container .icon_btn > svg:hover {
+    color: var(--orange);
+}

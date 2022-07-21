@@ -2,8 +2,9 @@ import { Divider, Grid, Typography } from "@mui/material";
 import React, { Component } from "react";
 // import ReCAPTCHA from "react-google-recaptcha";
 import axiosConfig, { questionsUrl } from "../../../utils/Api/axiosConfig";
-import formData from "../../../utils/formData";
-// import { recaptchaFields } from "../../../utils/formFields";
+// import formState from "../../../utils/state";
+import appData from "../../../utils/appData";
+// import { recaptchaState } from "../../../utils/state";
 import FormButton from "../../Helpers/FormButton/FormButton";
 import Header from "../../Helpers/Header/Header";
 import "./Instruction.css";
@@ -11,7 +12,7 @@ import "./Instruction.css";
 export class Instruction extends Component {
   constructor(props) {
     super(props);
-    // this.state = recaptchaFields;
+    // this.state = recaptchaState;
   }
 
   componentDidMount() {
@@ -61,7 +62,7 @@ export class Instruction extends Component {
     return (
       <Grid container>
         {/* Header */}
-        <Header title={formData.instructionsPage.title} />
+        <Header title={appData.instructionsPage.title} />
 
         <Grid container className="instruction_container" justify="center">
           <Divider />
@@ -69,24 +70,24 @@ export class Instruction extends Component {
             {/* Content How it works...*/}
             <Grid item xs={12}>
               <Typography variant="h4" className="title" id="content">
-                {formData.instructionsPage.firstParagraphHeader}
+                {appData.instructionsPage.firstParagraphHeader}
               </Typography>
             </Grid>
 
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
                 {
-                  formData.instructionsPage.firstParagraphDescription
+                  appData.instructionsPage.firstParagraphDescription
                     .description1
                 }{" "}
                 <b>
                   {
-                    formData.instructionsPage.firstParagraphDescription
+                    appData.instructionsPage.firstParagraphDescription
                       .description2
                   }
                 </b>{" "}
                 {
-                  formData.instructionsPage.firstParagraphDescription
+                  appData.instructionsPage.firstParagraphDescription
                     .description3
                 }
                 {"   "}
@@ -94,17 +95,17 @@ export class Instruction extends Component {
               <br />
               <Typography variant="body1" className="text">
                 {
-                  formData.instructionsPage.firstParagraphDescription
+                  appData.instructionsPage.firstParagraphDescription
                     .description4
                 }{" "}
                 <em>
                   {
-                    formData.instructionsPage.firstParagraphDescription
+                    appData.instructionsPage.firstParagraphDescription
                       .description5
                   }
                 </em>{" "}
                 {
-                  formData.instructionsPage.firstParagraphDescription
+                  appData.instructionsPage.firstParagraphDescription
                     .description6
                 }
               </Typography>
@@ -113,38 +114,38 @@ export class Instruction extends Component {
             {/* Content Some hints...*/}
             <Grid item xs={12}>
               <Typography variant="h4" className="title" id="content">
-                {formData.instructionsPage.secondParagraphHeader}
+                {appData.instructionsPage.secondParagraphHeader}
               </Typography>
             </Grid>
 
             <Grid item xs={12} className="content_grid">
               <Typography variant="body1" className="text">
                 {
-                  formData.instructionsPage.secondParagraphDescription
+                  appData.instructionsPage.secondParagraphDescription
                     .description1
                 }
               </Typography>
               <br />
               <Typography variant="body1" className="text">
                 {
-                  formData.instructionsPage.secondParagraphDescription
+                  appData.instructionsPage.secondParagraphDescription
                     .description2
                 }
               </Typography>
               <br />
               <Typography variant="body1" className="text">
                 {
-                  formData.instructionsPage.secondParagraphDescription
+                  appData.instructionsPage.secondParagraphDescription
                     .description3
                 }
                 <em>
                   {
-                    formData.instructionsPage.secondParagraphDescription
+                    appData.instructionsPage.secondParagraphDescription
                       .description4
                   }
                 </em>{" "}
                 {
-                  formData.instructionsPage.secondParagraphDescription
+                  appData.instructionsPage.secondParagraphDescription
                     .description5
                 }
               </Typography>
@@ -154,9 +155,9 @@ export class Instruction extends Component {
           {/* Continue Button*/}
           <Grid container className="continue_container">
             {/* <Grid className="recaptcha" item xs={12}> */}
-              {/* To change site key once actual site is up.
+            {/* To change site key once actual site is up.
                 Use smallworldofsinglishwords@gmail.com */}
-              {/* <ReCAPTCHA
+            {/* <ReCAPTCHA
                 sitekey="6Ldy0tQbAAAAANL-FvKgyzKBeWcGSaER4cd9jta0"
                 onChange={this.handleRecaptchaChange}
               /> */}
@@ -164,7 +165,7 @@ export class Instruction extends Component {
             <Grid item xs={12} className="continue_button_container">
               <FormButton
                 buttonDescription={
-                  formData.instructionsPage.secondParagraphDescription
+                  appData.instructionsPage.secondParagraphDescription
                     .buttonDescription
                 }
                 onClick={nextPage}

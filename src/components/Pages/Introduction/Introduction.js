@@ -2,7 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 import image from "../../../assets/images/NUS_Logo.png";
-import formData from "../../../utils/formData";
+import appData from "../../../utils/appData";
 import { currentDateTime } from "../../../utils/Logic/timeUtil";
 import Footer from "../../Helpers/Footer/Footer";
 import FormButton from "../../Helpers/FormButton/FormButton";
@@ -25,10 +25,10 @@ export class Introduction extends Component {
             </Grid>
             <Grid item className="title" xs={8}>
               <h2 className="logoTxt titleTxt">
-                {formData.introductionPage.title}
+                {appData.introductionPage.title}
               </h2>
               <h2 className="logoTxt subTxt">
-                {formData.introductionPage.subtitle}
+                {appData.introductionPage.subtitle}
               </h2>
             </Grid>
           </Grid>
@@ -37,15 +37,15 @@ export class Introduction extends Component {
           <Grid container className="introduction" justify="center">
             <Grid item className="introduction_grid">
               <Typography variant="body2" className="text" component={"div"}>
-                {formData.introductionPage.introduction}
+                {appData.introductionPage.introduction}
                 <p className="lucky_draw_text">
-                  {formData.introductionPage.introductionLuckyDraw}
+                  {appData.introductionPage.introductionLuckyDraw}
                 </p>
-                {formData.introductionPage.introduction2}
-                <i>{formData.introductionPage.introduction3}</i>
+                {appData.introductionPage.introduction2}
+                <i>{appData.introductionPage.introduction3}</i>
                 <br />
                 <br />
-                {formData.introductionPage.introduction4}
+                {appData.introductionPage.introduction4}
               </Typography>
             </Grid>
           </Grid>
@@ -58,17 +58,17 @@ export class Introduction extends Component {
                 className="popover_button"
                 type="introduction"
                 buttonDescription={
-                  formData.introductionPage.luckyDrawButtonDescription
+                  appData.introductionPage.luckyDrawButtonDescription
                 }
                 popOverButtonText={
-                  formData.introductionPage.luckyDrawInformation
+                  appData.introductionPage.luckyDrawInformation
                 }
               />
             </Grid>
             <Grid xs={6} item className="continue_button_container">
               <FormButton
                 buttonDescription={
-                  formData.introductionPage.continueButtonDescription
+                  appData.introductionPage.continueButtonDescription
                 }
                 onClick={(e) => {
                   handleFieldChange("startTime", currentDateTime());

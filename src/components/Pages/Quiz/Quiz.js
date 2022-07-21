@@ -1,8 +1,8 @@
 import { Grid, LinearProgress, TextField, Typography } from "@mui/material";
 import React, { Component } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import formData from "../../../utils/formData";
-import { recaptchaFields } from "../../../utils/formFields";
+// import ReCAPTCHA from "react-google-recaptcha";
+import appData from "../../../utils/appData";
+// import { recaptchaState } from "../../../utils/state";
 import {
   currentDateTime,
   endTimer,
@@ -22,7 +22,7 @@ export class Quiz extends Component {
     this.pageStartTime = startTimer();
     this.pageEndTime = "";
     this.resetAssociations = false;
-    this.state = recaptchaFields;
+    // this.state = recaptchaState;
   }
 
   componentDidUpdate() {
@@ -57,7 +57,7 @@ export class Quiz extends Component {
     const firstAssociationIndex = 0;
     const secondAssociationIndex = 1;
     const thirdAssociationIndex = 2;
-    const { isVerified, showRecaptcha, recaptchaAlreadyShown } = this.state;
+    // const { isVerified, showRecaptcha, recaptchaAlreadyShown } = this.state;
 
     return (
       <Grid container className="container">
@@ -73,7 +73,7 @@ export class Quiz extends Component {
             <TextField
               autoFocus
               autoComplete="off"
-              label={formData.quizPage.firstAssociationInstruction}
+              label={appData.quizPage.firstAssociationInstruction}
               name="firstAssociationText"
               onChange={(e) =>
                 handleResponseChange(e, wordIndex, firstAssociationIndex)
@@ -92,7 +92,7 @@ export class Quiz extends Component {
             {/* Second Association */}
             <TextField
               autoComplete="off"
-              label={formData.quizPage.secondAssociationInstruction}
+              label={appData.quizPage.secondAssociationInstruction}
               name="secondAssociationText"
               onChange={(e) =>
                 handleResponseChange(e, wordIndex, secondAssociationIndex)
@@ -111,7 +111,7 @@ export class Quiz extends Component {
             {/* Third Association */}
             <TextField
               autoComplete="off"
-              label={formData.quizPage.thirdAssociationInstruction}
+              label={appData.quizPage.thirdAssociationInstruction}
               name="thirdAssociationText"
               onChange={(e) =>
                 handleResponseChange(e, wordIndex, thirdAssociationIndex)
@@ -136,7 +136,7 @@ export class Quiz extends Component {
                 display="block"
                 gutterBottom
               >
-                {formData.quizPage.progress}
+                {appData.quizPage.progress}
               </Typography>
               <LinearProgress
                 className="progress"
@@ -166,14 +166,14 @@ export class Quiz extends Component {
           <Grid container className="button_container">
             <Grid item xs={6}>
               <PopoverButton
-                buttonDescription={formData.quizPage.needHelpButtonDescription}
-                popOverButtonText={formData.quizPage.instructionReminder}
+                buttonDescription={appData.quizPage.needHelpButtonDescription}
+                popOverButtonText={appData.quizPage.instructionReminder}
                 type="Quiz"
               />
             </Grid>
             <Grid item xs={6}>
               <FormButton
-                buttonDescription={formData.quizPage.buttonDescription}
+                buttonDescription={appData.quizPage.buttonDescription}
                 onClick={(e) => {
                   this.resetAssociations = true;
                   this.pageEndTime = endTimer();
