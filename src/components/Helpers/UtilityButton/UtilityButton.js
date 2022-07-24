@@ -11,7 +11,7 @@ export class UtilityButton extends Component {
     return (
       <Grid item className="util_btn_container">
         <Tooltip title={this.props.title}>
-          <IconButton className="icon_btn">
+          <IconButton className="icon_btn" onClick={this.props.onClick}>
             {this.props.title === "Download" ? (
               <DownloadIcon />
             ) : this.props.title === "Random" ? (

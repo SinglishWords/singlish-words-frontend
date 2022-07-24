@@ -1,64 +1,67 @@
-import React from "react";
+import React, { Component } from "react";
 import { Button, Grid, Typography, Popover } from "@mui/material";
 import "./PopoverButton.css";
 
-/* Taken directly from MaterialUI API. */
-export default function PopoverButton({
-  buttonDescription,
-  popOverButtonText,
-  type,
-}) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+export class PopoverButton extends Component {
+  state = {
+    anchorEl: null,
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  handleClick = (e) => {
+    e.preventDefault();
+    this.setState({ anchorEl: e.currentTarget });
   };
 
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
+  handleClose = (e) => {
+    e.preventDefault();
+    this.setState({ anchorEl: null });
+  };
 
-  return (
-    <Grid item className="container">
-      <Button
-        className="popoverbutton"
-        aria-describedby={id}
-        variant="contained"
-        onClick={handleClick}
-      >
-        {buttonDescription}
-      </Button>
-      <Popover
-        id={id}
-        className={type}
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "center",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "center",
-        }}
-        disableAutoFocus={true}
-      >
-        <Typography
-          variant="body2"
-          align="justify"
-          className={
-            type === "introduction"
-              ? "popoverbutton_text introduction_popover"
-              : "popoverbutton_text quiz_popover"
-          }
+  render() {
+    const open = Boolean(this.state.anchorEl);
+    const id = open ? "simple-popover" : undefined;
+
+    return (
+      <Grid item className="container">
+        <Button
+          className="popoverbutton"
+          aria-describedby={id}
+          variant="contained"
+          onClick={this.handleClick}
         >
-          {popOverButtonText}
-        </Typography>
-      </Popover>
-    </Grid>
-  );
+          {this.props.buttonDescription}
+        </Button>
+        <Popover
+          id={id}
+          className={this.props.type}
+          open={open}
+          anchorEl={this.state.anchorEl}
+          onClose={this.handleClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+          disableAutoFocus={true}
+        >
+          <Typography
+            variant="body2"
+            align="justify"
+            className={
+              this.props.type === "introduction"
+                ? "popoverbutton_text introduction_popover"
+                : "popoverbutton_text quiz_popover"
+            }
+          >
+            {this.props.popOverButtonText}
+          </Typography>
+        </Popover>
+      </Grid>
+    );
+  }
 }
+
+export default PopoverButton;

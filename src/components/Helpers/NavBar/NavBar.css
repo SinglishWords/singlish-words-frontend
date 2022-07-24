@@ -1,51 +1,51 @@
 .App .appbar {
-    background-color: var(--blue)
+  background-color: var(--blue);
 }
 
 .appbar .button > a {
-    color:white;
-    font-weight: bold;
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 14px;
-    text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .appbar .button > a:hover {
-    color: var(--orange);
+  color: var(--orange);
 }
 
-#menu-appbar .MuiPaper-root > ul > li > p > a{
-    text-decoration: none;
-    color: black;
+#menu-appbar .MuiPaper-root > ul > li > p > a {
+  text-decoration: none;
+  color: black;
 }
 
 .appbar .default_header {
-    display: flex;
+  display: flex;
 }
 
 .appbar .side_nav_panel {
-    display: none;
+  display: none;
 }
 
 .appbar #menu-appbar .side_nav_panel .menu_item {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 600px) {
-    .appbar .default_header {
-        display: none;
-    }
-    .appbar .side_nav_panel {
-        display: block;
-    }
+  .appbar .default_header {
+    display: none;
+  }
+  .appbar .side_nav_panel {
+    display: block;
+  }
 
-    .appbar .toolbar {
-        margin-left: auto;
-        margin-right: 0;
-    }
+  .appbar .toolbar {
+    margin-left: auto;
+    margin-right: 0;
+  }
 
-    .appbar .side_nav_panel .icon_button:hover {
-        color: var(--orange);
-    }
+  .appbar .side_nav_panel .icon_button:hover {
+    color: var(--orange);
+  }
 }

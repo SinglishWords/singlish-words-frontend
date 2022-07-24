@@ -25,6 +25,10 @@
   white-space: pre-line;
 }
 
+.footer .text > b > u {
+  color: white;
+}
+
 .site_link {
   cursor: pointer;
 }

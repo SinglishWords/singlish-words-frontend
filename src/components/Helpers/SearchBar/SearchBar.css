@@ -7,3 +7,14 @@
     align-items: center;
     justify-content: flex-end;
 }
+
+.modal .fade {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400;
+    border: 2px solid black;
+    box-shadow: 24px;
+    padding: 30px;
+}
