@@ -13,8 +13,28 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400;
-    border: 2px solid black;
-    box-shadow: 24px;
+    width: 70%;
     padding: 30px;
+    padding-top: 20px;
 }
+
+.modal .fade .title {
+    margin-bottom: 40px;
+}
+
+.modal .fade .relation_type_container {
+    margin-bottom: 40px;
+}
+
+.modal .fade .visualisation_type_container {
+    margin-bottom: 40px;
+}
+
+.modal .fade .relation_type_text {
+    color: var(--grey);
+}
+
+.modal .fade .visualisation_type_text {
+    color: var(--grey);
+}
+

@@ -42,7 +42,7 @@
 }
 
 .container .introduction .introduction_grid .text {
-  color: #394b58;
+  color: var(--grey);
   text-align: justify;
   line-height: 23px;
   white-space: pre-line;

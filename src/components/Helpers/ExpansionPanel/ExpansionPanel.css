@@ -2,6 +2,10 @@
     border: 1px solid rgba(0, 0, 0, 0.23);
 }
 
+.panel_container .text {
+    color: var(--grey);
+}
+
 .panel_container .MuiPaper-root .MuiButtonBase-root {
     border-bottom: 1px solid rgba(0, 0, 0, 0.23);
     color: white;

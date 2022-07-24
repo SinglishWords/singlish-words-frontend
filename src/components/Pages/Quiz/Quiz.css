@@ -38,7 +38,7 @@
 }
 
 .container .experiment_container .progress_container .progress_text {
-  color: #394b58;
+  color: var(--grey);
 }
 
 .container .experiment_container .progress_container .progress .MuiLinearProgress-bar {

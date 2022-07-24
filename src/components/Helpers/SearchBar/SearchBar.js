@@ -11,6 +11,7 @@ import {
 import React, { Component } from "react";
 import "./SearchBar.css";
 import UtilityButton from "../UtilityButton/UtilityButton";
+import Dropdown from "../../Helpers/Dropdown/Dropdown";
 
 export class SearchBar extends Component {
   state = {
@@ -49,8 +50,6 @@ export class SearchBar extends Component {
               <UtilityButton title="Options" onClick={this.handleOpen} />
               <Modal
                 className="modal"
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
                 open={this.state.open}
                 onClose={this.handleClose}
                 closeAfterTransition
@@ -60,19 +59,42 @@ export class SearchBar extends Component {
                 }}
               >
                 <Fade className="fade" in={this.state.open}>
-                  <Paper elevation={0}>
+                  <Paper elevation={2}>
                     <Box>
-                      <Typography
-                        id="transition-modal-title"
-                        variant="h6"
-                        component="h2"
+                      <Typography variant="h5" className="title">
+                        Options
+                      </Typography>
+                      <Grid item xs={12} className="relation_type_container">
+                        <Typography className="relation_type_text">
+                          Relation Type
+                        </Typography>
+                        <Dropdown
+                          inputLabel={"Select a relation"}
+                          value={""}
+                          name={"relation_type"}
+                          // onChange={}
+                          listData={[
+                            "Forward Associations",
+                            "Backward Associations",
+                          ]}
+                        />
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        className="visualisation_type_container"
                       >
-                        Text in a modal
-                      </Typography>
-                      <Typography id="transition-modal-description">
-                        Duis mollis, est non commodo luctus, nisi erat porttitor
-                        ligula.
-                      </Typography>
+                        <Typography className="visualisation_type_text">
+                          Visualisation Type
+                        </Typography>
+                        <Dropdown
+                          inputLabel={"Select a visualisation type"}
+                          value={""}
+                          name={"visualisation_type"}
+                          // onChange={}
+                          listData={["One-hop Network"]}
+                        />
+                      </Grid>
                     </Box>
                   </Paper>
                 </Fade>

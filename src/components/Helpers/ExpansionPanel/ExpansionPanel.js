@@ -23,7 +23,7 @@ export class ExpansionPanel extends Component {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <Typography className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
               consequat a lacus euismod vulputate. Quisque ut blandit lacus.
               Donec posuere odio ut consequat vestibulum. Nullam ligula diam,

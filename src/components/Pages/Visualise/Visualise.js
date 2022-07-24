@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardContent, Grid } from "@mui/material";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
 import NavBar from "../../Helpers/NavBar/NavBar";
 import SearchBar from "../../Helpers/SearchBar/SearchBar";
 import NetworkChart from "../../Helpers/NetworkChart/NetworkChart";
@@ -17,7 +17,15 @@ export class Visualise extends Component {
         <Grid item xs={12} className="card_container">
           <Card elevation={2} className="card">
             <CardContent>
-              <SearchBar page="Visualise" />
+              <Grid item xs={12}>
+                <SearchBar page="Visualise" />
+              </Grid>
+              <Grid item xs={12} className="description_container">
+                <Typography variant="body1" className="description_text">
+                  Visualization: <i>One-hop network </i>| Relation:{" "}
+                  <i>Forward associations</i>
+                </Typography>
+              </Grid>
               <Grid item xs={12} className="visualisation_container">
                 <NetworkChart />
               </Grid>
