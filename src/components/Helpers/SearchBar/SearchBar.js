@@ -69,7 +69,7 @@ export class SearchBar extends Component {
                           Relation Type
                         </Typography>
                         <Dropdown
-                          inputLabel={"Select a relation"}
+                          inputLabel={"Select a relation type"}
                           value={""}
                           name={"relation_type"}
                           // onChange={}

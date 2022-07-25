@@ -25,19 +25,25 @@ export class NetworkChart extends Component {
               layout: "force",
               draggable: true,
               force: {
-                repulsion: [75, 100],
+                repulsion: [100, 100],
                 friction: 0.3,
+                gravity: 0.03,
               },
               data: visualisationState.nodes,
               links: visualisationState.links,
               categories: visualisationState.categories,
               roam: true,
+              edgeSymbol: ["none", "arrow"],
+              itemStyle: {
+                opacity: 0.8,
+              },
               label: {
-                position: "right",
+                position: "inside",
                 formatter: "{b}",
                 show: true,
                 fontFamily: "Segoe UI",
                 fontSize: 15,
+                color: "#000",
               },
               lineStyle: {
                 color: "source",

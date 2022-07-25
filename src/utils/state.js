@@ -229,15 +229,15 @@ export const visualisationState = {
     {
       id: "14",
       name: "grape",
-      symbolSize: 4,
-      value: 4,
+      symbolSize: 20,
+      value: 20,
       category: 1,
     },
     {
       id: "15",
       name: "crunch",
-      symbolSize: 4,
-      value: 4,
+      symbolSize: 20,
+      value: 20,
       category: 2,
     },
     {
@@ -273,6 +273,10 @@ export const visualisationState = {
     {
       source: "0",
       target: "1",
+    },
+    {
+      source: "1",
+      target: "0",
     },
     {
       source: "0",
