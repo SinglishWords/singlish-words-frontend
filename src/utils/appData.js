@@ -20,10 +20,10 @@ const appData = {
     Upon completion of the study, you can enter a `,
     introductionLuckyDraw: `monthly lucky draw (refer to "Lucky Draw T&C")`,
     introduction2: ` to stand a chance of winning $5 Grab vouchers by entering your email address in the last page. The more times you complete the study, the more chances you get. `,
-    introduction3: `Don’t say bojio!`,
+    introduction3: `Don't say bojio!`,
     introduction4: `If you proceed, you consent to your demographic and linguistic data to be collected for research purposes. This data is completely anonymous, and never linked to your personal or contact information. Your anonymized data could be shared with other researchers for the purpose of scientific exploration.`,
     luckyDrawButtonDescription: `Lucky Draw T&C`,
-    luckyDrawInformation: `The lucky draw will be active from 1st January 2022 to 30th June 2022. In order to participate,
+    luckyDrawInformation: `The lucky draw will be active from 1st January 2022 to 31st December 2022. In order to participate,
     please email the unique code shown at the end of the survey to singlishwords@nus.edu.sg. 
 
     Your decision to participate is voluntary. The chance that each participant has to win a 
@@ -53,7 +53,7 @@ const appData = {
     Upon completion of the study, if you are a current NUS student, you are eligible to be reimbursed $5 for your time by emailing us, with your `,
     introductionEmail: `NUS student email address`,
     introduction2: `, your participation code presented to you only upon completion of this study. `,
-    introduction3: `Don’t say bojio!`,
+    introduction3: `Don't say bojio!`,
     introduction4: `If you proceed, you consent to your demographic and linguistic data to be collected for research purposes. This data is completely anonymous, and never linked to your personal or contact information. Your anonymized data could be shared with other researchers for the purpose of scientific exploration.`,
     continueButtonDescription: `I want to participate!`,
   },
@@ -142,13 +142,13 @@ const appData = {
       description3: `Note that your contact information is never connected to the data you provided previously. Your responses remain confidential and anonymous.`,
     },
     thirdParagraphHeader: `Lucky Draw Terms & Conditions`,
-    thirdParagraphDescription: `The lucky draw will be active from 1st January 2022 to 30th June 2022. Your decision to participate is voluntary. The chance that each participant has to win a voucher is proportional to the number of times they had completed the study and entered their email address on the final page. Participants who have been identified as exhibiting bot-like behavior are not permitted to participate in the lucky draw.
+    thirdParagraphDescription: `The lucky draw will be active from 1st January 2022 to 31st December 2022. Your decision to participate is voluntary. The chance that each participant has to win a voucher is proportional to the number of times they had completed the study and entered their email address on the final page. Participants who have been identified as exhibiting bot-like behavior are not permitted to participate in the lucky draw.
     Winners of the lucky draw will be randomly selected on the final day of the month. All participants will be notified of the outcome regardless of whether they had won or not. 100 $5 Grab Vouchers will be awarded each month.
     
     After winners have been selected, the pool from which the lucky draw winners are selected is reset for the next month.`,
     fourthParagraphHeader: `Get in touch`,
     fourthParagraphDescription: {
-      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
+      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at: `,
       email: `singlishwords@nus.edu.sg`,
       description2: `Principal Investigator: Dr. Cynthia Siew
       Department of Psychology, National University of Singapore.
@@ -177,7 +177,7 @@ const appData = {
     },
     //    thirdParagraphHeader: `Get in touch`,
     //    thirdParagraphDescription: {
-    //      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at:`,
+    //      description1: `If you have any concerns or questions regarding this research, please do not hesitate to contact the project team at: `,
     //      email: `smallworldofsinglishwords@gmail.com`,
     //      description2: `Principal Investigator: Dr. Cynthia Siew
     //      Department of Psychology, National University of Singapore.

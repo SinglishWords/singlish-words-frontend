@@ -26,6 +26,7 @@
   white-space: pre-line;
   text-align: justify;
   line-height: 30px;
+  display: inline;
 }
 
 .email_container .receive_updates_lucky_draw_header {

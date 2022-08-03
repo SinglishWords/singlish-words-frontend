@@ -88,6 +88,7 @@ export class Email extends Component {
               </Link>
               {appData.emailPage.secondParagraphDescription.description2}
             </Typography>
+            <br />
 
             <Typography variant="body1" className="text code_text">
               <b>{appData.emailPage.secondParagraphDescription.enterCode}</b>
