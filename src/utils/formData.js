@@ -23,7 +23,7 @@ const formData = {
     introduction3: `Don’t say bojio!`,
     introduction4: `If you proceed, you consent to your demographic and linguistic data to be collected for research purposes. This data is completely anonymous, and never linked to your personal or contact information. Your anonymized data could be shared with other researchers for the purpose of scientific exploration.`,
     luckyDrawButtonDescription: `Lucky Draw T&C`,
-    luckyDrawInformation: `The lucky draw will be active from 1st January 2022 to 30th June 2022. In order to participate,
+    luckyDrawInformation: `The lucky draw will be active from 1st July 2022 to 31st December 2022. In order to participate,
     please email the unique code shown at the end of the survey to singlishwords@nus.edu.sg. 
     Your decision to participate is voluntary. The chance that each participant has to win a 
     voucher is proportional to the number of times they had completed the study and entered 
