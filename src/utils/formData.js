@@ -31,7 +31,7 @@ const formData = {
     exhibiting bot-like behavior are not permitted to participate in the lucky draw.
     Winners of the lucky draw will be randomly selected on the final day of the month. All
     participants will be notified of the outcome regardless of whether they had won or not. 
-    100 $5 Grab Vouchers will be awarded each month.
+    $500 worth of vouchers will be awarded each month.
     
     After winners have been selected, the pool from which the lucky draw winners are selected
     is reset for the next month.`,
